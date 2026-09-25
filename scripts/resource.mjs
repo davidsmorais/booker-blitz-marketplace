@@ -15,7 +15,7 @@ export const githubHeaders = () => {
   return headers
 }
 export const MAX_IMAGE_BYTES = 512 * 1024
-export const MAX_BBDB_BYTES = 2 * 1024 * 1024
+export const MAX_BBDB_BYTES = 16 * 1024 * 1024
 export const MAX_BBTHEME_BYTES = 8 * 1024 * 1024
 export const MAX_README_CHARS = 12_000
 export const IMAGE_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp"])
@@ -123,8 +123,10 @@ export const validateDatabasePayload = (data, rawText) => {
   }
   for (const fileName of BBDB_ARRAY_FILES) {
     const value = data.files[fileName]
-    if (value !== undefined && !Array.isArray(value))
-      push(errors, `${fileName} must be an array`)
+    if (value === undefined) continue
+    if (!Array.isArray(value)) push(errors, `${fileName} must be an array`)
+    else if (value.some((item) => !isRecord(item)))
+      push(errors, `${fileName} entries must be objects`)
   }
   for (const fileName of BBDB_OBJECT_FILES) {
     const value = data.files[fileName]

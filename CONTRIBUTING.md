@@ -18,7 +18,7 @@ One folder, `themes/<slug>/` or `databases/<slug>/`:
 | `preview.png` / `.jpg` / `.webp` | Yes. One image, 512 KB or smaller. |
 | `meta.json` | Yes. Title, author, version, tags, `gameVersion`, `license: "CC-BY-4.0"`. |
 
-Databases are a single JSON file. Do not embed images. Size cap is 2 MB. Themes cap at 8 MB, matching the game.
+Databases are a single JSON file. Do not embed images. Size cap is 16 MB. Themes cap at 8 MB, matching the game.
 
 ## What stays out of the repo
 

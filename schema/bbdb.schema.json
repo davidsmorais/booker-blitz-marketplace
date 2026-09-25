@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/davidsmorais/booker-blitz-marketplace/raw/main/schema/bbdb.schema.json",
   "title": "Booker Blitz database (.bbdb)",
-  "description": "Envelope written by DataStudio. Images are not stored in the file. Matches game format bbdb version 1 (src/types/bbdb.ts).",
+  "description": "Envelope written by DataStudio. Matches game format bbdb version 1 (src/types/bbdb.ts). Record files are arrays of objects. picture and logo are filenames, not embedded images. File cap is 16 MB.",
   "type": "object",
   "additionalProperties": false,
   "required": ["format", "version", "name", "files"],
@@ -10,23 +10,37 @@
     "format": { "const": "bbdb" },
     "version": { "const": 1 },
     "name": { "type": "string", "minLength": 1 },
-    "exportedAt": { "type": "string" },
+    "exportedAt": { "type": "string", "minLength": 1 },
     "files": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "wrestlers.json": { "type": "array" },
-        "promotions.json": { "type": "array" },
-        "contracts.json": { "type": "array" },
-        "arenas.json": { "type": "array" },
-        "alliances.json": { "type": "array" },
-        "save_meta.json": { "type": "object" },
+        "wrestlers.json": { "$ref": "#/$defs/records" },
+        "promotions.json": { "$ref": "#/$defs/records" },
+        "contracts.json": { "$ref": "#/$defs/records" },
+        "arenas.json": { "$ref": "#/$defs/records" },
+        "alliances.json": { "$ref": "#/$defs/records" },
+        "save_meta.json": { "$ref": "#/$defs/saveMeta" },
         "datapack.json": { "type": "object" }
       },
       "anyOf": [
         { "required": ["wrestlers.json"] },
         { "required": ["promotions.json"] }
       ]
+    }
+  },
+  "$defs": {
+    "records": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "saveMeta": {
+      "type": "object",
+      "properties": {
+        "startDate": { "type": "string" },
+        "imgPath": { "type": "string" },
+        "themeKey": { "type": "string" }
+      }
     }
   }
 }
