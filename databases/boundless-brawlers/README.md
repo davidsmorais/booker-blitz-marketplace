@@ -4,10 +4,10 @@ A wrestling roster of 121 legendary characters from mythology, classic literatur
 
 ## Contents
 
-- **wrestlers.json**: 121 wrestlers split across two promotions
-  - **Colosseum Championship Wrestling (CCW)**: 80 wrestlers from mythology, history, and legend
-  - **Wonderland Pro Wrestling (WPW)**: 41 wrestlers from classic literature and early pulp/cinema
-- **promotions.json**: 2 themed promotions
+- **wrestlers.json**: 121 wrestlers and 30 staff split across two promotions
+  - **Colosseum Championship Wrestling (CCW)**: 80 wrestlers, plus a crew of Olympians and ancient poets (Zeus, Athena, Homer, Themis, Chiron and others)
+  - **Wonderland Pro Wrestling (WPW)**: 41 wrestlers, plus a crew from Victorian fiction (Phileas Fogg, Scheherazade, Dr. Watson, Inspector Lestrade and others)
+- **promotions.json**: 2 themed promotions, each with weekly shows, four PPVs, five titles, and four tag teams or trios
 
 ## Image sources
 
