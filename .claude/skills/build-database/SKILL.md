@@ -51,6 +51,8 @@ Include `wrestlers.json` or `promotions.json` (or both). Each array entry is an 
 
 Prefer a DataStudio export (Export / Save) over hand-built records. If you edit records, keep ids consistent across wrestlers, promotions, contracts, and staff `pic` filenames.
 
+To author or edit records, use the `bbdb` skill (`/bbdb`). Its CLI fills every wrestler and promotion field and checks the file against the game's loader: `node .claude/skills/bbdb/scripts/bbdb.mjs check databases/<slug>/<slug>.bbdb`.
+
 ## Checks
 
 Run `pnpm validate` from the repo root. Fix every reported error before finishing.
