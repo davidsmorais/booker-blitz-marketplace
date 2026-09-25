@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-25T04:28:44.902Z",
+  "themes": [
+    {
+      "title": "House Lights",
+      "author": "Dark Magic Studios",
+      "slug": "house-lights",
+      "version": "1.0.0",
+      "tags": [
+        "dark",
+        "neon",
+        "starter"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# House Lights\n\nA dark arena wash in cyan and magenta. Import it from Settings → Theme. It becomes your Custom theme.\n\nNo photographs. The colours are the whole look.\n",
+      "readmeExcerpt": "House Lights A dark arena wash in cyan and magenta. Import it from Settings → Theme. It becomes your Custom theme. No photographs. The colours are the whole look.",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/house-lights/house-lights.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/house-lights/preview.png",
+      "sha256": "50ddb1e07b1be8493eaefb9b0c8cf40add6262df805ac56e7a1527acba80b151",
+      "size": 209
+    }
+  ],
+  "databases": [
+    {
+      "title": "Harbor Circuit",
+      "author": "Dark Magic Studios",
+      "slug": "harbor-circuit",
+      "version": "1.0.0",
+      "tags": [
+        "starter",
+        "indie",
+        "fictional"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# Harbor Circuit\n\nA one-promotion starter database. Harbor City Wrestling and Lane Porter are fictional.\n\nImport the `.bbdb` in DataStudio. This file has no images. If you add portraits later, host them yourself and name the host in this README.\n",
+      "readmeExcerpt": "Harbor Circuit A one-promotion starter database. Harbor City Wrestling and Lane Porter are fictional. Import the .bbdb in DataStudio. This file has no images. If you add portraits later, host them yourself and name the host in this README.",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/harbor-circuit/harbor-circuit.bbdb",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/harbor-circuit/preview.png",
+      "sha256": "154599c13e89c963e8fd4730d887b4e73d6738425d44274f8f01548f0a29c164",
+      "size": 353
+    }
+  ],
+  "datastudio": {
+    "version": null,
+    "date": null,
+    "assets": []
+  }
+}

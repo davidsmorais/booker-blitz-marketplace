@@ -1,0 +1,12 @@
+{
+  "format": "bbtheme",
+  "version": 1,
+  "name": "No Art",
+  "colors": {
+    "primary": "#00f5ff",
+    "secondary": "#ff00ff",
+    "accent": "#ffffff",
+    "hueRotation": 0,
+    "mode": "dark"
+  }
+}

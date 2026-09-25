@@ -1,0 +1,50 @@
+name: Validate resource PR
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate
+        id: validate
+        run: node scripts/validate.mjs > "$RUNNER_TEMP/validate.txt" 2>&1
+        continue-on-error: true
+      - name: Comment on failure
+        if: steps.validate.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs")
+            const details = fs.readFileSync(process.env.RUNNER_TEMP + "/validate.txt", "utf8").slice(0, 6000)
+            const body = [
+              "This resource is not ready to merge.",
+              "",
+              "```",
+              details.trim() || "Validation failed.",
+              "```",
+              "",
+              "Fix the title, README, preview image, or schema errors above and push again.",
+            ].join("\n")
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            })
+      - name: Fail the check
+        if: steps.validate.outcome == 'failure'
+        run: |
+          cat "$RUNNER_TEMP/validate.txt"
+          exit 1

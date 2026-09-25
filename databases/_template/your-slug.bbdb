@@ -1,0 +1,10 @@
+{
+  "format": "bbdb",
+  "version": 1,
+  "name": "Your database name",
+  "exportedAt": "2026-09-25T00:00:00.000Z",
+  "files": {
+    "promotions.json": [],
+    "wrestlers.json": []
+  }
+}

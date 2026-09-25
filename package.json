@@ -1,0 +1,12 @@
+{
+  "name": "booker-blitz-marketplace",
+  "private": true,
+  "type": "module",
+  "description": "Community themes, databases, and DataStudio installers for Booker Blitz.",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "manifest": "node scripts/build-manifest.mjs",
+    "test": "node scripts/test-fixtures.mjs"
+  },
+  "license": "MIT"
+}

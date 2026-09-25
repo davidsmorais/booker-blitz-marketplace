@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davidsmorais/booker-blitz-marketplace/raw/main/schema/bbtheme.schema.json",
+  "title": "Booker Blitz theme (.bbtheme)",
+  "description": "Matches game format bbtheme version 1 (src/types/bbtheme.ts).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "name", "colors"],
+  "properties": {
+    "format": { "const": "bbtheme" },
+    "version": { "const": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "colors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary", "secondary", "accent", "hueRotation"],
+      "properties": {
+        "primary": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "secondary": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "accent": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "hueRotation": { "type": "number", "minimum": 0, "maximum": 360 },
+        "mode": { "enum": ["light", "dark"] },
+        "success": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "warning": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "money": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "statGreat": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "statGood": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "statAvg": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "statLow": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+        "statBad": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+      }
+    },
+    "backgrounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wp/1.png": { "type": "string", "pattern": "^data:image/.+;base64," },
+        "wp/2.png": { "type": "string", "pattern": "^data:image/.+;base64," },
+        "wp/3.png": { "type": "string", "pattern": "^data:image/.+;base64," },
+        "wp/4.png": { "type": "string", "pattern": "^data:image/.+;base64," },
+        "wp/5.png": { "type": "string", "pattern": "^data:image/.+;base64," },
+        "wp/contract-table.png": { "type": "string", "pattern": "^data:image/.+;base64," }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davidsmorais/booker-blitz-marketplace/raw/main/schema/bbdb.schema.json",
+  "title": "Booker Blitz database (.bbdb)",
+  "description": "Envelope written by DataStudio. Images are not stored in the file. Matches game format bbdb version 1 (src/types/bbdb.ts).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "name", "files"],
+  "properties": {
+    "format": { "const": "bbdb" },
+    "version": { "const": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "exportedAt": { "type": "string" },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "wrestlers.json": { "type": "array" },
+        "promotions.json": { "type": "array" },
+        "contracts.json": { "type": "array" },
+        "arenas.json": { "type": "array" },
+        "alliances.json": { "type": "array" },
+        "save_meta.json": { "type": "object" },
+        "datapack.json": { "type": "object" }
+      },
+      "anyOf": [
+        { "required": ["wrestlers.json"] },
+        { "required": ["promotions.json"] }
+      ]
+    }
+  }
+}
