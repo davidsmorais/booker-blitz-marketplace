@@ -3,7 +3,17 @@ import { readFileSync, readdirSync, statSync } from "node:fs"
 import { basename, extname, join } from "node:path"
 
 export const REPO = "davidsmorais/booker-blitz-marketplace"
+export const BOOKER_BLITZ_REPO = "davidsmorais/booker-blitz"
 export const RAW_ROOT = `https://raw.githubusercontent.com/${REPO}/main`
+
+export const githubHeaders = () => {
+  const headers = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "booker-blitz-marketplace",
+  }
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+  return headers
+}
 export const MAX_IMAGE_BYTES = 512 * 1024
 export const MAX_BBDB_BYTES = 2 * 1024 * 1024
 export const MAX_BBTHEME_BYTES = 8 * 1024 * 1024

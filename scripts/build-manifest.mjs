@@ -5,6 +5,7 @@ import {
   REPO,
   excerpt,
   findPreview,
+  githubHeaders,
   listResourceDirs,
   readJson,
   sha256,
@@ -61,12 +62,9 @@ const previousDatastudio = () => {
 }
 
 const fetchDatastudio = async () => {
-  const headers = {
-    Accept: "application/vnd.github+json",
-    "User-Agent": "booker-blitz-marketplace",
-  }
-  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
-  const response = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=20`, { headers })
+  const response = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=20`, {
+    headers: githubHeaders(),
+  })
   if (!response.ok) {
     console.warn(`[manifest] GitHub releases returned ${response.status}; keeping the previous DataStudio block`)
     return previousDatastudio()
