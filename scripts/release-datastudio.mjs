@@ -169,6 +169,31 @@ const tagExists = (tag) => {
   }
 }
 
+const remoteTagExists = (tag) => {
+  if (dryRun) return false
+  try {
+    const out = execFileSync("git", ["ls-remote", "--tags", "origin", `refs/tags/${tag}`], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim()
+    return out.length > 0
+  } catch {
+    return false
+  }
+}
+
+const githubReleaseExists = (tag) => {
+  if (dryRun) return false
+  try {
+    execFileSync("gh", ["release", "view", tag, "--repo", REPO], { stdio: "ignore" })
+    return true
+  } catch {
+    return false
+  }
+}
+
+const datastudioReleaseExists = (tag) => tagExists(tag) || remoteTagExists(tag) || githubReleaseExists(tag)
+
 const confirmVersion = async (version, notes) => {
   const tag = `datastudio-v${version}`
   const previous = latestMarketplaceTag()
@@ -242,7 +267,9 @@ const createGithubRelease = (tag, version, notes) => {
 }
 
 const bumpManifest = (tag) => {
-  run(process.execPath, [join(root, "scripts", "build-manifest.mjs")])
+  run(process.execPath, [join(root, "scripts", "build-manifest.mjs")], {
+    env: { ...process.env, DATASTUDIO_RELEASE_TAG: tag },
+  })
   if (dryRun) {
     console.log(`[dry-run] would commit manifest.json for ${tag} if changed`)
     return
@@ -278,9 +305,15 @@ if (version !== initialVersion) {
 const tag = `datastudio-v${version}`
 const finalNotes = await releaseNotesFor(version)
 
-createTagAndPush(tag)
-createGithubRelease(tag, version, finalNotes)
-bumpManifest(tag)
-
-console.log("")
-console.log("Next: upload .exe, .dmg, .AppImage, and checksums.txt to the draft release, then publish it.")
+if (datastudioReleaseExists(tag)) {
+  console.log(`[release] ${tag} already exists; syncing manifest from release assets (.AppImage, .msi, .dmg, .exe)`)
+  bumpManifest(tag)
+  console.log("")
+  console.log("Manifest updated from the existing release. Upload any missing installers to the release if needed.")
+} else {
+  createTagAndPush(tag)
+  createGithubRelease(tag, version, finalNotes)
+  bumpManifest(tag)
+  console.log("")
+  console.log("Next: upload .exe, .msi, .dmg, .AppImage, and checksums.txt to the draft release, then publish it.")
+}

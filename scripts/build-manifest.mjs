@@ -49,9 +49,15 @@ const entryFor = (dir, kind) => {
 
 const osFor = (name) => {
   const lower = name.toLowerCase()
-  if (lower.endsWith(".exe")) return "windows"
+  if (lower.endsWith(".exe") || lower.endsWith(".msi")) return "windows"
   if (lower.endsWith(".dmg")) return "mac"
   if (lower.endsWith(".appimage")) return "linux"
+  return null
+}
+
+const datastudioReleaseTag = () => {
+  const fromEnv = process.env.DATASTUDIO_RELEASE_TAG?.trim()
+  if (fromEnv) return fromEnv
   return null
 }
 
@@ -72,7 +78,10 @@ const fetchDatastudio = async () => {
     return previousDatastudio()
   }
   const releases = await response.json()
-  const release = releases.find((item) => typeof item.tag_name === "string" && item.tag_name.startsWith("datastudio-v"))
+  const pinnedTag = datastudioReleaseTag()
+  const release = pinnedTag
+    ? releases.find((item) => item.tag_name === pinnedTag)
+    : releases.find((item) => typeof item.tag_name === "string" && item.tag_name.startsWith("datastudio-v"))
   if (!release) return { version: null, date: null, assets: [] }
   const assets = (release.assets ?? [])
     .map((asset) => {
