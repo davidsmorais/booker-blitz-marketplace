@@ -4,5 +4,7 @@
   "version": "1.0.0",
   "tags": ["mythology", "literature", "history", "public-domain", "roster"],
   "gameVersion": "0.2.0",
-  "license": "CC-BY-4.0"
+  "license": "CC-BY-4.0",
+  "imageSetUrl": "https://drive.google.com/drive/folders/1Zbwi9Y_tJrE7-3ZPQxeejymLNsWvrT2H?usp=drive_link",
+  "verified": true
 }

@@ -40,6 +40,8 @@ const entryFor = (dir, kind) => {
     readmeExcerpt: excerpt(readme),
     downloadUrl: `${RAW_ROOT}/${folder}/${slug}/${slug}.${ext}`,
     imageUrl: `${RAW_ROOT}/${folder}/${slug}/${previewName}`,
+    ...(meta.imageSetUrl ? { imageSetUrl: meta.imageSetUrl } : {}),
+    ...(meta.verified ? { verified: meta.verified } : {}),
     sha256: sha256(payload),
     size: payload.length,
   }

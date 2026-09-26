@@ -73,6 +73,10 @@ export const validateMeta = (meta) => {
     push(errors, "meta.json license must be CC-BY-4.0")
   if (!Array.isArray(meta.tags) || meta.tags.length === 0 || meta.tags.some((tag) => typeof tag !== "string" || tag.trim().length === 0))
     push(errors, "meta.json tags must be a non-empty list of strings")
+  if (meta.imageSetUrl !== undefined && (typeof meta.imageSetUrl !== "string" || meta.imageSetUrl.trim().length === 0))
+    push(errors, "meta.json imageSetUrl must be a non-empty string")
+  if (meta.verified !== undefined && typeof meta.verified !== "boolean")
+    push(errors, "meta.json verified must be a boolean")
   return errors
 }
 

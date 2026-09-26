@@ -16,6 +16,8 @@
       "items": { "type": "string", "minLength": 1, "maxLength": 24 }
     },
     "gameVersion": { "type": "string", "minLength": 1, "maxLength": 32 },
-    "license": { "const": "CC-BY-4.0" }
+    "license": { "const": "CC-BY-4.0" },
+    "imageSetUrl": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "verified": { "type": "boolean" }
   }
 }

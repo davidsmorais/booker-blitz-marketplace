@@ -4,5 +4,6 @@
   "version": "1.0.0",
   "tags": ["dark", "hardcore", "crimson"],
   "gameVersion": "0.2.0",
-  "license": "CC-BY-4.0"
+  "license": "CC-BY-4.0",
+  "verified": true
 }

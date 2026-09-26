@@ -11,13 +11,11 @@ A wrestling roster of 121 legendary characters from mythology, classic literatur
 
 ## Image sources
 
-**Portraits**: Placeholder filenames only. This database ships without pre-generated portraits.
+**Portraits**: Hosted on Google Drive. Download the `people`, `logos`, and `belts` folders and point the game's datapack images folder at them.
 
-To generate portraits, use the `prompts.md` file in this folder. Each character has an AI image generation prompt optimized for wrestling-card art. Generated images should be:
-
-- Saved as `.jpg` files with names matching the wrestler's `picture` field
-- Placed in an external image host (not embedded in the `.bbdb`)
-- Confirmed to comply with the legal constraints in `BATTLEPLAN.md` (no copyrighted film designs, no real logos, original art or PD-licensed illustrations only)
+- Image host: https://drive.google.com/drive/folders/1Zbwi9Y_tJrE7-3ZPQxeejymLNsWvrT2H
+- Images are not embedded in the `.bbdb`; `picture` and `logo` fields are filenames that resolve against the host.
+- Art is original or public-domain illustration (no copyrighted film designs, no real logos).
 
 ## Gimmick themes
 

@@ -66,6 +66,8 @@
         "readmeExcerpt": { "type": "string" },
         "downloadUrl": { "type": "string" },
         "imageUrl": { "type": "string" },
+        "imageSetUrl": { "type": "string" },
+        "verified": { "type": "boolean" },
         "sha256": { "type": "string" },
         "size": { "type": "integer", "minimum": 0 }
       }

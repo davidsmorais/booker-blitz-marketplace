@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T01:58:21.806Z",
+  "generatedAt": "2026-09-26T02:22:53.713Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -18,6 +18,7 @@
       "readmeExcerpt": "Barbed Wire Crimson and violet hardcore theme. Primary, accent, and stat colours shift to blood red and purple, and five arena wallpapers come with the file. Import it from Settings → Theme → Import. It becomes your Custom theme.",
       "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/barbed-wire/barbed-wire.bbtheme",
       "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/barbed-wire/preview.webp",
+      "verified": true,
       "sha256": "7aaf0253fe573ab620b17545fc518ec79094d6a5ad7ec307878ecfe642dff622",
       "size": 3423870
     }
@@ -37,10 +38,12 @@
       ],
       "gameVersion": "0.2.0",
       "license": "CC-BY-4.0",
-      "readme": "# Public Domain Classics\n\nA wrestling roster of 121 legendary characters from mythology, classic literature, history, and early cinema — all reimagined as wrestling superstars. Every character is in the public domain.\n\n## Contents\n\n- **wrestlers.json**: 121 wrestlers and 30 staff split across two promotions\n  - **Colosseum Championship Wrestling (CCW)**: 80 wrestlers, plus a crew of Olympians and ancient poets (Zeus, Athena, Homer, Themis, Chiron and others)\n  - **Wonderland Pro Wrestling (WPW)**: 41 wrestlers, plus a crew from Victorian fiction (Phileas Fogg, Scheherazade, Dr. Watson, Inspector Lestrade and others)\n- **promotions.json**: 2 themed promotions, each with weekly shows, four PPVs, five titles, and four tag teams or trios\n\n## Image sources\n\n**Portraits**: Placeholder filenames only. This database ships without pre-generated portraits.\n\nTo generate portraits, use the `prompts.md` file in this folder. Each character has an AI image generation prompt optimized for wrestling-card art. Generated images should be:\n\n- Saved as `.jpg` files with names matching the wrestler's `picture` field\n- Placed in an external image host (not embedded in the `.bbdb`)\n- Confirmed to comply with the legal constraints in `BATTLEPLAN.md` (no copyrighted film designs, no real logos, original art or PD-licensed illustrations only)\n\n## Gimmick themes\n\nCharacters are split by thematic promotion:\n\n- **CCW (Colosseum Championship Wrestling)**: Gods, titans, legendary warriors, and historical conquerors\n- **WPW (Wonderland Pro Wrestling)**: Gothic, surreal, and pulp storytelling — Dracula, Sherlock Holmes, the Wizard of Oz cast, and early cinema monsters\n\n## Building on this pack\n\nRefer to `BATTLEPLAN.md` and `prompts.md` for:\n- Full roster list with card position and gimmick hooks\n- Step-by-step build instructions\n- Portrait generation prompts ready for AI art tools\n- Legal cautions around trademark/copyright (important!)\n\n",
+      "readme": "# Public Domain Classics\n\nA wrestling roster of 121 legendary characters from mythology, classic literature, history, and early cinema — all reimagined as wrestling superstars. Every character is in the public domain.\n\n## Contents\n\n- **wrestlers.json**: 121 wrestlers and 30 staff split across two promotions\n  - **Colosseum Championship Wrestling (CCW)**: 80 wrestlers, plus a crew of Olympians and ancient poets (Zeus, Athena, Homer, Themis, Chiron and others)\n  - **Wonderland Pro Wrestling (WPW)**: 41 wrestlers, plus a crew from Victorian fiction (Phileas Fogg, Scheherazade, Dr. Watson, Inspector Lestrade and others)\n- **promotions.json**: 2 themed promotions, each with weekly shows, four PPVs, five titles, and four tag teams or trios\n\n## Image sources\n\n**Portraits**: Hosted on Google Drive. Download the `people`, `logos`, and `belts` folders and point the game's datapack images folder at them.\n\n- Image host: https://drive.google.com/drive/folders/1Zbwi9Y_tJrE7-3ZPQxeejymLNsWvrT2H\n- Images are not embedded in the `.bbdb`; `picture` and `logo` fields are filenames that resolve against the host.\n- Art is original or public-domain illustration (no copyrighted film designs, no real logos).\n\n## Gimmick themes\n\nCharacters are split by thematic promotion:\n\n- **CCW (Colosseum Championship Wrestling)**: Gods, titans, legendary warriors, and historical conquerors\n- **WPW (Wonderland Pro Wrestling)**: Gothic, surreal, and pulp storytelling — Dracula, Sherlock Holmes, the Wizard of Oz cast, and early cinema monsters\n\n## Building on this pack\n\nRefer to `BATTLEPLAN.md` and `prompts.md` for:\n- Full roster list with card position and gimmick hooks\n- Step-by-step build instructions\n- Portrait generation prompts ready for AI art tools\n- Legal cautions around trademark/copyright (important!)\n\n",
       "readmeExcerpt": "Public Domain Classics A wrestling roster of 121 legendary characters from mythology, classic literature, history, and early cinema — all reimagined as wrestling superstars. Every character is in the public domain. Contents - wrestlers.json : 121 wrestlers and 30 staff split acr…",
       "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/boundless-brawlers/boundless-brawlers.bbdb",
       "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/boundless-brawlers/preview.jpg",
+      "imageSetUrl": "https://drive.google.com/drive/folders/1Zbwi9Y_tJrE7-3ZPQxeejymLNsWvrT2H?usp=drive_link",
+      "verified": true,
       "sha256": "6d9b884554cdfe1f3e48eeaa10889065c55b4f874f5e91feaba201ac202bca83",
       "size": 255948
     }
