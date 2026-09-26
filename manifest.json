@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-26T12:21:25.735Z",
+  "generatedAt": "2026-09-26T14:12:55.462Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -49,15 +49,15 @@
     }
   ],
   "datastudio": {
-    "version": "1.1.0",
-    "date": "2026-09-26T01:19:55Z",
+    "version": "1.1.2",
+    "date": "2026-09-26T12:46:34Z",
     "assets": [
       {
-        "name": "Booker-Blitz-Datastudio-1.1.0-linux-x86_64.AppImage",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.1.0/Booker-Blitz-Datastudio-1.1.0-linux-x86_64.AppImage",
+        "name": "Booker-Blitz-Datastudio-1.1.2-win-x64.exe",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.1.2/Booker-Blitz-Datastudio-1.1.2-win-x64.exe",
         "sha256": null,
-        "size": 390594828,
-        "os": "linux"
+        "size": 367861217,
+        "os": "windows"
       }
     ]
   }
