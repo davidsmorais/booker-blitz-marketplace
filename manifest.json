@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-28T17:11:18.183Z",
+  "generatedAt": "2026-10-01T22:59:05.950Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -49,7 +50,7 @@
     }
   ],
   "datastudio": {
-    "version": "1.2.0",
+    "version": "1.2.2",
     "date": null,
     "assets": []
   }
