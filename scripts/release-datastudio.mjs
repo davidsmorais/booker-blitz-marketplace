@@ -267,12 +267,21 @@ const createGithubRelease = (tag, version, notes) => {
 }
 
 const bumpManifest = (tag) => {
-  run(process.execPath, [join(root, "scripts", "build-manifest.mjs")], {
+  if (dryRun) {
+    console.log(`[dry-run] would rebuild and commit manifest.json for ${tag} if changed`)
+    return
+  }
+  const output = run(process.execPath, [join(root, "scripts", "build-manifest.mjs")], {
     env: { ...process.env, DATASTUDIO_RELEASE_TAG: tag },
   })
-  if (dryRun) {
-    console.log(`[dry-run] would commit manifest.json for ${tag} if changed`)
-    return
+  console.log(output)
+  const { datastudio } = readLocalJson(join(root, "manifest.json"))
+  if (datastudio.version !== tag.replace(/^datastudio-v/, "") || datastudio.assets.length === 0) {
+    execFileSync("git", ["checkout", "--", "manifest.json"])
+    throw new Error(
+      `${tag} has no installers visible to the manifest builder (draft, unpublished, or nothing uploaded). ` +
+        "Upload the installers, publish the release, then run pnpm release:datastudio again.",
+    )
   }
   const status = run("git", ["status", "--porcelain", "manifest.json"])
   if (!status) {
@@ -313,7 +322,7 @@ if (datastudioReleaseExists(tag)) {
 } else {
   createTagAndPush(tag)
   createGithubRelease(tag, version, finalNotes)
-  bumpManifest(tag)
   console.log("")
-  console.log("Next: upload .exe, .msi, .dmg, .AppImage, and checksums.txt to the draft release, then publish it.")
+  console.log("Next: upload .exe, .msi, .dmg, .AppImage, and checksums.txt to the draft release and publish it.")
+  console.log("Then run pnpm release:datastudio again to write the installers into manifest.json.")
 }

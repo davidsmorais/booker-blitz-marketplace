@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T20:40:00.238Z",
+  "generatedAt": "2026-10-15T22:09:50.491Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -51,6 +51,35 @@
   "datastudio": {
     "version": "1.5.0",
     "date": "2026-10-15T20:36:42Z",
-    "assets": []
+    "assets": [
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.0-linux-x86_64.AppImage",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.0/Booker-Blitz-Datastudio-1.5.0-linux-x86_64.AppImage",
+        "sha256": null,
+        "size": 542712424,
+        "os": "linux"
+      },
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.0-mac-arm64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.0/Booker-Blitz-Datastudio-1.5.0-mac-arm64.dmg",
+        "sha256": null,
+        "size": 540005112,
+        "os": "mac"
+      },
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.0-mac-x64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.0/Booker-Blitz-Datastudio-1.5.0-mac-x64.dmg",
+        "sha256": null,
+        "size": 545597497,
+        "os": "mac"
+      },
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.0-win-x64.exe",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.0/Booker-Blitz-Datastudio-1.5.0-win-x64.exe",
+        "sha256": null,
+        "size": 516091643,
+        "os": "windows"
+      }
+    ]
   }
 }
