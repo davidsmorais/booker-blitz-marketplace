@@ -1,6 +1,10 @@
 # Real World November 2026
 
-A live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz. Every person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.
+⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update)
+
+A live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz.
+
+Every person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.
 
 Cross-promotion talent carries **non-exclusive** deals — AEW names who also work New Japan, CMLL and ROH regulars who double on the US indies, Stardom talent appearing in AEW, and so on. Their extra deals live in `additionalContracts` and resolve into real contracts when a game starts.
 
@@ -36,6 +40,8 @@ Wages are monthly. Contracts are dated relative to the start date (`2026-01-01`)
 ## Image sources
 
 **This listing ships no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`) and resolve against an image folder you supply yourself in DataStudio's datapack import. Nothing is embedded in the `.bbdb`, and no image host is published with this pack.
+
+I will publish the image datapack later.
 
 ## Real names
 
