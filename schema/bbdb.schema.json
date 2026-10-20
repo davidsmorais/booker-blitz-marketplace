@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/davidsmorais/booker-blitz-marketplace/raw/main/schema/bbdb.schema.json",
   "title": "Booker Blitz database (.bbdb)",
-  "description": "Envelope written by DataStudio. Matches game format bbdb version 1 (src/types/bbdb.ts). Record files are arrays of objects. picture and logo are filenames, not embedded images. File cap is 16 MB.",
+  "description": "Envelope written by DataStudio. Matches game format bbdb version 1 (src/types/bbdb.ts) and the record interfaces in src/types/game.ts (Wrestler, Contract, Promotion, DatapackAlliance, Arena). Record files are arrays of objects. Dates are ISO strings. picture and logo are filenames, not embedded images. File cap is 16 MB. Records may carry extra fields; the game ignores what it does not know.",
   "type": "object",
   "additionalProperties": false,
   "required": ["format", "version", "name", "files"],
@@ -15,11 +15,25 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "wrestlers.json": { "$ref": "#/$defs/records" },
-        "promotions.json": { "$ref": "#/$defs/records" },
-        "contracts.json": { "$ref": "#/$defs/records" },
-        "arenas.json": { "$ref": "#/$defs/records" },
-        "alliances.json": { "$ref": "#/$defs/records" },
+        "wrestlers.json": { "type": "array", "items": { "$ref": "#/$defs/wrestler" } },
+        "promotions.json": { "type": "array", "items": { "$ref": "#/$defs/promotion" } },
+        "contracts.json": {
+          "description": "Legacy. Contracts live embedded on the wrestler (wrestler.contract and wrestler.additionalContracts). The game still accepts bundles with this file but ignores it.",
+          "deprecated": true,
+          "type": "array",
+          "items": { "$ref": "#/$defs/contract" }
+        },
+        "arenas.json": { "type": "array", "items": { "$ref": "#/$defs/arena" } },
+        "alliances.json": {
+          "description": "Promotion alliances (DatapackAlliance). Legacy wrestler stables (Alliance) are still accepted.",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "$ref": "#/$defs/datapackAlliance" },
+              { "$ref": "#/$defs/legacyAlliance" }
+            ]
+          }
+        },
         "save_meta.json": { "$ref": "#/$defs/saveMeta" },
         "datapack.json": { "type": "object" }
       },
@@ -30,16 +44,434 @@
     }
   },
   "$defs": {
-    "records": {
-      "type": "array",
-      "items": { "type": "object" }
-    },
     "saveMeta": {
       "type": "object",
       "properties": {
         "startDate": { "type": "string" },
         "imgPath": { "type": "string" },
         "themeKey": { "type": "string" }
+      }
+    },
+
+    "date": { "type": "string", "minLength": 1, "description": "ISO 8601 date or date-time" },
+    "stat": { "type": "number", "minimum": 0, "maximum": 100 },
+    "filename": { "type": "string", "description": "Bare filename, never a URL or data: URI" },
+
+    "base": {
+      "enum": ["Angola", "Argentina", "Australia", "Austria", "Belarus", "Belgium", "Brazil", "Canada", "Celebrity", "Chile", "China", "Croatia", "Czechia", "Denmark", "Egypt", "Europe", "France", "Germany", "Greece", "Hungary", "India", "Iran", "Ireland", "Italy", "Japan", "Lithuania", "Mexico", "Mongolia", "Netherlands", "New Zealand", "Nigeria", "Norway", "Other", "Peru", "Philippines", "Poland", "Portugal", "Russia", "Samoa", "Senegal", "South Africa", "South Korea", "Spain", "Sweden", "Switzerland", "Turkey", "UAE", "UK", "USA"]
+    },
+    "card": { "enum": ["lower", "mid", "upper"] },
+    "prestige": { "enum": ["low", "mid", "high"] },
+    "audienceSize": { "enum": ["small", "medium", "big"] },
+    "momentum": { "enum": ["frozen", "low", "medium", "hot", "burning"] },
+    "finisherType": { "enum": ["strike", "submission", "power", "aerial", "counter"] },
+    "gender": { "enum": ["M", "F", "O"] },
+    "morale": { "enum": ["broken", "poor", "fair", "good", "great", "excellent"] },
+    "wrestlingStyle": { "enum": ["technical", "high flyer", "powerhouse", "striker", "submission", "hardcore", "all rounder", "comedy"] },
+    "wrestlerType": { "enum": ["wrestler", "manager", "commentator", "interviewer", "ring_announcer", "referee", "writer", "businessperson", "medic", "scout", "trainer"] },
+    "presentation": { "enum": ["heel", "face", "tweener"] },
+    "weightClass": { "enum": ["super heavyweight", "heavyweight", "cruiserweight", "female", "hardcore"] },
+    "showRegularity": { "enum": ["single show", "weekly", "biweekly", "monthly"] },
+    "day": { "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] },
+    "month": { "enum": ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"] },
+    "facilityType": { "enum": ["arena", "gym", "medical_center", "production_studio", "training_facility", "performance_center"] },
+    "contractType": { "enum": ["exclusive", "non-exclusive"] },
+    "contractStatus": { "enum": ["active", "expired", "pending", "terminated"] },
+    "wageType": {
+      "description": "Pay unit of a wage, independent of exclusivity.",
+      "enum": ["monthly", "per-appearance"]
+    },
+
+    "wrestlerRef": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" },
+        "pic": { "type": "string" }
+      }
+    },
+    "wrestlerRefs": { "type": "array", "items": { "$ref": "#/$defs/wrestlerRef" } },
+    "keyStaff": {
+      "type": "object",
+      "properties": {
+        "gm": { "$ref": "#/$defs/wrestlerRef" },
+        "owner": { "$ref": "#/$defs/wrestlerRef" },
+        "booker": { "$ref": "#/$defs/wrestlerRefs" },
+        "writers": { "$ref": "#/$defs/wrestlerRefs" },
+        "roadAgent": { "$ref": "#/$defs/wrestlerRefs" },
+        "commentators": { "$ref": "#/$defs/wrestlerRefs" },
+        "interviewer": { "$ref": "#/$defs/wrestlerRefs" },
+        "ringAnnouncers": { "$ref": "#/$defs/wrestlerRefs" },
+        "referees": { "$ref": "#/$defs/wrestlerRefs" },
+        "medicTeam": { "$ref": "#/$defs/wrestlerRefs" },
+        "scouts": { "$ref": "#/$defs/wrestlerRefs" },
+        "trainers": { "$ref": "#/$defs/wrestlerRefs" }
+      }
+    },
+
+    "contract": {
+      "type": "object",
+      "required": ["id", "wrestlerId", "promotionId", "startDate", "endDate", "wage", "type", "status"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "wrestlerId": { "type": "integer" },
+        "promotionId": { "type": "integer" },
+        "startDate": { "$ref": "#/$defs/date" },
+        "endDate": { "$ref": "#/$defs/date" },
+        "wage": { "type": "number", "minimum": 0 },
+        "bookingsPerMonth": { "type": "number", "minimum": 0 },
+        "injuryGuarantee": { "type": "boolean" },
+        "type": { "$ref": "#/$defs/contractType" },
+        "wageType": {
+          "$ref": "#/$defs/wageType",
+          "description": "Pay unit of wage. Missing means the legacy coupling: exclusive is monthly, non-exclusive is per appearance."
+        },
+        "status": { "$ref": "#/$defs/contractStatus" },
+        "autoRenew": { "type": "boolean" },
+        "noCompeteDays": { "type": "number", "minimum": 0 },
+        "noCompeteMonths": { "type": "number", "minimum": 0, "description": "Exclusive-only. Months after the deal ends when appearances are blocked." },
+        "notes": { "type": "string" },
+        "preContractDeal": {
+          "type": "object",
+          "required": ["fromPromotionId", "agreedDate"],
+          "properties": {
+            "fromPromotionId": { "type": "integer" },
+            "agreedDate": { "$ref": "#/$defs/date" }
+          }
+        }
+      }
+    },
+
+    "injury": {
+      "type": "object",
+      "required": ["type", "daysToRecover"],
+      "properties": {
+        "type": { "type": "string" },
+        "daysToRecover": { "type": "number" },
+        "medicalNotificationSent": { "type": "boolean" },
+        "assignedMedicId": { "type": "integer" }
+      }
+    },
+
+    "staffAttributes": {
+      "type": "object",
+      "required": ["bookingLogic", "storytelling", "productFit", "riskTaking", "matchLayout", "psychology", "workerManagement", "trainingIntensity", "technicalCoaching", "characterCoaching", "diagnosis", "rehabilitation", "prevention", "mediaHandling", "brandBuilding", "socialMediaSavvy", "ruleKnowledge", "positioning", "reactionSpeed", "consistency", "awareness", "judgement"],
+      "properties": {
+        "bookingLogic": { "$ref": "#/$defs/stat" },
+        "storytelling": { "$ref": "#/$defs/stat" },
+        "productFit": { "$ref": "#/$defs/stat" },
+        "riskTaking": { "$ref": "#/$defs/stat" },
+        "matchLayout": { "$ref": "#/$defs/stat" },
+        "psychology": { "$ref": "#/$defs/stat" },
+        "workerManagement": { "$ref": "#/$defs/stat" },
+        "trainingIntensity": { "$ref": "#/$defs/stat" },
+        "technicalCoaching": { "$ref": "#/$defs/stat" },
+        "characterCoaching": { "$ref": "#/$defs/stat" },
+        "teaching": { "$ref": "#/$defs/stat" },
+        "diagnosis": { "$ref": "#/$defs/stat" },
+        "rehabilitation": { "$ref": "#/$defs/stat" },
+        "prevention": { "$ref": "#/$defs/stat" },
+        "mediaHandling": { "$ref": "#/$defs/stat" },
+        "brandBuilding": { "$ref": "#/$defs/stat" },
+        "socialMediaSavvy": { "$ref": "#/$defs/stat" },
+        "ruleKnowledge": { "$ref": "#/$defs/stat" },
+        "positioning": { "$ref": "#/$defs/stat" },
+        "reactionSpeed": { "$ref": "#/$defs/stat" },
+        "consistency": { "$ref": "#/$defs/stat" },
+        "awareness": { "$ref": "#/$defs/stat" },
+        "judgement": { "$ref": "#/$defs/stat" }
+      }
+    },
+
+    "wrestler": {
+      "description": "Wrestler or staff member (Wrestler in src/types/game.ts). Signed talent carries promotionId plus an embedded contract; free agents omit promotionId (never null).",
+      "type": "object",
+      "required": ["id", "name", "type", "base", "gender", "weight", "height", "dateOfBirth", "debut", "ability", "charisma", "micSkills", "hardcoreAbility", "condition", "injuryProne", "popularity", "morale", "prestige", "style", "acceptsIndieBookings", "masked", "retired", "story", "alterEgos", "birthplace", "managerId", "record", "history"],
+      "dependentRequired": { "promotionId": ["contract"] },
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string", "minLength": 1 },
+        "realName": { "type": "string" },
+        "nickname": { "type": "string" },
+        "type": { "$ref": "#/$defs/wrestlerType" },
+        "promotionId": { "type": "integer" },
+        "base": { "$ref": "#/$defs/base" },
+        "gender": { "$ref": "#/$defs/gender" },
+        "weight": { "type": "number", "description": "lbs" },
+        "height": { "type": "number", "description": "cm" },
+        "dateOfBirth": { "$ref": "#/$defs/date" },
+        "debut": { "$ref": "#/$defs/date" },
+        "wage": { "type": "number", "minimum": 0 },
+        "wageType": {
+          "$ref": "#/$defs/wageType",
+          "description": "Unit of wage. Missing means monthly."
+        },
+        "popularity": { "$ref": "#/$defs/stat" },
+        "charisma": { "$ref": "#/$defs/stat" },
+        "micSkills": { "$ref": "#/$defs/stat" },
+        "condition": { "$ref": "#/$defs/stat" },
+        "hardcoreAbility": { "$ref": "#/$defs/stat" },
+        "injuryProne": { "$ref": "#/$defs/stat" },
+        "ability": { "$ref": "#/$defs/stat" },
+        "currentAbility": { "$ref": "#/$defs/stat" },
+        "potentialAbility": { "$ref": "#/$defs/stat" },
+        "growthProgress": { "type": "number", "minimum": 0, "maximum": 1 },
+        "morale": { "$ref": "#/$defs/morale" },
+        "presentation": { "$ref": "#/$defs/presentation" },
+        "prestige": { "$ref": "#/$defs/prestige" },
+        "style": { "$ref": "#/$defs/wrestlingStyle" },
+        "cardPosition": { "$ref": "#/$defs/card" },
+        "finisher": { "type": "string" },
+        "finisherType": { "$ref": "#/$defs/finisherType" },
+        "character": { "type": "string" },
+        "acceptsIndieBookings": { "type": "boolean" },
+        "masked": { "type": "boolean" },
+        "retired": { "type": "boolean" },
+        "dead": { "type": "boolean" },
+        "inDevelopment": { "type": "boolean" },
+        "story": { "type": "string" },
+        "alterEgos": { "type": "array", "items": { "type": "string" } },
+        "birthplace": { "type": "string" },
+        "managerId": { "type": "integer", "minimum": 0, "description": "0 = no manager" },
+        "contractExpiryDate": { "$ref": "#/$defs/date" },
+        "contract": { "$ref": "#/$defs/contract" },
+        "additionalContracts": {
+          "description": "Further active non-exclusive deals beyond contract. They become contracts on a new game.",
+          "type": "array",
+          "items": { "$ref": "#/$defs/contract" }
+        },
+        "alsoWorksFor": { "type": "array", "items": { "type": "string" } },
+        "record": {
+          "type": "object",
+          "required": ["wins", "losses", "draws"],
+          "properties": {
+            "wins": { "type": "integer", "minimum": 0 },
+            "losses": { "type": "integer", "minimum": 0 },
+            "draws": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "history": {
+          "type": "object",
+          "required": ["matches", "jobs", "titles"],
+          "properties": {
+            "matches": { "type": "array", "items": { "type": "object" } },
+            "jobs": { "type": "array", "items": { "type": "object" } },
+            "titles": { "type": "array", "items": { "type": "object" } }
+          }
+        },
+        "teams": { "type": "array", "items": { "type": "integer" } },
+        "staffAttributes": { "$ref": "#/$defs/staffAttributes" },
+        "picture": { "$ref": "#/$defs/filename" },
+        "injury": { "$ref": "#/$defs/injury" },
+        "returnDate": { "$ref": "#/$defs/date" },
+        "retirementDate": { "$ref": "#/$defs/date" },
+        "suspension": {
+          "type": "object",
+          "required": ["daysRemaining"],
+          "properties": {
+            "daysRemaining": { "type": "number" },
+            "reason": { "type": "string" }
+          }
+        },
+        "brandShowName": { "type": "string" },
+        "brandAssignedAt": { "$ref": "#/$defs/date" },
+        "pendingBrandDebut": { "type": "boolean" },
+        "negotiationCooldownUntil": { "$ref": "#/$defs/date" },
+        "isWishlisted": { "type": "boolean" },
+        "allianceId": { "type": ["string", "null"] }
+      }
+    },
+
+    "team": {
+      "type": "object",
+      "required": ["id", "name", "promotionId", "memberIds", "prestige", "popularity", "dateCreated"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string", "minLength": 1 },
+        "promotionId": { "type": "integer" },
+        "memberIds": { "type": "array", "items": { "type": "integer" } },
+        "picture": { "$ref": "#/$defs/filename" },
+        "prestige": { "$ref": "#/$defs/prestige" },
+        "popularity": { "$ref": "#/$defs/stat" },
+        "dateCreated": { "$ref": "#/$defs/date" },
+        "manager": { "$ref": "#/$defs/wrestlerRef" }
+      }
+    },
+
+    "title": {
+      "type": "object",
+      "required": ["name", "card", "champion", "daysHeld", "defences", "prestige", "history"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "championName": { "type": "string" },
+        "picture": { "$ref": "#/$defs/filename" },
+        "card": { "$ref": "#/$defs/card" },
+        "prestige": { "$ref": "#/$defs/prestige" },
+        "gender": { "$ref": "#/$defs/gender" },
+        "weightClass": { "$ref": "#/$defs/weightClass" },
+        "numberOfHolders": { "type": "integer", "minimum": 1 },
+        "tournament": { "type": "boolean" },
+        "champion": { "$ref": "#/$defs/wrestlerRefs" },
+        "daysHeld": { "type": ["number", "null"] },
+        "defences": { "type": ["number", "null"] },
+        "history": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+
+    "show": {
+      "type": "object",
+      "required": ["name", "attendance", "day", "lastResults", "prestige", "rating", "regularity", "size", "duration", "ticketPrice", "history", "keyStaff"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "logo": { "$ref": "#/$defs/filename" },
+        "color": { "type": "string" },
+        "day": { "$ref": "#/$defs/day" },
+        "regularity": { "$ref": "#/$defs/showRegularity" },
+        "attendance": { "$ref": "#/$defs/audienceSize" },
+        "size": { "$ref": "#/$defs/audienceSize" },
+        "duration": { "type": "number" },
+        "ticketPrice": { "type": "number" },
+        "prestige": { "$ref": "#/$defs/prestige" },
+        "momentum": { "$ref": "#/$defs/momentum" },
+        "rating": { "type": "number" },
+        "lastResults": { "type": "array" },
+        "history": { "type": "array" },
+        "keyStaff": { "$ref": "#/$defs/keyStaff" }
+      }
+    },
+
+    "ppv": {
+      "type": "object",
+      "required": ["name", "attendance", "date", "prestige", "size", "duration", "ticketPrice", "history"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "logo": { "$ref": "#/$defs/filename" },
+        "date": { "$ref": "#/$defs/month" },
+        "nextEvent": { "$ref": "#/$defs/date" },
+        "attendance": { "$ref": "#/$defs/audienceSize" },
+        "size": { "$ref": "#/$defs/audienceSize" },
+        "duration": { "type": "number" },
+        "ticketPrice": { "type": "number" },
+        "prestige": { "$ref": "#/$defs/prestige" },
+        "active": { "type": "boolean" },
+        "history": { "type": "array" },
+        "keyStaff": { "$ref": "#/$defs/keyStaff" }
+      }
+    },
+
+    "promotion": {
+      "description": "Promotion in src/types/game.ts.",
+      "type": "object",
+      "required": ["id", "fullName", "shortName", "base", "level", "balance", "momentum", "audienceSize", "houseShowAttendance", "houseShowCostLevel", "houseShowsPerMonth", "houseShowsPrestige", "houseShowTicketPrice", "houseShowRotation", "keyStaff", "shows", "ppvs", "titles", "teams", "storylines", "tournaments", "summary", "history"],
+      "properties": {
+        "id": { "type": "integer" },
+        "fullName": { "type": "string", "minLength": 1 },
+        "shortName": { "type": "string", "minLength": 1 },
+        "base": { "$ref": "#/$defs/base" },
+        "level": { "type": "number", "minimum": 1, "maximum": 10 },
+        "logo": { "$ref": "#/$defs/filename" },
+        "balance": { "type": "number" },
+        "momentum": { "$ref": "#/$defs/momentum" },
+        "audienceSize": { "$ref": "#/$defs/audienceSize" },
+        "enforceShowSplit": { "type": "boolean" },
+        "houseShowAttendance": { "$ref": "#/$defs/audienceSize" },
+        "houseShowCostLevel": { "type": "number" },
+        "houseShowsPerMonth": { "type": "number", "minimum": 0 },
+        "houseShowsPrestige": { "$ref": "#/$defs/prestige" },
+        "houseShowTicketPrice": { "type": "number" },
+        "houseShowRotation": { "$ref": "#/$defs/wrestlerRefs" },
+        "keyStaff": { "$ref": "#/$defs/keyStaff" },
+        "shows": { "type": "array", "items": { "$ref": "#/$defs/show" } },
+        "ppvs": { "type": "array", "items": { "$ref": "#/$defs/ppv" } },
+        "titles": { "type": "array", "items": { "$ref": "#/$defs/title" } },
+        "teams": { "type": "array", "items": { "$ref": "#/$defs/team" } },
+        "storylines": { "type": "array" },
+        "tournaments": { "type": "array" },
+        "sponsorships": { "type": "array" },
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "level"],
+            "properties": {
+              "type": { "$ref": "#/$defs/facilityType" },
+              "level": { "type": "number", "minimum": 1, "maximum": 10 }
+            }
+          }
+        },
+        "summary": { "type": "string" },
+        "externalUrl": { "type": "string" },
+        "arenaPopularity": { "type": "object", "additionalProperties": { "type": "number", "minimum": 0, "maximum": 100 } },
+        "history": {
+          "type": "object",
+          "required": ["events", "monthlyBalance", "monthlyMomentum", "departures", "arrivals"],
+          "properties": {
+            "events": { "type": "array" },
+            "monthlyBalance": { "type": "array", "items": { "type": "number" } },
+            "monthlyMomentum": { "type": "array", "items": { "$ref": "#/$defs/momentum" } },
+            "departures": { "type": "array" },
+            "arrivals": { "type": "array" }
+          }
+        },
+        "allianceId": { "type": "integer" }
+      }
+    },
+
+    "datapackAlliance": {
+      "description": "Promotion alliance (DatapackAlliance). A promotion belongs to at most one alliance.",
+      "type": "object",
+      "required": ["id", "name", "promotionIds"],
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string", "minLength": 1 },
+        "picture": { "$ref": "#/$defs/filename" },
+        "promotionIds": { "type": "array", "items": { "type": "integer" } }
+      }
+    },
+
+    "legacyAlliance": {
+      "description": "Legacy wrestler stable (Alliance).",
+      "type": "object",
+      "required": ["id", "promotionId", "name", "memberIds"],
+      "properties": {
+        "id": { "type": "string" },
+        "promotionId": { "type": "integer" },
+        "name": { "type": "string" },
+        "memberIds": { "type": "array", "items": { "type": "integer" } }
+      }
+    },
+
+    "arena": {
+      "description": "Arena (src/types/game.ts). Same shape as a .bbarenas entry; the game fills missing fields except id and name.",
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "image": { "type": "string" },
+        "cost": { "type": "number" },
+        "capacity": { "type": "number" },
+        "maintenanceCost": { "type": "number" },
+        "setupFee": { "type": "number" },
+        "sponsorAppeal": { "type": "number" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": { "type": "string" },
+            "country": { "type": "string" }
+          }
+        },
+        "bonusMatchTypes": { "type": "array", "items": { "type": "string" } },
+        "bannedMatchTypes": { "type": "array", "items": { "type": "string" } },
+        "hazardZones": { "type": "array", "items": { "type": "string" } },
+        "riskFactor": { "$ref": "#/$defs/stat" },
+        "styleAffinity": { "type": "array", "items": { "$ref": "#/$defs/wrestlingStyle" } },
+        "lightingProfile": { "enum": ["dramatic", "flat", "neon"] },
+        "entranceVariants": { "type": "array", "items": { "type": "string" } },
+        "ownedBy": { "type": "integer" },
+        "base": { "$ref": "#/$defs/base" }
       }
     }
   }

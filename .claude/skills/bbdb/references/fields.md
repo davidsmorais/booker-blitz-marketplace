@@ -13,7 +13,7 @@ Source of truth: `src/types/game.ts` (`Wrestler`, `Promotion`, enums) and `src/t
 }}
 ```
 
-Allowed `files` keys: `wrestlers.json`, `promotions.json`, `contracts.json`, `arenas.json`, `alliances.json` (arrays); `save_meta.json`, `datapack.json` (objects). `save_meta.startDate` pre-fills the New Game start date.
+Allowed `files` keys: `wrestlers.json`, `promotions.json`, `contracts.json` (legacy, ignored by the game — contracts live on the wrestler), `arenas.json`, `alliances.json` (arrays); `save_meta.json`, `datapack.json` (objects). The full JSON Schema is `schema/bbdb.schema.json`. `save_meta.startDate` pre-fills the New Game start date.
 
 ## Enums
 
@@ -36,6 +36,7 @@ Allowed `files` keys: `wrestlers.json`, `promotions.json`, `contracts.json`, `ar
 | PPV `date` | january … december (month the PPV runs) |
 | facility `type` | arena, gym, medical_center, production_studio, training_facility, performance_center |
 | contract `type` / `status` | exclusive, non-exclusive / active, expired, pending, terminated |
+| `wageType` (wrestler and contract) | monthly, per-appearance |
 
 ## Wrestler (also every staff member)
 
@@ -53,6 +54,7 @@ Allowed `files` keys: `wrestlers.json`, `promotions.json`, `contracts.json`, `ar
 | `height` | int, cm | `183` |
 | `dateOfBirth`, `debut` | ISO date | `1990-01-01`, DOB + 20y |
 | `wage` | int, yearly $ | by card: lower 37 500, mid 92 000, upper 130 000; staff 66 000. For free agents it is the asking wage |
+| `wageType` | enum | optional. Unit of `wage`; missing means monthly |
 | `popularity`, `charisma`, `micSkills`, `condition`, `hardcoreAbility`, `injuryProne` | 0–100 | 30, 50, 50, 100, 30, 20 |
 | `ability` | 0–100 | 50 (staff 40) |
 | `currentAbility` | 0–100 | `ability` |
@@ -71,7 +73,8 @@ Allowed `files` keys: `wrestlers.json`, `promotions.json`, `contracts.json`, `ar
 | `birthplace` | string | `Unknown` |
 | `managerId` | int | `0` = none, else a wrestler id (usually type `manager`) |
 | `contractExpiryDate` | ISO date | **signed only**, equals `contract.endDate` |
-| `contract` | object | **signed only**: `{id, wrestlerId, promotionId, startDate, endDate, wage, type, status}`; generated if missing |
+| `contract` | object | **signed only**: `{id, wrestlerId, promotionId, startDate, endDate, wage, type, status}`, optional `wageType`, `bookingsPerMonth`, `autoRenew`, `injuryGuarantee`, `noCompeteMonths` (exclusive only); generated if missing. Missing `wageType` means exclusive = monthly, non-exclusive = per appearance |
+| `additionalContracts` | contract[] | optional. Further active non-exclusive deals beyond `contract`; they become contracts on a new game |
 | `record` | `{wins, losses, draws}` | zeros |
 | `history` | `{matches, jobs, titles}` | empty arrays |
 | `teams` | int[] | `[]` — recomputed at game start from `promotion.teams` |

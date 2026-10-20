@@ -33,7 +33,8 @@ export const ENUMS = {
 	month: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
 	facility: ['arena', 'gym', 'medical_center', 'production_studio', 'training_facility', 'performance_center'],
 	contractType: ['exclusive', 'non-exclusive'],
-	contractStatus: ['active', 'expired', 'pending', 'terminated']
+	contractStatus: ['active', 'expired', 'pending', 'terminated'],
+	wageType: ['monthly', 'per-appearance']
 }
 
 // ─── Canonical shapes ───────────────────────────────────────────────────────
@@ -83,6 +84,8 @@ const STAFF_WAGE = 66000
 // game reads `promotionId === undefined` as "free agent", so null is unsafe.
 export const WRESTLER_KEYS = ['id', 'name', 'realName', 'nickname', 'type', 'promotionId', 'base', 'gender', 'weight', 'height', 'dateOfBirth', 'debut', 'wage', 'popularity', 'charisma', 'micSkills', 'condition', 'hardcoreAbility', 'injuryProne', 'ability', 'currentAbility', 'potentialAbility', 'morale', 'presentation', 'prestige', 'style', 'cardPosition', 'finisher', 'finisherType', 'character', 'acceptsIndieBookings', 'masked', 'retired', 'dead', 'inDevelopment', 'story', 'alterEgos', 'birthplace', 'managerId', 'contractExpiryDate', 'contract', 'record', 'history', 'teams', 'staffAttributes', 'picture']
 const SIGNED_ONLY_KEYS = ['promotionId', 'contractExpiryDate', 'contract']
+// Optional game fields a database may carry; never filled by normalize
+const OPTIONAL_WRESTLER_KEYS = ['wageType', 'additionalContracts']
 
 export const PROMOTION_KEYS = ['id', 'fullName', 'shortName', 'base', 'level', 'logo', 'balance', 'momentum', 'audienceSize', 'enforceShowSplit', 'houseShowAttendance', 'houseShowCostLevel', 'houseShowsPerMonth', 'houseShowsPrestige', 'houseShowTicketPrice', 'houseShowRotation', 'keyStaff', 'shows', 'ppvs', 'titles', 'teams', 'storylines', 'tournaments', 'facilities', 'summary', 'externalUrl', 'history']
 
@@ -520,14 +523,26 @@ export const checkDb = (db, {strict = false} = {}) => {
 			if (c.status === 'active' && c.promotionId !== w.promotionId) err(at, 'contract.promotionId ≠ promotionId')
 			enumCheck(at, c, 'type', ENUMS.contractType)
 			enumCheck(at, c, 'status', ENUMS.contractStatus)
+			if (has(c, 'wageType')) enumCheck(at, c, 'wageType', ENUMS.wageType)
 			if (!isDate(c.startDate) || !isDate(c.endDate)) err(at, 'contract dates must be ISO dates')
+		}
+		if (has(w, 'wageType')) enumCheck(at, w, 'wageType', ENUMS.wageType)
+		if (has(w, 'additionalContracts')) {
+			if (!Array.isArray(w.additionalContracts)) err(at, 'additionalContracts must be an array')
+			else for (const c of w.additionalContracts) {
+				if (!isObj(c)) { err(at, 'additionalContracts entries must be objects'); continue }
+				if (c.wrestlerId !== w.id) err(at, `additionalContracts wrestlerId ${c.wrestlerId} ≠ id`)
+				if (c.type !== 'non-exclusive') err(at, 'additionalContracts must be non-exclusive')
+				if (has(c, 'wageType')) enumCheck(at, c, 'wageType', ENUMS.wageType)
+				if (!isDate(c.startDate) || !isDate(c.endDate)) err(at, 'additionalContracts dates must be ISO dates')
+			}
 		}
 		if (!isObj(w.staffAttributes)) err(at, 'staffAttributes missing')
 		else {
 			const gone = STAFF_ATTRIBUTE_KEYS.filter(k => !isNum(w.staffAttributes[k]))
 			if (gone.length) err(at, `staffAttributes missing ${gone.join(', ')}`)
 		}
-		for (const k of Object.keys(w)) if (!WRESTLER_KEYS.includes(k)) warn(at, `unknown field "${k}"`)
+		for (const k of Object.keys(w)) if (!WRESTLER_KEYS.includes(k) && !OPTIONAL_WRESTLER_KEYS.includes(k)) warn(at, `unknown field "${k}"`)
 	}
 
 	// Promotions
