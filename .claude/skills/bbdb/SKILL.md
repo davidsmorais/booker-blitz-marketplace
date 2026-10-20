@@ -14,12 +14,17 @@ BBDB=.claude/skills/bbdb/scripts/bbdb.mjs   # Node 18+, no install
 | Command | What it does |
 |---|---|
 | `node $BBDB new <file> --name "Name" [--start-date 2026-01-01]` | Empty, valid database |
-| `node $BBDB template <wrestler\|staff\|promotion\|show\|ppv\|title\|team>` | Print a fully populated record to copy |
+| `node $BBDB template <wrestler\|signed\|staff\|promotion\|show\|ppv\|title\|team>` | Print a fully populated record to copy (`signed` shows a contract) |
 | `node $BBDB upsert <file> <wrestlers\|promotions> <records.json>` | Add or update records by `id` (no `id` = new, next free id), then normalize + check |
 | `node $BBDB remove <file> <wrestlers\|promotions> <id...>` | Delete, and scrub references (keyStaff, champions, teams, managers; a removed promotion's talent becomes free agents) |
-| `node $BBDB normalize <file>` | Fill every missing field with a safe default, fix contracts, sync staff refs, canonical key order |
-| `node $BBDB check <file> [--strict]` | Errors (won't load / will misbehave) and warnings (thin content). Exit 1 on errors |
-| `node $BBDB stats <file>` | Roster per promotion by type, shows/PPVs/titles/teams |
+| `node $BBDB normalize <file>` | Fill every missing field with a safe default, fix contracts (explicit `wageType`), embed a legacy `contracts.json`, sync staff refs, canonical key order |
+| `node $BBDB check <file> [--strict]` | Errors (won't load / will misbehave) and warnings (thin content, wages off the scale). Exit 1 on errors |
+| `node $BBDB stats <file>` | Roster per promotion by type, shows/PPVs/titles/teams, monthly payroll and contract terms |
+| `node $BBDB reterm <file> [--from-yearly] [--write]` | Re-term every contract by promotion size, the way AI promotions sign (see *Wages and contracts*) |
+| `node $BBDB rebalance-wages <file> [--write]` | Set every contract wage from promotion level × card × role × merit; prints payroll vs. gate per promotion |
+| `node $BBDB seed-potential <file> [--all] [--write]` | Give wrestlers growth room (`potentialAbility` above `currentAbility`), more for rookies |
+
+The last three are bulk rewrites: they print what they would do and only save with `--write`.
 
 ## Workflow
 
@@ -27,8 +32,9 @@ BBDB=.claude/skills/bbdb/scripts/bbdb.mjs   # Node 18+, no install
 2. **Read before writing.** Run `stats` and `check` on an existing file first so you know what is already broken. Read [references/fields.md](references/fields.md) before authoring records — it lists every field, its enum values and its default.
 3. **Write records as partial JSON** in a scratch file and `upsert` them. You only need the fields you care about; normalize fills the rest. On an existing record, nested objects (`record`, `keyStaff`, `history`) merge one level deep but **arrays replace wholesale** — to add a title or show, send the promotion's full `titles`/`shows` array. Put creative content in: `name`, `gender`, `style`, `cardPosition`, `presentation`, `base`, stats, `finisher`, `story`, `picture`. Leave out `id` for new records.
 4. **Promotions need a playable shape**: at least one weekly show, a few PPVs, titles for each division you have (men, women, tag), and signed staff — referees, commentators, a writer, and a businessperson as owner. A promotion without them loads but plays badly (`check` warns).
-5. **Run `check` until it reports 0 errors.** Treat warnings as a to-do list (empty `finisher`, empty `story`, no titles, ages outside 16–80).
-6. **Prove it loads** when you can reach the game repo — see *Verify in the game* below. Then follow `build-database` for the listing checks (`pnpm validate`).
+5. **Set the economy.** Wages are monthly. For a new database, or one whose `check` warns that wages are over the level scale, run `reterm` (add `--from-yearly` if the file was built with yearly wages), then `rebalance-wages`, then `seed-potential`. Read each dry run before you add `--write`.
+6. **Run `check` until it reports 0 errors.** Treat warnings as a to-do list (empty `finisher`, empty `story`, no titles, ages outside 16–80, wages off the scale).
+7. **Prove it loads** when you can reach the game repo — see *Verify in the game* below. Then follow `build-database` for the listing checks (`pnpm validate`).
 
 Editing the JSON by hand is fine for bulk creative work (stories, finishers), as long as you run `normalize` then `check` afterwards.
 
@@ -36,13 +42,31 @@ Editing the JSON by hand is fine for bulk creative work (stories, finishers), as
 
 - **Every field present.** Wrestlers carry all of `WRESTLER_KEYS`, promotions all of `PROMOTION_KEYS`, including empty ones (`nickname: ""`, `alterEgos: []`, `history: {…: []}`, `staffAttributes` with all 23 keys). `shows`, `ppvs`, `titles`, `teams`, `storylines`, `tournaments` must be arrays — the game calls `.map` on them.
 - **Absent, never `null`, for "none".** The game tests `promotionId === undefined` for free agents and `keyStaff.gm !== undefined` for staffing. So `promotionId`, `contract`, `contractExpiryDate` exist only on signed talent, and `keyStaff.owner` / `keyStaff.gm` exist only when assigned. To release someone with `upsert`, send `"promotionId": null` — the CLI turns that into removing all three.
-- **Signed talent has an active `contract`** whose `wrestlerId` and `promotionId` match. The contract wins over `promotionId` if they disagree. Normalize creates one (spread expiries, wage from card position) when missing. Contract dates are relative to 2026-01-01; the game shifts them to the chosen start date.
+- **Signed talent has an active `contract`** whose `wrestlerId` and `promotionId` match. The contract wins over `promotionId` if they disagree. Normalize creates one when missing (spread expiries, terms and wage from the promotion's level, see below). Contract dates are relative to 2026-01-01; the game shifts them to the chosen start date.
 - **Enums are exact, lowercase strings** from `src/types/game.ts` — `cardPosition` is `lower|mid|upper` (no `main`), `morale` has no `confident`, `base` is a fixed country list (use `Other`, not an invented realm). Normalize maps case differences and replaces unknown values with defaults; `check` names the field so you can pick the right value yourself.
 - **Units:** `weight` in lbs (typical 180–320), `height` in cm. **Dates** are ISO strings. Ages drive retirement and decline: a legend "born" in 1382 retires on day one, so give fictional or historical characters a working age (roughly 22–45 for wrestlers).
 - **Staff are wrestler records** with `type` = `referee`, `commentator`, `writer`, `businessperson`, etc. and `staffAttributes`. `keyStaff` entries are `{id, name, pic}` refs; supply just `{id}` and normalize fills `name`/`pic`. If a promotion's `keyStaff` is entirely empty the game auto-assigns signed staff by type when a game starts.
 - **Images are filenames** (`wrestler-0042.webp`, `ccw.png`) — never URLs, paths or `data:` URIs.
-- **Only `wrestlers.json`, `promotions.json` and `alliances.json` reach the game.** `contracts.json` and `arenas.json` are ignored by New Game, but DataStudio writes them to disk on import — a re-export from DataStudio can drag in the default datapack's contracts. `check` errors on contracts that point at missing wrestlers/promotions; delete the file.
+- **Only `wrestlers.json`, `promotions.json` and `alliances.json` reach the game.** `arenas.json` is ignored by New Game (venues come from `.bbarenas`). The game no longer reads `contracts.json` at all: contracts live on the wrestler. Older DataStudio exports still carry it, so `normalize` embeds its rows on workers who have no contract and drops the file.
 - **Team ids** only need to be unique inside their promotion; teams with fewer than 2 signed members are dropped at game start. Wrestler `teams` is recomputed at game start, leave it `[]`.
+
+## Wages and contracts
+
+The game's contract model (booker-blitz `src/utils/contractEmployment.ts`, `docs/2. people.md`). The CLI mirrors it:
+
+- **Wages are monthly.** `wrestler.wage` and `contract.wage` are dollars per month, unless `wageType` is `per-appearance`, in which case they are a fee per show worked. A monthly figure is about 3.25× the per-appearance fee. Databases built before this rule used yearly figures (37,500 / 92,000 / 130,000 by card), which now read as monthly pay and wreck the promotion's finances. `check` warns when wages are more than 4× the level scale, and `reterm --from-yearly` fixes them.
+- **Exclusivity and pay unit are separate.** `contract.type` is `exclusive` or `non-exclusive`; `contract.wageType` is `monthly` or `per-appearance`. Any mix is valid. A contract **without** `wageType` keeps the old coupling (exclusive = monthly, non-exclusive = per appearance), so normalize always writes it explicitly.
+- **Terms follow promotion size**, the way AI promotions sign and the default datapack is set up:
+  - level 6+: exclusive, monthly
+  - level 4–5: top talent (popularity over 1.3× the roster average) non-exclusive, monthly; everyone else per appearance
+  - level 1–3: non-exclusive, per appearance
+
+  Normalize uses this for new contracts. `reterm` applies it to every existing one.
+- **Default wage** is a monthly floor by promotion level and card (level 4: $3,000 upper / $500 lower; level 6: $10,000 / $5,000; level 8: $50,000 / $10,000; level 10: $100,000 / $15,000, interpolated between) × the role's share of wrestler pay × merit (1.0–1.5 from popularity and current ability). Free agents ask the level-5 rate. `rebalance-wages` resets every contract to this scale.
+- **Per-appearance deals** carry `bookingsPerMonth` (default 4). Monthly deals drop it, along with `injuryGuarantee`.
+- **Non-compete** is `noCompeteMonths`, on exclusive deals only, capped at 20% of the term. Normalize clamps it and converts a legacy `noCompeteDays`.
+- **Several companies at once:** a non-exclusive worker's extra deals go in `additionalContracts` (same contract shape, `type: "non-exclusive"`, a different `promotionId` from the main contract). An exclusive main contract plus extra deals is an error, because exclusive talent works for one company.
+- **The worker follows the main contract.** On signed talent, `wage` and `wageType` copy the contract's. A free agent's `wage` is their asking price, in `wageType` units (missing means monthly).
 
 ## Verify in the game
 
@@ -63,13 +87,14 @@ it('starts a game as every promotion', () => {
 	const promotions = parsed.db.files['promotions.json'] as Promotion[]
 	const date = new Date(getBbDbMeta(parsed.db).startDate ?? '2026-01-01')
 	for (const p of promotions) {
-		const {enrichedGameData} = createNewGameData({
+		const {enrichedGameData, gameStatePayload} = createNewGameData({
 			gameData: {promotion: p.id, name: 's', playerName: 's', picture: '', slot: 1, dateSaved: date, ingameDate: date, gameStartDate: date},
 			promotions: structuredClone(promotions),
 			wrestlers: structuredClone(parsed.db.files['wrestlers.json']) as Wrestler[],
 			defaultDate: date
 		})
 		expect(enrichedGameData.promotionName).toBe(p.fullName)
+		expect(gameStatePayload.contracts.every(c => c.wageType)).toBe(true)
 	}
 })
 EOF
@@ -83,4 +108,5 @@ Delete the temp test afterwards — it is not part of the game's suite. For a fi
 - Don't invent fields. Unknown keys get a `check` warning; the game ignores them and DataStudio may drop them.
 - Don't renumber existing ids — contracts, keyStaff, champions, teams and portraits all point at them. Use `remove` + `upsert` if you must.
 - Don't write `null` into optional fields other than via `upsert`'s release shortcut.
+- Don't write yearly salaries. A $120,000-a-year wrestler is `"wage": 10000`, or let normalize pick the wage from the promotion's level.
 - Don't ship local paths in `save_meta.json` (`imgPath`); marketplace databases keep it `""`.

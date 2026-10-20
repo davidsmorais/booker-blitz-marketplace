@@ -7,7 +7,7 @@ description: Builds a Booker Blitz marketplace database (.bbdb) and its listing 
 
 A marketplace database is one folder, `databases/<slug>/`. The `.bbdb` is JSON. Images stay out of the file.
 
-Read `schema/bbdb.schema.json`, `schema/meta.schema.json`, and `databases/_template/` before writing. Match record fields to an existing export such as `databases/real-world-2026/real-world-2026.bbdb`. Do not invent columns.
+Read `schema/bbdb.schema.json`, `schema/meta.schema.json`, and `databases/_template/` before writing. Match record fields to `.claude/skills/bbdb/references/fields.md` and an existing listing such as `databases/boundless-brawlers/`. Do not invent columns.
 
 ## Folder
 
@@ -42,14 +42,14 @@ A pull request may touch only `databases/<slug>/`.
 
 `files` may only contain:
 
-- Arrays: `wrestlers.json`, `promotions.json`, `contracts.json`, `arenas.json`, `alliances.json`
+- Arrays: `wrestlers.json`, `promotions.json`, `arenas.json`, `alliances.json`, and the legacy `contracts.json` (the game ignores it; contracts live on each wrestler, so leave it out)
 - Objects: `save_meta.json` (`startDate`, `imgPath`, `themeKey`), `datapack.json`
 
 Include `wrestlers.json` or `promotions.json` (or both). Each array entry is an object.
 
 `picture`, `logo`, and staff `pic` are filenames (`Damien Sandow.jpg`), not embedded images and not URLs. The file must not contain `data:image/`.
 
-Prefer a DataStudio export (Export / Save) over hand-built records. If you edit records, keep ids consistent across wrestlers, promotions, contracts, and staff `pic` filenames.
+Prefer a DataStudio export (Export / Save) over hand-built records. If you edit records, keep ids consistent across wrestlers, promotions, contracts, and staff `pic` filenames. Wages are monthly; a pack built with yearly figures bankrupts its promotions (see the `bbdb` skill, *Wages and contracts*).
 
 To author or edit records, use the `bbdb` skill (`/bbdb`). Its CLI fills every wrestler and promotion field and checks the file against the game's loader: `node .claude/skills/bbdb/scripts/bbdb.mjs check databases/<slug>/<slug>.bbdb`.
 
