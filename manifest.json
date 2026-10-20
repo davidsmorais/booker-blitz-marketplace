@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:50:30.471Z",
+  "generatedAt": "2026-10-20T14:52:34.991Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -46,33 +46,40 @@
       "verified": true,
       "sha256": "b0aa71179b1acfc9294390d30c0e9d21e083325c94b6590bfd666320bd5b6912",
       "size": 433849
-    },
-    {
-      "title": "Real World November 2026",
-      "author": "david morais",
-      "slug": "real-world-november-2026",
-      "version": "1.0.0",
-      "tags": [
-        "real-world",
-        "roster",
-        "cross-promotion",
-        "aew",
-        "njpw",
-        "wwe"
-      ],
-      "gameVersion": "0.2.0",
-      "license": "CC-BY-4.0",
-      "readme": "# Real World November 2026\n\nA live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz. Every person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.\n\nCross-promotion talent carries **non-exclusive** deals — AEW names who also work New Japan, CMLL and ROH regulars who double on the US indies, Stardom talent appearing in AEW, and so on. Their extra deals live in `additionalContracts` and resolve into real contracts when a game starts.\n\n## Contents\n\n- **promotions.json** — 16 promotions, each with its weekly shows, PPVs, titles, tag teams and signed staff\n- **wrestlers.json** — 4,270 people: 981 signed wrestlers, 292 signed staff, and 2,997 free agents\n- **alliances.json** — 6 alliances: WWE Universe, Forbidden Door, CyberFight, IndependentWrestling.TV, The Collective, United Japan Pro Wrestling\n\n## Roster breakdown\n\n| id | Promotion | Lvl | Base | Signed wrestlers | Signed staff |\n|---:|---|---:|---|---:|---:|\n| 3 | AJPW | 7 | Japan | 36 | 6 |\n| 5 | AAA | 6 | Mexico | 48 | 10 |\n| 11 | CMLL | 8 | Mexico | 157 | 29 |\n| 28 | TNA | 6 | USA | 48 | 17 |\n| 38 | NJPW | 9 | Japan | 56 | 24 |\n| 44 | PROGRESS | 3 | UK | 22 | 2 |\n| 45 | NOAH | 7 | Japan | 48 | 11 |\n| 49 | ROH | 5 | USA | 78 | 7 |\n| 61 | Stardom | 6 | Japan | 46 | 6 |\n| 64 | WWE | 10 | USA | 104 | 65 |\n| 65 | NXT | 6 | USA | 73 | 32 |\n| 68 | MLW | 4 | USA | 30 | 8 |\n| 76 | AEW | 9 | USA | 115 | 52 |\n| 77 | GCW | 4 | USA | 49 | 7 |\n| 79 | NWA | 5 | USA | 49 | 12 |\n| 118 | MLP | 3 | USA | 22 | 4 |\n\nWages are monthly. Contracts are dated relative to the start date (`2026-01-01`); the game shifts them to whatever start date you pick at New Game.\n\n## Image sources\n\n**This listing ships no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`) and resolve against an image folder you supply yourself in DataStudio's datapack import. Nothing is embedded in the `.bbdb`, and no image host is published with this pack.\n\n## Real names\n\nWrestler, staff and promotion names are real and are used descriptively. No real promotion logo or trademarked artwork is included in this repository.\n",
-      "readmeExcerpt": "Real World November 2026 A live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz. Every person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV struc…",
-      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/real-world-november-2026/real-world-november-2026.bbdb",
-      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/real-world-november-2026/preview.jpg",
-      "sha256": "31a299c372865379e26a78d7685e4fa918fbaf742b696f608264a6a5ff337fb0",
-      "size": 14263101
     }
   ],
   "datastudio": {
-    "version": "1.4.0",
-    "date": null,
-    "assets": []
+    "version": "1.5.1",
+    "date": "2026-10-20T12:32:18Z",
+    "assets": [
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.1-linux-x86_64.AppImage",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.1/Booker-Blitz-Datastudio-1.5.1-linux-x86_64.AppImage",
+        "sha256": null,
+        "size": 542720862,
+        "os": "linux"
+      },
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.1-mac-arm64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.1/Booker-Blitz-Datastudio-1.5.1-mac-arm64.dmg",
+        "sha256": null,
+        "size": 540000119,
+        "os": "mac"
+      },
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.1-mac-x64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.1/Booker-Blitz-Datastudio-1.5.1-mac-x64.dmg",
+        "sha256": null,
+        "size": 545599002,
+        "os": "mac"
+      },
+      {
+        "name": "Booker-Blitz-Datastudio-1.5.1-win-x64.exe",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.5.1/Booker-Blitz-Datastudio-1.5.1-win-x64.exe",
+        "sha256": null,
+        "size": 516910465,
+        "os": "windows"
+      }
+    ]
   }
 }
