@@ -37,11 +37,16 @@ Cross-promotion talent carries **non-exclusive** deals — AEW names who also wo
 
 Wages are monthly. Contracts are dated relative to the start date (`2026-01-01`); the game shifts them to whatever start date you pick at New Game.
 
+## Downloads
+
+For legal reasons this pack is not hosted in this repository. Both files are hosted on MediaFire:
+
+- **Datapack (.bbdb):** https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file
+- **Image pack (RWNov26.zip):** https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file
+
 ## Image sources
 
-**This listing ships no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`) and resolve against an image folder you supply yourself in DataStudio's datapack import. Nothing is embedded in the `.bbdb`, and no image host is published with this pack.
-
-I will publish the image datapack later.
+**The `.bbdb` embeds no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`). Download `RWNov26.zip` from MediaFire (the only image host for this pack), extract it, and point DataStudio's datapack import at the extracted image folder.
 
 ## Real names
 

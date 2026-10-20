@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T14:52:34.991Z",
+  "generatedAt": "2026-10-20T15:01:25.023Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -46,6 +46,27 @@
       "verified": true,
       "sha256": "b0aa71179b1acfc9294390d30c0e9d21e083325c94b6590bfd666320bd5b6912",
       "size": 433849
+    },
+    {
+      "title": "Real World November 2026",
+      "author": "Sonyahaus3n (community)",
+      "slug": "real-world-november-2026",
+      "version": "1.0.0",
+      "tags": [
+        "real-world",
+        "roster",
+        "cross-promotion",
+        "aew",
+        "njpw",
+        "wwe"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# Real World November 2026\r\n\r\n⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update)\r\n\r\nA live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz.\r\n\r\nEvery person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.\r\n\r\nCross-promotion talent carries **non-exclusive** deals — AEW names who also work New Japan, CMLL and ROH regulars who double on the US indies, Stardom talent appearing in AEW, and so on. Their extra deals live in `additionalContracts` and resolve into real contracts when a game starts.\r\n\r\n## Contents\r\n\r\n- **promotions.json** — 16 promotions, each with its weekly shows, PPVs, titles, tag teams and signed staff\r\n- **wrestlers.json** — 4,270 people: 981 signed wrestlers, 292 signed staff, and 2,997 free agents\r\n- **alliances.json** — 6 alliances: WWE Universe, Forbidden Door, CyberFight, IndependentWrestling.TV, The Collective, United Japan Pro Wrestling\r\n\r\n## Roster breakdown\r\n\r\n| id | Promotion | Lvl | Base | Signed wrestlers | Signed staff |\r\n|---:|---|---:|---|---:|---:|\r\n| 3 | AJPW | 7 | Japan | 36 | 6 |\r\n| 5 | AAA | 6 | Mexico | 48 | 10 |\r\n| 11 | CMLL | 8 | Mexico | 157 | 29 |\r\n| 28 | TNA | 6 | USA | 48 | 17 |\r\n| 38 | NJPW | 9 | Japan | 56 | 24 |\r\n| 44 | PROGRESS | 3 | UK | 22 | 2 |\r\n| 45 | NOAH | 7 | Japan | 48 | 11 |\r\n| 49 | ROH | 5 | USA | 78 | 7 |\r\n| 61 | Stardom | 6 | Japan | 46 | 6 |\r\n| 64 | WWE | 10 | USA | 104 | 65 |\r\n| 65 | NXT | 6 | USA | 73 | 32 |\r\n| 68 | MLW | 4 | USA | 30 | 8 |\r\n| 76 | AEW | 9 | USA | 115 | 52 |\r\n| 77 | GCW | 4 | USA | 49 | 7 |\r\n| 79 | NWA | 5 | USA | 49 | 12 |\r\n| 118 | MLP | 3 | USA | 22 | 4 |\r\n\r\nWages are monthly. Contracts are dated relative to the start date (`2026-01-01`); the game shifts them to whatever start date you pick at New Game.\r\n\r\n## Downloads\r\n\r\nFor legal reasons this pack is not hosted in this repository. Both files are hosted on MediaFire:\r\n\r\n- **Datapack (.bbdb):** https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file\r\n- **Image pack (RWNov26.zip):** https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file\r\n\r\n## Image sources\r\n\r\n**The `.bbdb` embeds no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`). Download `RWNov26.zip` from MediaFire (the only image host for this pack), extract it, and point DataStudio's datapack import at the extracted image folder.\r\n\r\n## Real names\r\n\r\nWrestler, staff and promotion names are real and are used descriptively. No real promotion logo or trademarked artwork is included in this repository.\r\n",
+      "readmeExcerpt": "Real World November 2026 ⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update) A live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz. Every person is real: full attribute sets, real finishers and gimmicks, rea…",
+      "downloadUrl": "https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/real-world-november-2026/preview.jpg",
+      "imageSetUrl": "https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file"
     }
   ],
   "datastudio": {

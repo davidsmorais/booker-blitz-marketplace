@@ -50,9 +50,7 @@
         "readme",
         "readmeExcerpt",
         "downloadUrl",
-        "imageUrl",
-        "sha256",
-        "size"
+        "imageUrl"
       ],
       "properties": {
         "title": { "type": "string" },

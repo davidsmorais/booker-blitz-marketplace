@@ -24,8 +24,9 @@ const entryFor = (dir, kind) => {
   const ext = kind === "theme" ? "bbtheme" : "bbdb"
   const folder = kind === "theme" ? "themes" : "databases"
   const payloadPath = join(dir, `${slug}.${ext}`)
-  const payload = readFileSync(payloadPath)
   const meta = readJson(join(dir, "meta.json"))
+  const external = typeof meta.downloadUrl === "string"
+  const payload = external ? null : readFileSync(payloadPath)
   const readme = readFileSync(join(dir, "README.md"), "utf8").slice(0, MAX_README)
   const previewName = findPreview(dir)
   return {
@@ -38,12 +39,11 @@ const entryFor = (dir, kind) => {
     license: meta.license,
     readme,
     readmeExcerpt: excerpt(readme),
-    downloadUrl: `${RAW_ROOT}/${folder}/${slug}/${slug}.${ext}`,
+    downloadUrl: external ? meta.downloadUrl : `${RAW_ROOT}/${folder}/${slug}/${slug}.${ext}`,
     imageUrl: `${RAW_ROOT}/${folder}/${slug}/${previewName}`,
     ...(meta.imageSetUrl ? { imageSetUrl: meta.imageSetUrl } : {}),
     ...(meta.verified ? { verified: meta.verified } : {}),
-    sha256: sha256(payload),
-    size: payload.length,
+    ...(payload ? { sha256: sha256(payload), size: payload.length } : {}),
   }
 }
 

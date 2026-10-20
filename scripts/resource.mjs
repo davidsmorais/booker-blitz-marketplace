@@ -75,6 +75,8 @@ export const validateMeta = (meta) => {
     push(errors, "meta.json tags must be a non-empty list of strings")
   if (meta.imageSetUrl !== undefined && (typeof meta.imageSetUrl !== "string" || meta.imageSetUrl.trim().length === 0))
     push(errors, "meta.json imageSetUrl must be a non-empty string")
+  if (meta.downloadUrl !== undefined && (typeof meta.downloadUrl !== "string" || !/^https:\/\//.test(meta.downloadUrl)))
+    push(errors, "meta.json downloadUrl must be an https URL")
   if (meta.verified !== undefined && typeof meta.verified !== "boolean")
     push(errors, "meta.json verified must be a boolean")
   return errors
@@ -166,11 +168,16 @@ export const validateResourceDir = (dir, kind) => {
   const readmePath = join(dir, "README.md")
   const metaPath = join(dir, "meta.json")
 
+  let externalPayload = false
+  try {
+    externalPayload = typeof readJson(metaPath).downloadUrl === "string"
+  } catch {}
+
   let payloadStat
   try {
     payloadStat = statSync(payloadPath)
   } catch {
-    push(errors, `Missing payload ${payloadName}`)
+    if (!externalPayload) push(errors, `Missing payload ${payloadName}`)
   }
 
   let readme = ""
@@ -200,7 +207,7 @@ export const validateResourceDir = (dir, kind) => {
     push(errors, "Missing or invalid meta.json")
   }
 
-  if (payloadStat) {
+  if (payloadStat && !externalPayload) {
     const cap = kind === "theme" ? MAX_BBTHEME_BYTES : MAX_BBDB_BYTES
     if (payloadStat.size > cap) push(errors, `${payloadName} is over ${cap} bytes`)
     try {
