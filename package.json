@@ -7,7 +7,8 @@
     "validate": "node scripts/validate.mjs",
     "manifest": "node scripts/build-manifest.mjs",
     "test": "node scripts/test-fixtures.mjs",
-    "release:datastudio": "node scripts/release-datastudio.mjs"
+    "release:datastudio": "node scripts/release-datastudio.mjs",
+    "deploy:datastudio": "node scripts/deploy-datastudio.mjs"
   },
   "license": "MIT"
 }
