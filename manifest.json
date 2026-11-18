@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T18:42:00.846Z",
+  "generatedAt": "2026-11-18T19:51:05.707Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -72,6 +72,14 @@
   "datastudio": {
     "version": "1.7.0",
     "date": "2026-11-18T18:39:42Z",
-    "assets": []
+    "assets": [
+      {
+        "name": "Booker-Blitz-Datastudio-1.7.0-win-x64.exe",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.7.0/Booker-Blitz-Datastudio-1.7.0-win-x64.exe",
+        "sha256": null,
+        "size": 801048937,
+        "os": "windows"
+      }
+    ]
   }
 }
