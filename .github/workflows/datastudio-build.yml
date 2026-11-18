@@ -116,6 +116,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
+        env:
+          # onnxruntime-node@1.17.3 (via @imgly/background-removal-node) tries to fetch
+          # the CUDA EP tarball on Linux x64, which 404s upstream. Background removal runs on CPU.
+          npm_config_onnxruntime_node_install_cuda: skip
         run: pnpm i --frozen-lockfile
 
       - name: Package Datastudio 📦
