@@ -1,7 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T22:53:46.031Z",
+  "generatedAt": "2026-11-18T23:04:33.370Z",
   "themes": [
+    {
+      "title": "AEW Gold",
+      "author": "Dark Magic Studios",
+      "slug": "aew-gold",
+      "version": "1.0.0",
+      "tags": [
+        "dark",
+        "aew",
+        "gold"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# AEW Gold\n\nDark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "AEW Gold Dark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Se…",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/aew-gold/aew-gold.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/aew-gold/preview.jpg",
+      "sha256": "491b4d1af2371f7318fe1364182ce95338bf246ef6a93fb995713a661201a947",
+      "size": 331358
+    },
     {
       "title": "Barbed Wire",
       "author": "Dark Magic Studios",
@@ -21,6 +40,82 @@
       "verified": true,
       "sha256": "7aaf0253fe573ab620b17545fc518ec79094d6a5ad7ec307878ecfe642dff622",
       "size": 3423870
+    },
+    {
+      "title": "Kanagawa Wave",
+      "author": "Dark Magic Studios",
+      "slug": "kanagawa-wave",
+      "version": "1.0.0",
+      "tags": [
+        "japanese",
+        "ukiyoe",
+        "light"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# Kanagawa Wave\n\nA light ukiyo-e theme: washi-paper surfaces, Hokusai Prussian-blue accent, and stat colours drawn from an indigo-to-vermilion ramp. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "Kanagawa Wave A light ukiyo-e theme: washi-paper surfaces, Hokusai Prussian-blue accent, and stat colours drawn from an indigo-to-vermilion ramp. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes …",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/kanagawa-wave/kanagawa-wave.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/kanagawa-wave/preview.jpg",
+      "sha256": "0ce37f382173634539bc1f4631f5f7038acb48383932e4fab5340a5658213c40",
+      "size": 1010328
+    },
+    {
+      "title": "Minimal Ring",
+      "author": "Dark Magic Studios",
+      "slug": "minimal-ring",
+      "version": "1.0.0",
+      "tags": [
+        "light",
+        "minimal",
+        "monochrome"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# Minimal Ring\n\nA quiet, monochrome light theme: off-white surfaces, a single black accent, and restrained stat colours that stay out of the way. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "Minimal Ring A quiet, monochrome light theme: off-white surfaces, a single black accent, and restrained stat colours that stay out of the way. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes you…",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/minimal-ring/minimal-ring.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/minimal-ring/preview.jpg",
+      "sha256": "a1ca9d7119173df5c86e2190165094977a5c2dabcbc2a3a2683473689a0b6239",
+      "size": 191603
+    },
+    {
+      "title": "Pixel Main Event",
+      "author": "Dark Magic Studios",
+      "slug": "pixel-main-event",
+      "version": "1.0.0",
+      "tags": [
+        "retro",
+        "pixel",
+        "arcade"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# Pixel Main Event\n\nA 16-bit arcade theme: dark navy surfaces, chunky gold accent, and stat colours pulled from classic pixel palettes. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "Pixel Main Event A 16-bit arcade theme: dark navy surfaces, chunky gold accent, and stat colours pulled from classic pixel palettes. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom t…",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/pixel-main-event/pixel-main-event.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/pixel-main-event/preview.jpg",
+      "sha256": "594ab680efd8fe686b084af430abcca1b08ce49a5a7043a1c56d71adf83bd5ae",
+      "size": 1144454
+    },
+    {
+      "title": "WWE Showtime",
+      "author": "Dark Magic Studios",
+      "slug": "wwe-showtime",
+      "version": "1.0.0",
+      "tags": [
+        "dark",
+        "wwe",
+        "red"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# WWE Showtime\n\nDark theme in big-show red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "WWE Showtime Dark theme in big-show red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom…",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/wwe-showtime/wwe-showtime.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/wwe-showtime/preview.jpg",
+      "sha256": "4814ff5305a0c3c42f55cb83e7372f3c486ce7e82b486225c6cb3ce244d354b7",
+      "size": 406086
     }
   ],
   "databases": [
@@ -62,7 +157,7 @@
       ],
       "gameVersion": "0.2.0",
       "license": "CC-BY-4.0",
-      "readme": "# Real World November 2026\r\n\r\n⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update)\r\n\r\nA live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz.\r\n\r\nEvery person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.\r\n\r\nCross-promotion talent carries **non-exclusive** deals — AEW names who also work New Japan, CMLL and ROH regulars who double on the US indies, Stardom talent appearing in AEW, and so on. Their extra deals live in `additionalContracts` and resolve into real contracts when a game starts.\r\n\r\n## Contents\r\n\r\n- **promotions.json** — 16 promotions, each with its weekly shows, PPVs, titles, tag teams and signed staff\r\n- **wrestlers.json** — 4,270 people: 981 signed wrestlers, 292 signed staff, and 2,997 free agents\r\n- **alliances.json** — 6 alliances: WWE Universe, Forbidden Door, CyberFight, IndependentWrestling.TV, The Collective, United Japan Pro Wrestling\r\n\r\n## Roster breakdown\r\n\r\n| id | Promotion | Lvl | Base | Signed wrestlers | Signed staff |\r\n|---:|---|---:|---|---:|---:|\r\n| 3 | AJPW | 7 | Japan | 36 | 6 |\r\n| 5 | AAA | 6 | Mexico | 48 | 10 |\r\n| 11 | CMLL | 8 | Mexico | 157 | 29 |\r\n| 28 | TNA | 6 | USA | 48 | 17 |\r\n| 38 | NJPW | 9 | Japan | 56 | 24 |\r\n| 44 | PROGRESS | 3 | UK | 22 | 2 |\r\n| 45 | NOAH | 7 | Japan | 48 | 11 |\r\n| 49 | ROH | 5 | USA | 78 | 7 |\r\n| 61 | Stardom | 6 | Japan | 46 | 6 |\r\n| 64 | WWE | 10 | USA | 104 | 65 |\r\n| 65 | NXT | 6 | USA | 73 | 32 |\r\n| 68 | MLW | 4 | USA | 30 | 8 |\r\n| 76 | AEW | 9 | USA | 115 | 52 |\r\n| 77 | GCW | 4 | USA | 49 | 7 |\r\n| 79 | NWA | 5 | USA | 49 | 12 |\r\n| 118 | MLP | 3 | USA | 22 | 4 |\r\n\r\nWages are monthly. Contracts are dated relative to the start date (`2026-01-01`); the game shifts them to whatever start date you pick at New Game.\r\n\r\n## Downloads\r\n\r\nFor legal reasons this pack is not hosted in this repository. Both files are hosted on MediaFire:\r\n\r\n- **Datapack (.bbdb):** https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file\r\n- **Image pack (RWNov26.zip):** https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file\r\n\r\n## Image sources\r\n\r\n**The `.bbdb` embeds no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`). Download `RWNov26.zip` from MediaFire (the only image host for this pack), extract it, and point DataStudio's datapack import at the extracted image folder.\r\n\r\n## Real names\r\n\r\nWrestler, staff and promotion names are real and are used descriptively. No real promotion logo or trademarked artwork is included in this repository.\r\n",
+      "readme": "# Real World November 2026\n\n⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update)\n\nA live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz.\n\nEvery person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.\n\nCross-promotion talent carries **non-exclusive** deals — AEW names who also work New Japan, CMLL and ROH regulars who double on the US indies, Stardom talent appearing in AEW, and so on. Their extra deals live in `additionalContracts` and resolve into real contracts when a game starts.\n\n## Contents\n\n- **promotions.json** — 16 promotions, each with its weekly shows, PPVs, titles, tag teams and signed staff\n- **wrestlers.json** — 4,270 people: 981 signed wrestlers, 292 signed staff, and 2,997 free agents\n- **alliances.json** — 6 alliances: WWE Universe, Forbidden Door, CyberFight, IndependentWrestling.TV, The Collective, United Japan Pro Wrestling\n\n## Roster breakdown\n\n| id | Promotion | Lvl | Base | Signed wrestlers | Signed staff |\n|---:|---|---:|---|---:|---:|\n| 3 | AJPW | 7 | Japan | 36 | 6 |\n| 5 | AAA | 6 | Mexico | 48 | 10 |\n| 11 | CMLL | 8 | Mexico | 157 | 29 |\n| 28 | TNA | 6 | USA | 48 | 17 |\n| 38 | NJPW | 9 | Japan | 56 | 24 |\n| 44 | PROGRESS | 3 | UK | 22 | 2 |\n| 45 | NOAH | 7 | Japan | 48 | 11 |\n| 49 | ROH | 5 | USA | 78 | 7 |\n| 61 | Stardom | 6 | Japan | 46 | 6 |\n| 64 | WWE | 10 | USA | 104 | 65 |\n| 65 | NXT | 6 | USA | 73 | 32 |\n| 68 | MLW | 4 | USA | 30 | 8 |\n| 76 | AEW | 9 | USA | 115 | 52 |\n| 77 | GCW | 4 | USA | 49 | 7 |\n| 79 | NWA | 5 | USA | 49 | 12 |\n| 118 | MLP | 3 | USA | 22 | 4 |\n\nWages are monthly. Contracts are dated relative to the start date (`2026-01-01`); the game shifts them to whatever start date you pick at New Game.\n\n## Downloads\n\nFor legal reasons this pack is not hosted in this repository. Both files are hosted on MediaFire:\n\n- **Datapack (.bbdb):** https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file\n- **Image pack (RWNov26.zip):** https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file\n\n## Image sources\n\n**The `.bbdb` embeds no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`). Download `RWNov26.zip` from MediaFire (the only image host for this pack), extract it, and point DataStudio's datapack import at the extracted image folder.\n\n## Real names\n\nWrestler, staff and promotion names are real and are used descriptively. No real promotion logo or trademarked artwork is included in this repository.\n",
       "readmeExcerpt": "Real World November 2026 ⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update) A live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz. Every person is real: full attribute sets, real finishers and gimmicks, rea…",
       "downloadUrl": "https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file",
       "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/real-world-november-2026/preview.jpg",
