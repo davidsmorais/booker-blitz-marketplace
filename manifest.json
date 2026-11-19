@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T16:47:36.837Z",
+  "generatedAt": "2026-11-19T16:50:23.785Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -23,10 +23,10 @@
       "size": 3423870
     },
     {
-      "title": "AEW Gold",
+      "title": "Gold",
       "author": "Dark Magic Studios",
       "slug": "gold",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "tags": [
         "dark",
         "aew",
@@ -34,8 +34,8 @@
       ],
       "gameVersion": "0.2.0",
       "license": "CC-BY-4.0",
-      "readme": "# AEW Gold\n\nDark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
-      "readmeExcerpt": "AEW Gold Dark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Se…",
+      "readme": "# Gold\n\nDark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "Gold Dark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settin…",
       "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/gold/gold.bbtheme",
       "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/gold/preview.jpg",
       "sha256": "94f9ab38d634e0e33b88b1f95b31138e8ce2191b047be86eec839af4c65226e1",
@@ -99,10 +99,10 @@
       "size": 1144454
     },
     {
-      "title": "WWE Showtime",
+      "title": "Showtime",
       "author": "Dark Magic Studios",
       "slug": "showtime",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "tags": [
         "dark",
         "wwe",
@@ -110,8 +110,8 @@
       ],
       "gameVersion": "0.2.0",
       "license": "CC-BY-4.0",
-      "readme": "# WWE Showtime\n\nDark theme in big-show red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
-      "readmeExcerpt": "WWE Showtime Dark theme in big-show red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom…",
+      "readme": "# Showtime\n\nDark theme in big-show blue and red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "Showtime Dark theme in big-show blue and red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your C…",
       "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/showtime/showtime.bbtheme",
       "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/showtime/preview.jpg",
       "sha256": "1c08a73708d256fae82f0a32a5cef6209a941e7d596946e28cf1ed08ce3ea7db",
