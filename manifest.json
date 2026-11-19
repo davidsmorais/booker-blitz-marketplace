@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T02:02:39.183Z",
+  "generatedAt": "2026-11-19T02:11:22.057Z",
   "themes": [
     {
       "title": "AEW Gold",
@@ -165,35 +165,35 @@
     }
   ],
   "datastudio": {
-    "version": "1.8.0",
-    "date": "2026-11-18T22:26:15Z",
+    "version": "1.8.1",
+    "date": "2026-11-19T02:10:52Z",
     "assets": [
       {
-        "name": "Booker-Blitz-Datastudio-1.8.0-linux-x86_64.AppImage",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.0/Booker-Blitz-Datastudio-1.8.0-linux-x86_64.AppImage",
+        "name": "Booker-Blitz-Datastudio-1.8.1-linux-x86_64.AppImage",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.1/Booker-Blitz-Datastudio-1.8.1-linux-x86_64.AppImage",
         "sha256": null,
-        "size": 820039427,
+        "size": 820051369,
         "os": "linux"
       },
       {
-        "name": "Booker-Blitz-Datastudio-1.8.0-mac-arm64.dmg",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.0/Booker-Blitz-Datastudio-1.8.0-mac-arm64.dmg",
+        "name": "Booker-Blitz-Datastudio-1.8.1-mac-arm64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.1/Booker-Blitz-Datastudio-1.8.1-mac-arm64.dmg",
         "sha256": null,
-        "size": 818909266,
+        "size": 818888651,
         "os": "mac"
       },
       {
-        "name": "Booker-Blitz-Datastudio-1.8.0-mac-x64.dmg",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.0/Booker-Blitz-Datastudio-1.8.0-mac-x64.dmg",
+        "name": "Booker-Blitz-Datastudio-1.8.1-mac-x64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.1/Booker-Blitz-Datastudio-1.8.1-mac-x64.dmg",
         "sha256": null,
-        "size": 824834240,
+        "size": 824873176,
         "os": "mac"
       },
       {
-        "name": "Booker-Blitz-Datastudio-1.8.0-win-x64.exe",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.0/Booker-Blitz-Datastudio-1.8.0-win-x64.exe",
+        "name": "Booker-Blitz-Datastudio-1.8.1-win-x64.exe",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.8.1/Booker-Blitz-Datastudio-1.8.1-win-x64.exe",
         "sha256": null,
-        "size": 801135560,
+        "size": 801142168,
         "os": "windows"
       }
     ]
