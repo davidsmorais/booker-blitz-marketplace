@@ -6,6 +6,8 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "manifest": "node scripts/build-manifest.mjs",
+    "theme:embed": "node scripts/theme-images.mjs embed",
+    "theme:extract": "node scripts/theme-images.mjs extract",
     "test": "node scripts/test-fixtures.mjs",
     "release:datastudio": "node scripts/release-datastudio.mjs",
     "deploy:datastudio": "node scripts/deploy-datastudio.mjs"

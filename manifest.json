@@ -1,26 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T02:11:22.057Z",
+  "generatedAt": "2026-11-19T16:20:11.608Z",
   "themes": [
-    {
-      "title": "AEW Gold",
-      "author": "Dark Magic Studios",
-      "slug": "aew-gold",
-      "version": "1.0.0",
-      "tags": [
-        "dark",
-        "aew",
-        "gold"
-      ],
-      "gameVersion": "0.2.0",
-      "license": "CC-BY-4.0",
-      "readme": "# AEW Gold\n\nDark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
-      "readmeExcerpt": "AEW Gold Dark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Se…",
-      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/aew-gold/aew-gold.bbtheme",
-      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/aew-gold/preview.jpg",
-      "sha256": "491b4d1af2371f7318fe1364182ce95338bf246ef6a93fb995713a661201a947",
-      "size": 331358
-    },
     {
       "title": "Barbed Wire",
       "author": "Dark Magic Studios",
@@ -40,6 +21,25 @@
       "verified": true,
       "sha256": "7aaf0253fe573ab620b17545fc518ec79094d6a5ad7ec307878ecfe642dff622",
       "size": 3423870
+    },
+    {
+      "title": "AEW Gold",
+      "author": "Dark Magic Studios",
+      "slug": "gold",
+      "version": "1.0.0",
+      "tags": [
+        "dark",
+        "aew",
+        "gold"
+      ],
+      "gameVersion": "0.2.0",
+      "license": "CC-BY-4.0",
+      "readme": "# AEW Gold\n\nDark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
+      "readmeExcerpt": "AEW Gold Dark theme in the All Elite colour language: near-black surfaces, warm gold accent, and a stat ramp that runs from green through gold to the red of a pulled-apart contract. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Se…",
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/gold/gold.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/gold/preview.jpg",
+      "sha256": "94f9ab38d634e0e33b88b1f95b31138e8ce2191b047be86eec839af4c65226e1",
+      "size": 331354
     },
     {
       "title": "Kanagawa Wave",
@@ -95,13 +95,13 @@
       "readmeExcerpt": "Pixel Main Event A 16-bit arcade theme: dark navy surfaces, chunky gold accent, and stat colours pulled from classic pixel palettes. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom t…",
       "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/pixel-main-event/pixel-main-event.bbtheme",
       "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/pixel-main-event/preview.jpg",
-      "sha256": "594ab680efd8fe686b084af430abcca1b08ce49a5a7043a1c56d71adf83bd5ae",
+      "sha256": "dd33d0c33ec4b7eaabb8dc0e2ae7e1b601f2769bcd5c9d43966099998e56c6c6",
       "size": 1144454
     },
     {
       "title": "WWE Showtime",
       "author": "Dark Magic Studios",
-      "slug": "wwe-showtime",
+      "slug": "showtime",
       "version": "1.0.0",
       "tags": [
         "dark",
@@ -112,10 +112,10 @@
       "license": "CC-BY-4.0",
       "readme": "# WWE Showtime\n\nDark theme in big-show red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom theme.\n",
       "readmeExcerpt": "WWE Showtime Dark theme in big-show red: black stage surfaces, WWE-red accent, white stat text, and a gold money colour for the purse. Palette plus five wallpapers, generated in Canva (no logos or trademarked art). Import it from Settings → Theme → Import. It becomes your Custom…",
-      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/wwe-showtime/wwe-showtime.bbtheme",
-      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/wwe-showtime/preview.jpg",
-      "sha256": "4814ff5305a0c3c42f55cb83e7372f3c486ce7e82b486225c6cb3ce244d354b7",
-      "size": 406086
+      "downloadUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/showtime/showtime.bbtheme",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/themes/showtime/preview.jpg",
+      "sha256": "1c08a73708d256fae82f0a32a5cef6209a941e7d596946e28cf1ed08ce3ea7db",
+      "size": 406082
     }
   ],
   "databases": [
