@@ -1,0 +1,27 @@
+{
+  "format": "bbtheme",
+  "version": 1,
+  "name": "Showtime",
+  "colors": {
+    "primary": "#0c0cac",
+    "secondary": "#0e1053",
+    "accent": "#d81a26",
+    "hueRotation": 0,
+    "mode": "dark",
+    "success": "#3fae5a",
+    "warning": "#f5a623",
+    "money": "#f5c542",
+    "statGreat": "#3fae5a",
+    "statGood": "#7dd3fc",
+    "statAvg": "#d1d5db",
+    "statLow": "#f5a623",
+    "statBad": "#d81a26"
+  },
+  "backgrounds": {
+    "wp/1.png": "wp/1.webp",
+    "wp/2.png": "wp/2.webp",
+    "wp/3.png": "wp/3.webp",
+    "wp/4.png": "wp/4.webp",
+    "wp/5.png": "wp/5.webp"
+  }
+}

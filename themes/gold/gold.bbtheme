@@ -1,0 +1,27 @@
+{
+  "format": "bbtheme",
+  "version": 1,
+  "name": "Gold",
+  "colors": {
+    "primary": "#41351f",
+    "secondary": "#1a1712",
+    "accent": "#e0b53c",
+    "hueRotation": 0,
+    "mode": "dark",
+    "success": "#3fae5a",
+    "warning": "#e0b53c",
+    "money": "#f5c542",
+    "statGreat": "#3fae5a",
+    "statGood": "#a3c14a",
+    "statAvg": "#e0b53c",
+    "statLow": "#e07b39",
+    "statBad": "#d81a26"
+  },
+  "backgrounds": {
+    "wp/1.png": "wp/1.webp",
+    "wp/2.png": "wp/2.webp",
+    "wp/3.png": "wp/3.webp",
+    "wp/4.png": "wp/4.webp",
+    "wp/5.png": "wp/5.webp"
+  }
+}
