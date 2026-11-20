@@ -37,10 +37,12 @@ export const ENUMS = {
 	regularity: ['single show', 'weekly', 'biweekly', 'monthly'],
 	day: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
 	month: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
-	facility: ['arena', 'gym', 'medical_center', 'production_studio', 'training_facility', 'performance_center'],
+	facility: ['arena', 'gym', 'medical_center', 'production_studio', 'academy', 'training_facility', 'performance_center'],
 	contractType: ['exclusive', 'non-exclusive'],
 	contractStatus: ['active', 'expired', 'pending', 'terminated'],
-	wageType: ['monthly', 'per-appearance']
+	wageType: ['monthly', 'per-appearance'],
+	gimmickType: ['monster', 'technician', 'comedy', 'cult-leader', 'celebrity', 'fighter', 'daredevil', 'authority', 'rebel'],
+	commentatorType: ['play-by-play', 'color', 'comedy', 'heel', 'legend']
 }
 
 // ─── Canonical shapes ───────────────────────────────────────────────────────
@@ -166,11 +168,15 @@ const SIGNED_ONLY_KEYS = ['promotionId', 'contractExpiryDate', 'contract']
 // Optional game fields a database may carry. Normalize writes wageType for
 // signed talent (synced from the contract, as the game does at new game);
 // a free agent without one asks a monthly wage.
-const OPTIONAL_WRESTLER_KEYS = ['wageType', 'additionalContracts', 'brandShowName']
+const OPTIONAL_WRESTLER_KEYS = ['wageType', 'additionalContracts', 'brandShowName', 'gimmick', 'gimmickType', 'commentatorType']
 const WRESTLER_ORDER = WRESTLER_KEYS.flatMap(k => (k === 'wage' ? [k, 'wageType'] : k === 'contract' ? [k, 'additionalContracts'] : [k]))
-const CONTRACT_KEYS = ['id', 'wrestlerId', 'promotionId', 'startDate', 'endDate', 'wage', 'wageType', 'type', 'status', 'bookingsPerMonth', 'noCompeteMonths', 'autoRenew', 'injuryGuarantee']
+const CONTRACT_KEYS = ['id', 'wrestlerId', 'promotionId', 'startDate', 'endDate', 'wage', 'wageType', 'type', 'status', 'bookingsPerMonth', 'noCompeteMonths', 'autoRenew', 'injuryGuarantee', 'allowsIndieAppearances', 'notes', 'preContractDeal']
 
 export const PROMOTION_KEYS = ['id', 'fullName', 'shortName', 'base', 'level', 'logo', 'balance', 'momentum', 'audienceSize', 'enforceShowSplit', 'houseShowAttendance', 'houseShowCostLevel', 'houseShowsPerMonth', 'houseShowsPrestige', 'houseShowTicketPrice', 'houseShowRotation', 'keyStaff', 'shows', 'ppvs', 'titles', 'teams', 'storylines', 'tournaments', 'facilities', 'summary', 'externalUrl', 'history']
+
+// Optional 0.9.x promotion fields a database may carry. Not required: older
+// packs and the base datapack omit them.
+const OPTIONAL_PROMOTION_KEYS = ['sponsorships', 'schools', 'arenaPopularity', 'arenaPopularityDecayOn', 'arenaPopularityGrownOn', 'finances', 'allianceId', 'isIndie', 'closed', 'foundedDate', 'monthShowNet']
 
 // Older datapack exports carry these; the game ignores them
 const LEGACY_PROMOTION_KEYS = ['brands', 'enforceBrandSplit']
@@ -692,6 +698,8 @@ export const checkDb = (db, {strict = false} = {}) => {
 		enumCheck(at, w, 'style', ENUMS.style)
 		enumCheck(at, w, 'cardPosition', ENUMS.card)
 		enumCheck(at, w, 'finisherType', ENUMS.finisherType)
+		if (has(w, 'gimmickType')) enumCheck(at, w, 'gimmickType', ENUMS.gimmickType)
+		if (has(w, 'commentatorType')) enumCheck(at, w, 'commentatorType', ENUMS.commentatorType)
 		for (const k of STAT_KEYS) if (!isNum(w[k]) || w[k] < 0 || w[k] > 100) err(at, `${k} must be a number 0–100`)
 		if (isNum(w.potentialAbility) && isNum(w.currentAbility) && w.potentialAbility < w.currentAbility) err(at, 'potentialAbility below currentAbility')
 		for (const k of ['dateOfBirth', 'debut']) if (!isDate(w[k])) err(at, `${k} is not an ISO date`)
@@ -826,7 +834,7 @@ export const checkDb = (db, {strict = false} = {}) => {
 			}
 			if (arr(t.memberIds).length < 2) warn(tat, 'fewer than 2 members (the game drops it)')
 		}
-		for (const k of Object.keys(p)) if (!PROMOTION_KEYS.includes(k) && !LEGACY_PROMOTION_KEYS.includes(k)) warn(at, `unknown field "${k}"`)
+		for (const k of Object.keys(p)) if (!PROMOTION_KEYS.includes(k) && !LEGACY_PROMOTION_KEYS.includes(k) && !OPTIONAL_PROMOTION_KEYS.includes(k)) warn(at, `unknown field "${k}"`)
 
 		const roster = wrestlers.filter(w => w.promotionId === p.id)
 		const count = type => roster.filter(w => w.type === type).length

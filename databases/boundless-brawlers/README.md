@@ -2,6 +2,10 @@
 
 A wrestling roster of 121 legendary characters from mythology, classic literature, history, and early cinema — all reimagined as wrestling superstars. Every character is in the public domain.
 
+## Version
+
+**1.2.0** — updated for game **0.9.5**. Adds gimmick types and free-text gimmicks, commentator call styles, contract clauses (indie appearances, non-compete, auto-renew), sponsorships, wrestling schools, a promotion alliance, a CCW brand split, and seeded storylines and tournaments.
+
 ## Contents
 
 - **wrestlers.json**: 121 wrestlers and 30 staff split across two promotions

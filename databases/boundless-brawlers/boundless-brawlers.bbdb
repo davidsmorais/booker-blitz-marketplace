@@ -1,8 +1,8 @@
 {
   "format": "bbdb",
   "version": 1,
-  "name": "Default",
-  "exportedAt": "2026-09-25T22:19:16.913Z",
+  "name": "Public Domain Classics",
+  "exportedAt": "2026-11-19T17:27:41.140Z",
   "files": {
     "promotions.json": [
       {
@@ -15,7 +15,7 @@
         "balance": 3000000,
         "momentum": "hot",
         "audienceSize": "big",
-        "enforceShowSplit": false,
+        "enforceShowSplit": true,
         "houseShowAttendance": "medium",
         "houseShowCostLevel": 15000,
         "houseShowsPerMonth": 4,
@@ -186,7 +186,11 @@
                   "pic": "wrestler-0133.webp"
                 }
               ]
-            }
+            },
+            "isBrand": true,
+            "brandTitleNames": [
+              "CCW Tag Team Championship"
+            ]
           },
           {
             "name": "Olympus Unleashed",
@@ -254,7 +258,14 @@
                   "pic": "wrestler-0133.webp"
                 }
               ]
-            }
+            },
+            "isBrand": true,
+            "brandTitleNames": [
+              "CCW World Heavyweight Championship",
+              "CCW Intercontinental Championship",
+              "CCW Goddess Championship",
+              "CCW Mythic Rumble Championship"
+            ]
           }
         ],
         "ppvs": [
@@ -546,7 +557,14 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 28,
+            "numberOneContender": {
+              "id": 2,
+              "name": "Loki",
+              "pic": "wrestler-0002.webp"
+            },
+            "numberOneContenderSince": "2026-01-01"
           },
           {
             "name": "CCW Intercontinental Championship",
@@ -574,7 +592,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 21
           },
           {
             "name": "CCW Goddess Championship",
@@ -602,7 +621,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 28
           },
           {
             "name": "CCW Tag Team Championship",
@@ -635,7 +655,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 21
           },
           {
             "name": "CCW Mythic Rumble Championship",
@@ -663,7 +684,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 14
           }
         ],
         "teams": [
@@ -721,8 +743,160 @@
             "dateCreated": "2026-01-01T00:00:00.000Z"
           }
         ],
-        "storylines": [],
-        "tournaments": [],
+        "storylines": [
+          {
+            "id": 1,
+            "name": "The Monster of Heorot",
+            "description": "Beowulf has hunted Grendel across the mead halls of the Colosseum, and the monster answers in the dark.",
+            "sides": [
+              {
+                "name": "Beowulf",
+                "participants": [
+                  {
+                    "id": 36,
+                    "name": "Beowulf",
+                    "pic": "wrestler-0036.webp"
+                  }
+                ]
+              },
+              {
+                "name": "Grendel",
+                "participants": [
+                  {
+                    "id": 35,
+                    "name": "Grendel",
+                    "pic": "wrestler-0035.webp"
+                  }
+                ]
+              }
+            ],
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "momentum": "hot",
+            "rating": 72,
+            "weeklyRatings": [],
+            "events": []
+          },
+          {
+            "id": 2,
+            "name": "Storm Over Olympus",
+            "description": "Thor and Susanoo both claim the storm, and the sky over the Colosseum splits in two.",
+            "sides": [
+              {
+                "name": "Thor",
+                "participants": [
+                  {
+                    "id": 3,
+                    "name": "Thor",
+                    "pic": "wrestler-0003.webp"
+                  }
+                ]
+              },
+              {
+                "name": "Susanoo",
+                "participants": [
+                  {
+                    "id": 15,
+                    "name": "Susanoo",
+                    "pic": "wrestler-0015.webp"
+                  }
+                ]
+              }
+            ],
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "momentum": "hot",
+            "rating": 70,
+            "weeklyRatings": [],
+            "events": []
+          },
+          {
+            "id": 3,
+            "name": "The Detective and the Count",
+            "description": "Sherlock Holmes has a case, and Dracula is the only suspect who never leaves a clue.",
+            "sides": [
+              {
+                "name": "Sherlock Holmes",
+                "participants": [
+                  {
+                    "id": 39,
+                    "name": "Sherlock Holmes",
+                    "pic": "wrestler-0039.webp"
+                  }
+                ]
+              },
+              {
+                "name": "Dracula",
+                "participants": [
+                  {
+                    "id": 40,
+                    "name": "Dracula",
+                    "pic": "wrestler-0040.webp"
+                  }
+                ]
+              }
+            ],
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "momentum": "medium",
+            "rating": 68,
+            "weeklyRatings": [],
+            "events": []
+          }
+        ],
+        "tournaments": [
+          {
+            "id": "tn-ccw-titanomachy",
+            "name": "Titanomachy Tournament",
+            "description": "Eight Colosseum legends enter the Titanomachy; one leaves with the marquee.",
+            "type": "single-elimination",
+            "participantType": "singles",
+            "status": "upcoming",
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "promotionId": 1,
+            "participants": [
+              {
+                "id": 1,
+                "name": "Heracles",
+                "pic": "wrestler-0001.webp"
+              },
+              {
+                "id": 3,
+                "name": "Thor",
+                "pic": "wrestler-0003.webp"
+              },
+              {
+                "id": 8,
+                "name": "Achilles",
+                "pic": "wrestler-0008.webp"
+              },
+              {
+                "id": 17,
+                "name": "Set",
+                "pic": "wrestler-0017.webp"
+              },
+              {
+                "id": 34,
+                "name": "Ravana",
+                "pic": "wrestler-0034.webp"
+              },
+              {
+                "id": 75,
+                "name": "Genghis Khan",
+                "pic": "wrestler-0075.webp"
+              },
+              {
+                "id": 26,
+                "name": "Paul Bunyan",
+                "pic": "wrestler-0026.webp"
+              },
+              {
+                "id": 55,
+                "name": "Robin Hood",
+                "pic": "wrestler-0055.webp"
+              }
+            ],
+            "matches": [],
+            "seeded": true
+          }
+        ],
         "facilities": [
           {
             "type": "arena",
@@ -737,7 +911,7 @@
             "level": 3
           },
           {
-            "type": "training_facility",
+            "type": "academy",
             "level": 3
           }
         ],
@@ -749,7 +923,51 @@
           "monthlyMomentum": [],
           "departures": [],
           "arrivals": []
-        }
+        },
+        "allianceId": 1,
+        "schools": [
+          {
+            "id": "school-ccw",
+            "base": "Greece",
+            "name": "Colosseum Academy",
+            "openedDate": "2025-01-01T00:00:00.000Z",
+            "headTrainerId": 136
+          }
+        ],
+        "sponsorships": [
+          {
+            "id": "sp-ccw-ambrosia",
+            "name": "Ambrosia Beverages",
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "monthlyAmount": 15000,
+            "perShowAmount": 3000,
+            "prestigeLoss": 2,
+            "durationMinutes": 90,
+            "obligationType": "wrestler_segments",
+            "obligationParticipantIds": [
+              1,
+              3
+            ],
+            "segmentCount": 2
+          },
+          {
+            "id": "sp-ccw-olympus",
+            "name": "Olympus Equipment",
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "monthlyAmount": 20000,
+            "perShowAmount": 5000,
+            "prestigeLoss": 3,
+            "durationMinutes": 120,
+            "obligationType": "wrestler_match",
+            "obligationParticipantIds": [
+              8,
+              9
+            ],
+            "segmentCount": 1
+          }
+        ]
       },
       {
         "id": 2,
@@ -1224,7 +1442,14 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 28,
+            "numberOneContender": {
+              "id": 109,
+              "name": "Mordred",
+              "pic": "wrestler-0109.webp"
+            },
+            "numberOneContenderSince": "2026-01-01"
           },
           {
             "name": "WPW Spectral Championship",
@@ -1252,7 +1477,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 21
           },
           {
             "name": "WPW Heroines Championship",
@@ -1280,7 +1506,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 28
           },
           {
             "name": "WPW Tag Team Championship",
@@ -1313,7 +1540,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 21
           },
           {
             "name": "WPW Literary Legends Championship",
@@ -1341,7 +1569,8 @@
                 "defences": [],
                 "event": ""
               }
-            ]
+            ],
+            "defenceFrequencyDays": 14
           }
         ],
         "teams": [
@@ -1400,8 +1629,165 @@
             "dateCreated": "2026-01-01T00:00:00.000Z"
           }
         ],
-        "storylines": [],
-        "tournaments": [],
+        "storylines": [
+          {
+            "id": 1,
+            "name": "The Fall of Camelot",
+            "description": "Mordred moves against the once and future king, and the round table cracks down the middle.",
+            "sides": [
+              {
+                "name": "King Arthur",
+                "participants": [
+                  {
+                    "id": 105,
+                    "name": "King Arthur",
+                    "pic": "wrestler-0105.webp"
+                  }
+                ]
+              },
+              {
+                "name": "Mordred",
+                "participants": [
+                  {
+                    "id": 109,
+                    "name": "Mordred",
+                    "pic": "wrestler-0109.webp"
+                  }
+                ]
+              }
+            ],
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "momentum": "hot",
+            "rating": 74,
+            "weeklyRatings": [],
+            "events": []
+          },
+          {
+            "id": 2,
+            "name": "The Pirate Queens' Code",
+            "description": "Anne Bonny and Mary Read sail under their own flag, and Blackbeard wants the sea for himself.",
+            "sides": [
+              {
+                "name": "Anne Bonny & Mary Read",
+                "participants": [
+                  {
+                    "id": 87,
+                    "name": "Anne Bonny",
+                    "pic": "wrestler-0087.webp"
+                  },
+                  {
+                    "id": 88,
+                    "name": "Mary Read",
+                    "pic": "wrestler-0088.webp"
+                  }
+                ]
+              },
+              {
+                "name": "Blackbeard",
+                "participants": [
+                  {
+                    "id": 86,
+                    "name": "Blackbeard",
+                    "pic": "wrestler-0086.webp"
+                  }
+                ]
+              }
+            ],
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "momentum": "medium",
+            "rating": 66,
+            "weeklyRatings": [],
+            "events": []
+          },
+          {
+            "id": 3,
+            "name": "The Phantom's Obsession",
+            "description": "The Phantom of the opera has one obsession, and Christine Daaé is it.",
+            "sides": [
+              {
+                "name": "The Phantom",
+                "participants": [
+                  {
+                    "id": 114,
+                    "name": "The Phantom",
+                    "pic": "wrestler-0114.webp"
+                  }
+                ]
+              },
+              {
+                "name": "Christine Daaé",
+                "participants": [
+                  {
+                    "id": 115,
+                    "name": "Christine Daae",
+                    "pic": "wrestler-0115.webp"
+                  }
+                ]
+              }
+            ],
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "momentum": "medium",
+            "rating": 64,
+            "weeklyRatings": [],
+            "events": []
+          }
+        ],
+        "tournaments": [
+          {
+            "id": "tn-wpw-looking-glass",
+            "name": "Looking Glass Grand Prix",
+            "description": "The Looking Glass Grand Prix sorts the surreal from the impossible.",
+            "type": "single-elimination",
+            "participantType": "singles",
+            "status": "upcoming",
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "promotionId": 2,
+            "participants": [
+              {
+                "id": 105,
+                "name": "King Arthur",
+                "pic": "wrestler-0105.webp"
+              },
+              {
+                "id": 107,
+                "name": "Lancelot",
+                "pic": "wrestler-0107.webp"
+              },
+              {
+                "id": 106,
+                "name": "Merlin",
+                "pic": "wrestler-0106.webp"
+              },
+              {
+                "id": 81,
+                "name": "Vlad III",
+                "pic": "wrestler-0081.webp"
+              },
+              {
+                "id": 86,
+                "name": "Blackbeard",
+                "pic": "wrestler-0086.webp"
+              },
+              {
+                "id": 110,
+                "name": "Count Orlok",
+                "pic": "wrestler-0110.webp"
+              },
+              {
+                "id": 98,
+                "name": "Rasputin",
+                "pic": "wrestler-0098.webp"
+              },
+              {
+                "id": 100,
+                "name": "Napoleon",
+                "pic": "wrestler-0100.webp"
+              }
+            ],
+            "matches": [],
+            "seeded": true
+          }
+        ],
         "facilities": [
           {
             "type": "arena",
@@ -1418,6 +1804,10 @@
           {
             "type": "production_studio",
             "level": 3
+          },
+          {
+            "type": "academy",
+            "level": 2
           }
         ],
         "summary": "Every Match is Somebody's Nightmare. A surreal and gothic wrestling promotion pulling talent from literature, pulp, and cinema. Where the impossible becomes reality.",
@@ -1428,7 +1818,51 @@
           "monthlyMomentum": [],
           "departures": [],
           "arrivals": []
-        }
+        },
+        "allianceId": 1,
+        "schools": [
+          {
+            "id": "school-wpw",
+            "base": "UK",
+            "name": "Looking Glass Academy",
+            "openedDate": "2025-01-01T00:00:00.000Z",
+            "headTrainerId": 151
+          }
+        ],
+        "sponsorships": [
+          {
+            "id": "sp-wpw-wonderland",
+            "name": "Wonderland Confections",
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "monthlyAmount": 12000,
+            "perShowAmount": 2500,
+            "prestigeLoss": 2,
+            "durationMinutes": 90,
+            "obligationType": "wrestler_segments",
+            "obligationParticipantIds": [
+              66,
+              67
+            ],
+            "segmentCount": 2
+          },
+          {
+            "id": "sp-wpw-emerald",
+            "name": "Emerald City Bank",
+            "startDate": "2026-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "monthlyAmount": 18000,
+            "perShowAmount": 4000,
+            "prestigeLoss": 3,
+            "durationMinutes": 120,
+            "obligationType": "wrestler_match",
+            "obligationParticipantIds": [
+              105,
+              107
+            ],
+            "segmentCount": 1
+          }
+        ]
       }
     ],
     "wrestlers.json": [
@@ -1471,7 +1905,7 @@
         "inDevelopment": false,
         "story": "The ultimate strongman, completing twelve legendary labors. Unstoppable force.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -1483,7 +1917,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 2,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -1521,7 +1958,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0001.webp"
+        "picture": "wrestler-0001.webp",
+        "gimmickType": "monster",
+        "gimmick": "The Twelve Labors strongman who no-sells everything.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 2,
@@ -1562,7 +2002,7 @@
         "inDevelopment": false,
         "story": "Master of deception and tricks, always working an angle.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Norway",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -1574,7 +2014,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 2,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -1612,7 +2055,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0002.webp"
+        "picture": "wrestler-0002.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The trickster god of screwjob finishes.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 3,
@@ -1653,7 +2099,7 @@
         "inDevelopment": false,
         "story": "The thunder god, commanding with hammer and storm.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Norway",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -1665,7 +2111,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -1703,7 +2152,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0003.webp"
+        "picture": "wrestler-0003.webp",
+        "gimmickType": "monster",
+        "gimmick": "The storm-lord who swings a hammer at the ring post.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 4,
@@ -1744,7 +2196,7 @@
         "inDevelopment": false,
         "story": "Ancient one-eyed patriarch, authority and wisdom.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Norway",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -1756,7 +2208,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -1794,7 +2249,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0004.webp"
+        "picture": "wrestler-0004.webp",
+        "gimmickType": "authority",
+        "gimmick": "The one-eyed Allfather and veteran authority.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 5,
@@ -1835,7 +2293,7 @@
         "inDevelopment": false,
         "story": "Spider-trickster, always spinning a new angle.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Nigeria",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -1885,7 +2343,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0005.webp"
+        "picture": "wrestler-0005.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The spider-trickster who always has an angle.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 6,
@@ -1926,7 +2387,7 @@
         "inDevelopment": false,
         "story": "Slavic witch, unpredictable and terrifying.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Russia",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -1938,7 +2399,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -1976,7 +2440,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0006.webp"
+        "picture": "wrestler-0006.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The witch of the hut on chicken legs.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 7,
@@ -2017,7 +2484,7 @@
         "inDevelopment": false,
         "story": "Gorgon with petrifying gaze, submission specialist.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -2029,7 +2496,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2067,7 +2537,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0007.webp"
+        "picture": "wrestler-0007.webp",
+        "gimmickType": "monster",
+        "gimmick": "The gorgon whose stare turns opponents to stone.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 8,
@@ -2108,7 +2581,7 @@
         "inDevelopment": false,
         "story": "Greek warrior with one legendary weakness.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-03-01T00:00:00.000Z",
         "contract": {
@@ -2120,7 +2593,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2158,7 +2634,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0008.webp"
+        "picture": "wrestler-0008.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The invincible warrior with one weak heel.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 9,
@@ -2199,7 +2678,7 @@
         "inDevelopment": false,
         "story": "Noble Trojan warrior, honorable and strong.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-04-01T00:00:00.000Z",
         "contract": {
@@ -2211,7 +2690,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 4,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2249,7 +2731,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0009.webp"
+        "picture": "wrestler-0009.webp",
+        "gimmickType": "fighter",
+        "gimmick": "Troy's honorable champion and underdog.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 10,
@@ -2290,7 +2775,7 @@
         "inDevelopment": false,
         "story": "Winged-sandal warrior, soaring aerial attacks.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-05-01T00:00:00.000Z",
         "contract": {
@@ -2340,7 +2825,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0010.webp"
+        "picture": "wrestler-0010.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The shield-and-sword high-spot artist.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 11,
@@ -2381,7 +2869,7 @@
         "inDevelopment": false,
         "story": "Enchantress, turning opponents into prey.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-06-01T00:00:00.000Z",
         "contract": {
@@ -2393,7 +2881,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 4,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2431,7 +2922,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0011.webp"
+        "picture": "wrestler-0011.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The sorceress who turns jobbers into pigs.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 12,
@@ -2472,7 +2966,7 @@
         "inDevelopment": false,
         "story": "Vengeful sorceress, traps her rivals.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-07-01T00:00:00.000Z",
         "contract": {
@@ -2522,7 +3016,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0012.webp"
+        "picture": "wrestler-0012.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The vengeful sorceress of betrayal.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 13,
@@ -2563,7 +3060,7 @@
         "inDevelopment": false,
         "story": "Fastest warrior alive, swift and deadly.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-08-01T00:00:00.000Z",
         "contract": {
@@ -2613,7 +3110,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0013.webp"
+        "picture": "wrestler-0013.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The fastest woman on the roster.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 14,
@@ -2654,7 +3154,7 @@
         "inDevelopment": false,
         "story": "Sun goddess, radiant and all-seeing.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Japan",
         "managerId": 0,
         "contractExpiryDate": "2027-09-01T00:00:00.000Z",
         "contract": {
@@ -2666,7 +3166,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2704,7 +3207,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0014.webp"
+        "picture": "wrestler-0014.webp",
+        "gimmickType": "authority",
+        "gimmick": "The sun goddess who brightens dark arenas.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 15,
@@ -2745,7 +3251,7 @@
         "inDevelopment": false,
         "story": "Storm god, chaotic and destructive.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Japan",
         "managerId": 0,
         "contractExpiryDate": "2027-10-01T00:00:00.000Z",
         "contract": {
@@ -2757,7 +3263,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2795,7 +3304,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0015.webp"
+        "picture": "wrestler-0015.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The chaotic storm-god brawler.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 16,
@@ -2836,7 +3348,7 @@
         "inDevelopment": false,
         "story": "Thunder drummer, percussion-powered brawler.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Japan",
         "managerId": 0,
         "contractExpiryDate": "2027-11-01T00:00:00.000Z",
         "contract": {
@@ -2886,7 +3398,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0016.webp"
+        "picture": "wrestler-0016.webp",
+        "gimmickType": "monster",
+        "gimmick": "The drum-and-thunder doom bringer.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 17,
@@ -2927,7 +3442,7 @@
         "inDevelopment": false,
         "story": "Egyptian storm destroyer, ruthless.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Egypt",
         "managerId": 0,
         "contractExpiryDate": "2027-12-01T00:00:00.000Z",
         "contract": {
@@ -2939,7 +3454,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -2977,7 +3495,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0017.webp"
+        "picture": "wrestler-0017.webp",
+        "gimmickType": "monster",
+        "gimmick": "The desert-storm destroyer.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 18,
@@ -3018,7 +3539,7 @@
         "inDevelopment": false,
         "story": "Jackal-headed judge of the dead.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Egypt",
         "managerId": 0,
         "contractExpiryDate": "2028-01-01T00:00:00.000Z",
         "contract": {
@@ -3068,7 +3589,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0018.webp"
+        "picture": "wrestler-0018.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The masked judge of worth.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 19,
@@ -3109,7 +3633,7 @@
         "inDevelopment": false,
         "story": "Egyptian protector, healer and mother.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Egypt",
         "managerId": 0,
         "contractExpiryDate": "2028-02-01T00:00:00.000Z",
         "contract": {
@@ -3121,7 +3645,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 6,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -3159,7 +3686,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0019.webp"
+        "picture": "wrestler-0019.webp",
+        "gimmickType": "authority",
+        "gimmick": "The protector who revives fallen tag partners.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 20,
@@ -3200,7 +3730,7 @@
         "inDevelopment": false,
         "story": "Falcon-eyed aerial warrior.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Egypt",
         "managerId": 0,
         "contractExpiryDate": "2028-03-01T00:00:00.000Z",
         "contract": {
@@ -3250,7 +3780,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0020.webp"
+        "picture": "wrestler-0020.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The falcon-winged aerial specialist.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 21,
@@ -3291,7 +3824,7 @@
         "inDevelopment": false,
         "story": "Lioness warrior, no mercy in battle.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Egypt",
         "managerId": 0,
         "contractExpiryDate": "2028-04-01T00:00:00.000Z",
         "contract": {
@@ -3341,7 +3874,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0021.webp"
+        "picture": "wrestler-0021.webp",
+        "gimmickType": "monster",
+        "gimmick": "The lioness who shows no remorse.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 22,
@@ -3382,7 +3918,7 @@
         "inDevelopment": false,
         "story": "Celtic berserker, battle-rage finisher.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Ireland",
         "managerId": 0,
         "contractExpiryDate": "2028-05-01T00:00:00.000Z",
         "contract": {
@@ -3394,7 +3930,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 6,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -3432,7 +3971,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0022.webp"
+        "picture": "wrestler-0022.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The battle-rage spearman.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 23,
@@ -3473,7 +4015,7 @@
         "inDevelopment": false,
         "story": "Crow goddess, predicts defeat.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Ireland",
         "managerId": 0,
         "contractExpiryDate": "2028-06-01T00:00:00.000Z",
         "contract": {
@@ -3523,7 +4065,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0023.webp"
+        "picture": "wrestler-0023.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The crow-haired oracle of defeat.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 24,
@@ -3564,7 +4109,7 @@
         "inDevelopment": false,
         "story": "Irish giant, strength beyond measure.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Ireland",
         "managerId": 0,
         "contractExpiryDate": "2026-07-01T00:00:00.000Z",
         "contract": {
@@ -3614,7 +4159,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0024.webp"
+        "picture": "wrestler-0024.webp",
+        "gimmickType": "monster",
+        "gimmick": "The giant's-causeway strongman.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 25,
@@ -3655,7 +4203,7 @@
         "inDevelopment": false,
         "story": "Trickster fox, never plays by the rules.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -3705,7 +4253,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0025.webp"
+        "picture": "wrestler-0025.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The trickster who always has a run-in.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 26,
@@ -3746,7 +4297,7 @@
         "inDevelopment": false,
         "story": "American legend, giant lumberjack.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -3758,7 +4309,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 2,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -3796,7 +4350,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0026.webp"
+        "picture": "wrestler-0026.webp",
+        "gimmickType": "monster",
+        "gimmick": "The literal giant with an axe.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 27,
@@ -3837,7 +4394,7 @@
         "inDevelopment": false,
         "story": "Wild west cowboy, lasso master.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -3887,7 +4444,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0027.webp"
+        "picture": "wrestler-0027.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The cowboy who lassos finishers.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 28,
@@ -3928,7 +4488,7 @@
         "inDevelopment": false,
         "story": "Steel-driving man, fights the machine.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -3940,7 +4500,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -3978,7 +4541,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0028.webp"
+        "picture": "wrestler-0028.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The steel-driving underdog.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 29,
@@ -4019,7 +4585,7 @@
         "inDevelopment": false,
         "story": "Trickster rabbit, outsmarts the big guys.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -4069,7 +4635,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0029.webp"
+        "picture": "wrestler-0029.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The briar-patch trickster who outsmarts bigger foes.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 30,
@@ -4110,7 +4679,7 @@
         "inDevelopment": false,
         "story": "Haitian death spirit, unnerving presence.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Other",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -4160,7 +4729,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0030.webp"
+        "picture": "wrestler-0030.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The graveyard dandy of the dead.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 31,
@@ -4201,7 +4773,7 @@
         "inDevelopment": false,
         "story": "Hindu destroyer goddess, fierce and untamed.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "India",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -4213,7 +4785,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -4251,7 +4826,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0031.webp"
+        "picture": "wrestler-0031.webp",
+        "gimmickType": "monster",
+        "gimmick": "The many-armed destroyer.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 32,
@@ -4292,7 +4870,7 @@
         "inDevelopment": false,
         "story": "Monkey king, acrobatic aerial legend.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "India",
         "managerId": 0,
         "contractExpiryDate": "2027-03-01T00:00:00.000Z",
         "contract": {
@@ -4304,7 +4882,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -4342,7 +4923,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0032.webp"
+        "picture": "wrestler-0032.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The monkey-king aerial ace.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 33,
@@ -4383,7 +4967,7 @@
         "inDevelopment": false,
         "story": "Thunder king, divine authority.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "India",
         "managerId": 0,
         "contractExpiryDate": "2027-04-01T00:00:00.000Z",
         "contract": {
@@ -4433,7 +5017,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0033.webp"
+        "picture": "wrestler-0033.webp",
+        "gimmickType": "authority",
+        "gimmick": "The thunderbolt-wielding king of gods.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 34,
@@ -4474,7 +5061,7 @@
         "inDevelopment": false,
         "story": "Ten-headed sorcerer, cunning and evil.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "India",
         "managerId": 0,
         "contractExpiryDate": "2027-05-01T00:00:00.000Z",
         "contract": {
@@ -4486,7 +5073,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 4,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -4524,7 +5114,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0034.webp"
+        "picture": "wrestler-0034.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The ten-headed mind-game tyrant.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 35,
@@ -4565,7 +5158,7 @@
         "inDevelopment": false,
         "story": "Beowulf-era monster, pure destruction.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-06-01T00:00:00.000Z",
         "contract": {
@@ -4615,7 +5208,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0035.webp"
+        "picture": "wrestler-0035.webp",
+        "gimmickType": "monster",
+        "gimmick": "The monster who feasts in the dark.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 36,
@@ -4656,7 +5252,7 @@
         "inDevelopment": false,
         "story": "Monster-hunter warrior, legendary strength.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-07-01T00:00:00.000Z",
         "contract": {
@@ -4668,7 +5264,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 4,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -4706,7 +5305,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0036.webp"
+        "picture": "wrestler-0036.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The monster-hunter of Heorot.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 37,
@@ -4747,7 +5349,7 @@
         "inDevelopment": false,
         "story": "Norse valkyrie, warrior woman.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Norway",
         "managerId": 0,
         "contractExpiryDate": "2027-08-01T00:00:00.000Z",
         "contract": {
@@ -4797,7 +5399,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0037.webp"
+        "picture": "wrestler-0037.webp",
+        "gimmickType": "authority",
+        "gimmick": "The valkyrie who escorts the fallen.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 38,
@@ -4838,7 +5443,7 @@
         "inDevelopment": false,
         "story": "Wolf-beast, unchained fury.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Norway",
         "managerId": 0,
         "contractExpiryDate": "2027-09-01T00:00:00.000Z",
         "contract": {
@@ -4888,7 +5493,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0038.webp"
+        "picture": "wrestler-0038.webp",
+        "gimmickType": "monster",
+        "gimmick": "The unchained wolf of the apocalypse.",
+        "brandShowName": "Olympus Unleashed"
       },
       {
         "id": 39,
@@ -4929,7 +5537,7 @@
         "inDevelopment": false,
         "story": "Master detective, solves every match.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-10-01T00:00:00.000Z",
         "contract": {
@@ -4941,7 +5549,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -4979,7 +5590,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0039.webp"
+        "picture": "wrestler-0039.webp",
+        "gimmickType": "technician",
+        "gimmick": "The detective who solves your offense mid-match.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 40,
@@ -5020,7 +5634,7 @@
         "inDevelopment": false,
         "story": "Count vampire, aristocratic darkness.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Europe",
         "managerId": 0,
         "contractExpiryDate": "2027-11-01T00:00:00.000Z",
         "contract": {
@@ -5032,7 +5646,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -5070,7 +5687,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0040.webp"
+        "picture": "wrestler-0040.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The hypnotic aristocrat of the night.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 41,
@@ -5111,7 +5731,7 @@
         "inDevelopment": false,
         "story": "Dual personality, transforms mid-match.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-12-01T00:00:00.000Z",
         "contract": {
@@ -5123,7 +5743,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -5161,7 +5784,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0041.webp"
+        "picture": "wrestler-0041.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The doctor with a second face.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 42,
@@ -5202,7 +5828,7 @@
         "inDevelopment": false,
         "story": "Bandaged mystery man, unseen danger.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-01-01T00:00:00.000Z",
         "contract": {
@@ -5252,7 +5878,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0042.webp"
+        "picture": "wrestler-0042.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The bandaged mystery man.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 43,
@@ -5293,7 +5922,7 @@
         "inDevelopment": false,
         "story": "Submarine inventor, outsider hero.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2028-02-01T00:00:00.000Z",
         "contract": {
@@ -5305,7 +5934,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 6,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -5343,7 +5975,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0043.webp"
+        "picture": "wrestler-0043.webp",
+        "gimmickType": "authority",
+        "gimmick": "The inventor-outsider of the deep.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 44,
@@ -5384,7 +6019,7 @@
         "inDevelopment": false,
         "story": "Obsessed whaler, one feud forever.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-03-01T00:00:00.000Z",
         "contract": {
@@ -5434,7 +6069,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0044.webp"
+        "picture": "wrestler-0044.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The peg-legged obsessive hunting the whale.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 45,
@@ -5475,7 +6113,7 @@
         "inDevelopment": false,
         "story": "Pirate captain, cunning and cruel.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2028-04-01T00:00:00.000Z",
         "contract": {
@@ -5525,7 +6163,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0045.webp"
+        "picture": "wrestler-0045.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The parrot-backed pirate schemer.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 46,
@@ -5566,7 +6207,7 @@
         "inDevelopment": false,
         "story": "Musketeer swordsman, noble fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2028-05-01T00:00:00.000Z",
         "contract": {
@@ -5578,7 +6219,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 6,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -5616,7 +6260,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0046.webp"
+        "picture": "wrestler-0046.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The musketeer with a blade and a quip.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 47,
@@ -5657,7 +6304,7 @@
         "inDevelopment": false,
         "story": "Musketeer stable member.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2028-06-01T00:00:00.000Z",
         "contract": {
@@ -5707,7 +6354,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0047.webp"
+        "picture": "wrestler-0047.webp",
+        "gimmickType": "authority",
+        "gimmick": "The brooding musketeer captain.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 48,
@@ -5748,7 +6398,7 @@
         "inDevelopment": false,
         "story": "Musketeer bruiser, strong and jovial.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2026-07-01T00:00:00.000Z",
         "contract": {
@@ -5798,7 +6448,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0048.webp"
+        "picture": "wrestler-0048.webp",
+        "gimmickType": "monster",
+        "gimmick": "The strongest musketeer.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 49,
@@ -5839,7 +6492,7 @@
         "inDevelopment": false,
         "story": "Musketeer schemer, calculated moves.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -5889,7 +6542,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0049.webp"
+        "picture": "wrestler-0049.webp",
+        "gimmickType": "technician",
+        "gimmick": "The technical musketeer.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 50,
@@ -5930,7 +6586,7 @@
         "inDevelopment": false,
         "story": "Count of Monte Cristo, revenge arc.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -5942,7 +6598,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 2,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -5980,7 +6639,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0050.webp"
+        "picture": "wrestler-0050.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The wronged count with a long memory.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 51,
@@ -6021,7 +6683,7 @@
         "inDevelopment": false,
         "story": "Hunchback warrior, sympathetic power.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -6071,7 +6733,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0051.webp"
+        "picture": "wrestler-0051.webp",
+        "gimmickType": "monster",
+        "gimmick": "The bell-ringer with a heart of gold.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 52,
@@ -6112,7 +6777,7 @@
         "inDevelopment": false,
         "story": "Created horror, seeking redemption.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -6124,7 +6789,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -6162,7 +6830,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0052.webp"
+        "picture": "wrestler-0052.webp",
+        "gimmickType": "monster",
+        "gimmick": "The misunderstood monster.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 53,
@@ -6203,7 +6874,7 @@
         "inDevelopment": false,
         "story": "Ageless beauty, corrupting influence.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -6215,7 +6886,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -6253,7 +6927,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0053.webp"
+        "picture": "wrestler-0053.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The man who never ages.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 54,
@@ -6294,7 +6971,7 @@
         "inDevelopment": false,
         "story": "Guilt-ridden killer, self-sabotaging.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Russia",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -6344,7 +7021,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0054.webp"
+        "picture": "wrestler-0054.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The self-saboteur with a guilty conscience.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 55,
@@ -6385,7 +7065,7 @@
         "inDevelopment": false,
         "story": "Outlaw hero, steals victories.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -6397,7 +7077,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -6435,7 +7118,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0055.webp"
+        "picture": "wrestler-0055.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The outlaw who steals finishes.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 56,
@@ -6476,7 +7162,7 @@
         "inDevelopment": false,
         "story": "Robin's partner, quarter-staff master.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-03-01T00:00:00.000Z",
         "contract": {
@@ -6526,7 +7212,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0056.webp"
+        "picture": "wrestler-0056.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The quarterstaff powerhouse.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 57,
@@ -6567,7 +7256,7 @@
         "inDevelopment": false,
         "story": "Brawling monk, righteous fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-04-01T00:00:00.000Z",
         "contract": {
@@ -6617,7 +7306,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0057.webp"
+        "picture": "wrestler-0057.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The brawling monk.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 58,
@@ -6658,7 +7350,7 @@
         "inDevelopment": false,
         "story": "Knight crusader, noble warrior.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-05-01T00:00:00.000Z",
         "contract": {
@@ -6670,7 +7362,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 4,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -6708,7 +7403,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0058.webp"
+        "picture": "wrestler-0058.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The knight of the jousting entrance.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 59,
@@ -6749,7 +7447,7 @@
         "inDevelopment": false,
         "story": "Poet-swordsman, best promos alive.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2027-06-01T00:00:00.000Z",
         "contract": {
@@ -6799,7 +7497,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0059.webp"
+        "picture": "wrestler-0059.webp",
+        "gimmickType": "celebrity",
+        "gimmick": "The poet-swordsman with the best promos.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 60,
@@ -6840,7 +7541,7 @@
         "inDevelopment": false,
         "story": "Frontier scout, cunning warrior.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2027-07-01T00:00:00.000Z",
         "contract": {
@@ -6890,7 +7591,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0060.webp"
+        "picture": "wrestler-0060.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The frontier scout.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 61,
@@ -6931,7 +7635,7 @@
         "inDevelopment": false,
         "story": "Mohican warrior, agile fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2027-08-01T00:00:00.000Z",
         "contract": {
@@ -6981,7 +7685,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0061.webp"
+        "picture": "wrestler-0061.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The agile warrior of the Lenape.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 62,
@@ -7022,7 +7729,7 @@
         "inDevelopment": false,
         "story": "Boy underdog, river-born trickster.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2027-09-01T00:00:00.000Z",
         "contract": {
@@ -7072,7 +7779,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0062.webp"
+        "picture": "wrestler-0062.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The raft-riding underdog.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 63,
@@ -7113,7 +7823,7 @@
         "inDevelopment": false,
         "story": "Boy schemer, whitewash finisher.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2027-10-01T00:00:00.000Z",
         "contract": {
@@ -7163,7 +7873,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0063.webp"
+        "picture": "wrestler-0063.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The schemer who tricks you into work.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 64,
@@ -7204,7 +7917,7 @@
         "inDevelopment": false,
         "story": "Pirate captain, hook-hand weapon.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-11-01T00:00:00.000Z",
         "contract": {
@@ -7216,7 +7929,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -7254,7 +7970,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0064.webp"
+        "picture": "wrestler-0064.webp",
+        "gimmickType": "authority",
+        "gimmick": "The hook-handed captain with a ticking clock.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 65,
@@ -7295,7 +8014,7 @@
         "inDevelopment": false,
         "story": "Never-aging flyer, eternal youth.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-12-01T00:00:00.000Z",
         "contract": {
@@ -7307,7 +8026,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 5,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -7345,7 +8067,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0065.webp"
+        "picture": "wrestler-0065.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The boy who never grows up.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 66,
@@ -7386,7 +8111,7 @@
         "inDevelopment": false,
         "story": "Oz's destroyer, water is weakness.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-01-01T00:00:00.000Z",
         "contract": {
@@ -7398,7 +8123,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 6,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -7436,7 +8164,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0066.webp"
+        "picture": "wrestler-0066.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The water-fearing witch of the west.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 67,
@@ -7477,7 +8208,7 @@
         "inDevelopment": false,
         "story": "Kansas girl, tornado-born fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-02-01T00:00:00.000Z",
         "contract": {
@@ -7489,7 +8220,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 6,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -7527,7 +8261,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0067.webp"
+        "picture": "wrestler-0067.webp",
+        "gimmickType": "celebrity",
+        "gimmick": "The tornado-tossed underdog.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 68,
@@ -7568,7 +8305,7 @@
         "inDevelopment": false,
         "story": "Rusted giant seeking heart.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-03-01T00:00:00.000Z",
         "contract": {
@@ -7618,7 +8355,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0068.webp"
+        "picture": "wrestler-0068.webp",
+        "gimmickType": "monster",
+        "gimmick": "The rust-prone strongman seeking a heart.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 69,
@@ -7659,7 +8399,7 @@
         "inDevelopment": false,
         "story": "Straw genius, hidden intellect.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-04-01T00:00:00.000Z",
         "contract": {
@@ -7709,7 +8449,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0069.webp"
+        "picture": "wrestler-0069.webp",
+        "gimmickType": "technician",
+        "gimmick": "The floppy scarecrow with real technical skill.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 70,
@@ -7750,7 +8493,7 @@
         "inDevelopment": false,
         "story": "Coward seeking courage, wins by luck.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-05-01T00:00:00.000Z",
         "contract": {
@@ -7800,7 +8543,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0070.webp"
+        "picture": "wrestler-0070.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The coward who wins by accident.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 71,
@@ -7841,7 +8587,7 @@
         "inDevelopment": false,
         "story": "Wonderland explorer, size-changing gimmick.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2028-06-01T00:00:00.000Z",
         "contract": {
@@ -7891,7 +8637,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0071.webp"
+        "picture": "wrestler-0071.webp",
+        "gimmickType": "daredevil",
+        "gimmick": "The girl who shrinks and grows.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 72,
@@ -7932,7 +8681,7 @@
         "inDevelopment": false,
         "story": "Chaotic teaparty ruler.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-07-01T00:00:00.000Z",
         "contract": {
@@ -7982,7 +8731,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0072.webp"
+        "picture": "wrestler-0072.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The chaos-breaking hatter.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 73,
@@ -8023,7 +8775,7 @@
         "inDevelopment": false,
         "story": "Card kingdom tyrant, off-with-heads.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -8035,7 +8787,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 2,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8073,7 +8828,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0073.webp"
+        "picture": "wrestler-0073.webp",
+        "gimmickType": "authority",
+        "gimmick": "The monarch who demands heads.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 74,
@@ -8114,7 +8872,7 @@
         "inDevelopment": false,
         "story": "Grinning trickster, disappears mid-match.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -8164,7 +8922,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0074.webp"
+        "picture": "wrestler-0074.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The vanishing cat with a lingering grin.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 75,
@@ -8205,7 +8966,7 @@
         "inDevelopment": false,
         "story": "Conqueror supreme, expands his empire.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Mongolia",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -8217,7 +8978,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8255,7 +9019,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0075.webp"
+        "picture": "wrestler-0075.webp",
+        "gimmickType": "authority",
+        "gimmick": "The conqueror who expands his stable.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 76,
@@ -8296,7 +9063,7 @@
         "inDevelopment": false,
         "story": "Egyptian queen, seductive controller.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Egypt",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -8308,7 +9075,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8346,7 +9116,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0076.webp"
+        "picture": "wrestler-0076.webp",
+        "gimmickType": "authority",
+        "gimmick": "The regal manipulator of alliances.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 77,
@@ -8387,7 +9160,7 @@
         "inDevelopment": false,
         "story": "Roman general, betrayal magnet.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Italy",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -8399,7 +9172,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8437,7 +9213,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0077.webp"
+        "picture": "wrestler-0077.webp",
+        "gimmickType": "authority",
+        "gimmick": "The dictator with the 'Et tu' finish.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 78,
@@ -8478,7 +9257,7 @@
         "inDevelopment": false,
         "story": "Slave rebel, underdog liberator.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Italy",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -8490,7 +9269,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8528,7 +9310,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0078.webp"
+        "picture": "wrestler-0078.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The rebel leading the lower-card revolt.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 79,
@@ -8569,7 +9354,7 @@
         "inDevelopment": false,
         "story": "Celtic warrior queen, chariot entrance.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -8581,7 +9366,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8619,7 +9407,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0079.webp"
+        "picture": "wrestler-0079.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The chariot-riding warrior queen.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 80,
@@ -8660,7 +9451,7 @@
         "inDevelopment": false,
         "story": "Maid of Orleans, inspirational leader.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2027-03-01T00:00:00.000Z",
         "contract": {
@@ -8672,7 +9463,10 @@
           "wage": 13000,
           "wageType": "monthly",
           "type": "exclusive",
-          "status": "active"
+          "status": "active",
+          "noCompeteMonths": 3,
+          "autoRenew": true,
+          "allowsIndieAppearances": true
         },
         "record": {
           "wins": 0,
@@ -8710,7 +9504,10 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0080.webp"
+        "picture": "wrestler-0080.webp",
+        "gimmickType": "authority",
+        "gimmick": "The inspirational commander.",
+        "brandShowName": "Colosseum Nights"
       },
       {
         "id": 81,
@@ -8751,7 +9548,7 @@
         "inDevelopment": false,
         "story": "Impaler lord, spike-filled battles.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Europe",
         "managerId": 0,
         "contractExpiryDate": "2027-04-01T00:00:00.000Z",
         "contract": {
@@ -8802,7 +9599,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0081.webp"
+        "picture": "wrestler-0081.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The impaler on the spike entrance."
       },
       {
         "id": 82,
@@ -8843,7 +9642,7 @@
         "inDevelopment": false,
         "story": "Hun scourge, devastating power.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Europe",
         "managerId": 0,
         "contractExpiryDate": "2027-05-01T00:00:00.000Z",
         "contract": {
@@ -8894,7 +9693,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0082.webp"
+        "picture": "wrestler-0082.webp",
+        "gimmickType": "monster",
+        "gimmick": "The Scourge of the Roster."
       },
       {
         "id": 83,
@@ -8935,7 +9736,7 @@
         "inDevelopment": false,
         "story": "Macedonian conqueror, undefeated arc.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-06-01T00:00:00.000Z",
         "contract": {
@@ -8986,7 +9787,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0083.webp"
+        "picture": "wrestler-0083.webp",
+        "gimmickType": "authority",
+        "gimmick": "The undefeated conqueror."
       },
       {
         "id": 84,
@@ -9027,7 +9830,7 @@
         "inDevelopment": false,
         "story": "Spartan king, This is Sparta.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-07-01T00:00:00.000Z",
         "contract": {
@@ -9078,7 +9881,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0084.webp"
+        "picture": "wrestler-0084.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The 300-strong king of the spear."
       },
       {
         "id": 85,
@@ -9119,7 +9924,7 @@
         "inDevelopment": false,
         "story": "Scottish freedom fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-08-01T00:00:00.000Z",
         "contract": {
@@ -9170,7 +9975,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0085.webp"
+        "picture": "wrestler-0085.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The freedom-fighting promo specialist."
       },
       {
         "id": 86,
@@ -9211,7 +10018,7 @@
         "inDevelopment": false,
         "story": "Pirate terror, flaming beard entrance.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-09-01T00:00:00.000Z",
         "contract": {
@@ -9262,7 +10069,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0086.webp"
+        "picture": "wrestler-0086.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The pirate with the lit fuses."
       },
       {
         "id": 87,
@@ -9303,7 +10112,7 @@
         "inDevelopment": false,
         "story": "Pirate woman, vicious fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-10-01T00:00:00.000Z",
         "contract": {
@@ -9354,7 +10163,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0087.webp"
+        "picture": "wrestler-0087.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The pirate queen of the crew."
       },
       {
         "id": 88,
@@ -9395,7 +10206,7 @@
         "inDevelopment": false,
         "story": "Pirate disguise artist, cutlass master.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-11-01T00:00:00.000Z",
         "contract": {
@@ -9446,7 +10257,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0088.webp"
+        "picture": "wrestler-0088.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The disguised pirate of the crew."
       },
       {
         "id": 89,
@@ -9487,7 +10300,7 @@
         "inDevelopment": false,
         "story": "Wild west brawler, tough and fearless.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2027-12-01T00:00:00.000Z",
         "contract": {
@@ -9538,7 +10351,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0089.webp"
+        "picture": "wrestler-0089.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The wild-west brawler."
       },
       {
         "id": 90,
@@ -9579,7 +10394,7 @@
         "inDevelopment": false,
         "story": "Lawman of the west, high noon countdown.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-01-01T00:00:00.000Z",
         "contract": {
@@ -9630,7 +10445,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0090.webp"
+        "picture": "wrestler-0090.webp",
+        "gimmickType": "authority",
+        "gimmick": "The lawman with the high-noon countdown."
       },
       {
         "id": 91,
@@ -9671,7 +10488,7 @@
         "inDevelopment": false,
         "story": "Young gunslinger, cocky outlaw.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-02-01T00:00:00.000Z",
         "contract": {
@@ -9722,7 +10539,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0091.webp"
+        "picture": "wrestler-0091.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The cocky young gun."
       },
       {
         "id": 92,
@@ -9763,7 +10582,7 @@
         "inDevelopment": false,
         "story": "Outlaw robber, steals finishes.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-03-01T00:00:00.000Z",
         "contract": {
@@ -9814,7 +10633,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0092.webp"
+        "picture": "wrestler-0092.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The outlaw who robs finishes."
       },
       {
         "id": 93,
@@ -9855,7 +10676,7 @@
         "inDevelopment": false,
         "story": "Sharpshooter, precision-strike finishes.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-04-01T00:00:00.000Z",
         "contract": {
@@ -9906,7 +10727,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0093.webp"
+        "picture": "wrestler-0093.webp",
+        "gimmickType": "technician",
+        "gimmick": "The sharpshooter with precision strikes."
       },
       {
         "id": 94,
@@ -9947,7 +10770,7 @@
         "inDevelopment": false,
         "story": "Strategic general, brilliant booking.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "China",
         "managerId": 0,
         "contractExpiryDate": "2028-05-01T00:00:00.000Z",
         "contract": {
@@ -9998,7 +10821,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0094.webp"
+        "picture": "wrestler-0094.webp",
+        "gimmickType": "authority",
+        "gimmick": "The strategist who wins before the bell."
       },
       {
         "id": 95,
@@ -10039,7 +10864,7 @@
         "inDevelopment": false,
         "story": "Carthaginian general, mountain crosser.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Italy",
         "managerId": 0,
         "contractExpiryDate": "2028-06-01T00:00:00.000Z",
         "contract": {
@@ -10090,7 +10915,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0095.webp"
+        "picture": "wrestler-0095.webp",
+        "gimmickType": "authority",
+        "gimmick": "The mountain-crossing tactician."
       },
       {
         "id": 96,
@@ -10131,7 +10958,7 @@
         "inDevelopment": false,
         "story": "Crusader king, noble warrior.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-07-01T00:00:00.000Z",
         "contract": {
@@ -10182,7 +11009,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0096.webp"
+        "picture": "wrestler-0096.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The crusader knight."
       },
       {
         "id": 97,
@@ -10223,7 +11052,7 @@
         "inDevelopment": false,
         "story": "Sultan honor, noble rival.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Turkey",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -10274,7 +11103,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0097.webp"
+        "picture": "wrestler-0097.webp",
+        "gimmickType": "authority",
+        "gimmick": "The honorable rival of the crusades."
       },
       {
         "id": 98,
@@ -10315,7 +11146,7 @@
         "inDevelopment": false,
         "story": "Mystic unkillable, near-supernatural no-sell.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Russia",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -10366,7 +11197,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0098.webp"
+        "picture": "wrestler-0098.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The near-unkillable mystic."
       },
       {
         "id": 99,
@@ -10407,7 +11240,7 @@
         "inDevelopment": false,
         "story": "Russian empress, regal authority.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Russia",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -10458,7 +11291,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0099.webp"
+        "picture": "wrestler-0099.webp",
+        "gimmickType": "authority",
+        "gimmick": "The regal authority of the court."
       },
       {
         "id": 100,
@@ -10499,7 +11334,7 @@
         "inDevelopment": false,
         "story": "Emperor obsessed, conquest gimmick.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -10550,7 +11385,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0100.webp"
+        "picture": "wrestler-0100.webp",
+        "gimmickType": "authority",
+        "gimmick": "The emperor obsessed with the crown."
       },
       {
         "id": 101,
@@ -10591,7 +11428,7 @@
         "inDevelopment": false,
         "story": "Roman tyrant, burns down arenas.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Italy",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -10642,7 +11479,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0101.webp"
+        "picture": "wrestler-0101.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The feckless emperor who burns angles."
       },
       {
         "id": 102,
@@ -10683,7 +11522,7 @@
         "inDevelopment": false,
         "story": "Pirate matriarch, largest pirate crew.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "China",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -10734,7 +11573,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0102.webp"
+        "picture": "wrestler-0102.webp",
+        "gimmickType": "authority",
+        "gimmick": "The pirate queen of the largest fleet."
       },
       {
         "id": 103,
@@ -10775,7 +11616,7 @@
         "inDevelopment": false,
         "story": "Protest warrior, naked truth fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -10826,7 +11667,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0103.webp"
+        "picture": "wrestler-0103.webp",
+        "gimmickType": "celebrity",
+        "gimmick": "The rider who protests for the people."
       },
       {
         "id": 104,
@@ -10867,7 +11710,7 @@
         "inDevelopment": false,
         "story": "Spanish legend, honorable warrior.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Spain",
         "managerId": 0,
         "contractExpiryDate": "2027-03-01T00:00:00.000Z",
         "contract": {
@@ -10918,7 +11761,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0104.webp"
+        "picture": "wrestler-0104.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The honorable mercenary."
       },
       {
         "id": 105,
@@ -10959,7 +11804,7 @@
         "inDevelopment": false,
         "story": "Camelot king, sword-in-stone arc.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-04-01T00:00:00.000Z",
         "contract": {
@@ -11010,7 +11855,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0105.webp"
+        "picture": "wrestler-0105.webp",
+        "gimmickType": "authority",
+        "gimmick": "The once and future king."
       },
       {
         "id": 106,
@@ -11051,7 +11898,7 @@
         "inDevelopment": false,
         "story": "Mystic advisor, magical manager.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-05-01T00:00:00.000Z",
         "contract": {
@@ -11102,7 +11949,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0106.webp"
+        "picture": "wrestler-0106.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The mystic advisor of Camelot."
       },
       {
         "id": 107,
@@ -11143,7 +11992,7 @@
         "inDevelopment": false,
         "story": "Best knight alive, love-triangle feuds.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-06-01T00:00:00.000Z",
         "contract": {
@@ -11194,7 +12043,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0107.webp"
+        "picture": "wrestler-0107.webp",
+        "gimmickType": "fighter",
+        "gimmick": "The greatest knight of the round table."
       },
       {
         "id": 108,
@@ -11235,7 +12086,7 @@
         "inDevelopment": false,
         "story": "Queen, love-triangle engine.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-07-01T00:00:00.000Z",
         "contract": {
@@ -11286,7 +12137,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0108.webp"
+        "picture": "wrestler-0108.webp",
+        "gimmickType": "celebrity",
+        "gimmick": "The queen at the heart of the triangle."
       },
       {
         "id": 109,
@@ -11327,7 +12180,7 @@
         "inDevelopment": false,
         "story": "Usurper, ends Camelot's reign.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-08-01T00:00:00.000Z",
         "contract": {
@@ -11378,7 +12231,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0109.webp"
+        "picture": "wrestler-0109.webp",
+        "gimmickType": "rebel",
+        "gimmick": "The usurper of Camelot."
       },
       {
         "id": 110,
@@ -11419,7 +12274,7 @@
         "inDevelopment": false,
         "story": "Nosferatu vampire, rat-swarm terror.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Germany",
         "managerId": 0,
         "contractExpiryDate": "2027-09-01T00:00:00.000Z",
         "contract": {
@@ -11470,7 +12325,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0110.webp"
+        "picture": "wrestler-0110.webp",
+        "gimmickType": "monster",
+        "gimmick": "The silent plague-bearing vampire."
       },
       {
         "id": 111,
@@ -11511,7 +12368,7 @@
         "inDevelopment": false,
         "story": "Clay monster, word-controlled beast.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Germany",
         "managerId": 0,
         "contractExpiryDate": "2027-10-01T00:00:00.000Z",
         "contract": {
@@ -11562,7 +12419,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0111.webp"
+        "picture": "wrestler-0111.webp",
+        "gimmickType": "monster",
+        "gimmick": "The clay monster bound to a word."
       },
       {
         "id": 112,
@@ -11603,7 +12462,7 @@
         "inDevelopment": false,
         "story": "Robot double, good vs evil gimmick.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Germany",
         "managerId": 0,
         "contractExpiryDate": "2027-11-01T00:00:00.000Z",
         "contract": {
@@ -11654,7 +12513,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0112.webp"
+        "picture": "wrestler-0112.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The false Maria with a double entrance."
       },
       {
         "id": 113,
@@ -11695,7 +12556,7 @@
         "inDevelopment": false,
         "story": "Sleepwalker, hypnotized puppet.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Germany",
         "managerId": 0,
         "contractExpiryDate": "2027-12-01T00:00:00.000Z",
         "contract": {
@@ -11746,7 +12607,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0113.webp"
+        "picture": "wrestler-0113.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The somnambulist puppet."
       },
       {
         "id": 114,
@@ -11787,7 +12650,7 @@
         "inDevelopment": false,
         "story": "Opera ghost, masked mystery man.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2028-01-01T00:00:00.000Z",
         "contract": {
@@ -11838,7 +12701,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0114.webp"
+        "picture": "wrestler-0114.webp",
+        "gimmickType": "cult-leader",
+        "gimmick": "The masked ghost of the opera."
       },
       {
         "id": 115,
@@ -11879,7 +12744,7 @@
         "inDevelopment": false,
         "story": "Opera singer, Phantom's obsession.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2028-02-01T00:00:00.000Z",
         "contract": {
@@ -11930,7 +12795,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0115.webp"
+        "picture": "wrestler-0115.webp",
+        "gimmickType": "celebrity",
+        "gimmick": "The opera-singer idol."
       },
       {
         "id": 116,
@@ -11971,7 +12838,7 @@
         "inDevelopment": false,
         "story": "Wind-up robot, mechanical fighter.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-03-01T00:00:00.000Z",
         "contract": {
@@ -12022,7 +12889,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0116.webp"
+        "picture": "wrestler-0116.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The wind-up clockwork novelty."
       },
       {
         "id": 117,
@@ -12063,7 +12932,7 @@
         "inDevelopment": false,
         "story": "Carnival huckster, fake authority.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-04-01T00:00:00.000Z",
         "contract": {
@@ -12114,7 +12983,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0117.webp"
+        "picture": "wrestler-0117.webp",
+        "gimmickType": "authority",
+        "gimmick": "The huckster behind the curtain."
       },
       {
         "id": 118,
@@ -12155,7 +13026,7 @@
         "inDevelopment": false,
         "story": "Dorothy's dog, mascot gimmick.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-05-01T00:00:00.000Z",
         "contract": {
@@ -12206,7 +13077,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0118.webp"
+        "picture": "wrestler-0118.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The tiny mascot with the big run-in."
       },
       {
         "id": 119,
@@ -12247,7 +13120,7 @@
         "inDevelopment": false,
         "story": "Pompous professor, low-card comedy.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-06-01T00:00:00.000Z",
         "contract": {
@@ -12298,7 +13171,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0119.webp"
+        "picture": "wrestler-0119.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The pompous professor of the low card."
       },
       {
         "id": 120,
@@ -12339,7 +13214,7 @@
         "inDevelopment": false,
         "story": "Oz princess, magical ruler.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-07-01T00:00:00.000Z",
         "contract": {
@@ -12390,7 +13265,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0120.webp"
+        "picture": "wrestler-0120.webp",
+        "gimmickType": "authority",
+        "gimmick": "The princess-ruler of Oz."
       },
       {
         "id": 121,
@@ -12431,7 +13308,7 @@
         "inDevelopment": false,
         "story": "Pumpkin-headed novelty, Halloween gimmick.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -12482,7 +13359,9 @@
           "awareness": 20,
           "judgement": 20
         },
-        "picture": "wrestler-0121.webp"
+        "picture": "wrestler-0121.webp",
+        "gimmickType": "comedy",
+        "gimmick": "The pumpkin-headed seasonal novelty."
       },
       {
         "id": 122,
@@ -12523,7 +13402,7 @@
         "inDevelopment": false,
         "story": "Zeus runs the business side of the promotion at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -12614,7 +13493,7 @@
         "inDevelopment": false,
         "story": "Hera runs the business side of the promotion at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -12705,7 +13584,7 @@
         "inDevelopment": false,
         "story": "Athena shapes the storylines from behind the curtain at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -12796,7 +13675,7 @@
         "inDevelopment": false,
         "story": "Homer shapes the storylines from behind the curtain at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -12887,7 +13766,7 @@
         "inDevelopment": false,
         "story": "Virgil shapes the storylines from behind the curtain at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Italy",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -12978,7 +13857,7 @@
         "inDevelopment": false,
         "story": "Apollo calls the action from ringside at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -13028,7 +13907,8 @@
           "awareness": 40,
           "judgement": 40
         },
-        "picture": "wrestler-0127.webp"
+        "picture": "wrestler-0127.webp",
+        "commentatorType": "play-by-play"
       },
       {
         "id": 128,
@@ -13069,7 +13949,7 @@
         "inDevelopment": false,
         "story": "Calliope calls the action from ringside at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-03-01T00:00:00.000Z",
         "contract": {
@@ -13119,7 +13999,8 @@
           "awareness": 40,
           "judgement": 40
         },
-        "picture": "wrestler-0128.webp"
+        "picture": "wrestler-0128.webp",
+        "commentatorType": "color"
       },
       {
         "id": 129,
@@ -13160,7 +14041,7 @@
         "inDevelopment": false,
         "story": "Hermes chases the talent backstage for a word at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-04-01T00:00:00.000Z",
         "contract": {
@@ -13251,7 +14132,7 @@
         "inDevelopment": false,
         "story": "Stentor introduces every competitor to the crowd at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-05-01T00:00:00.000Z",
         "contract": {
@@ -13342,7 +14223,7 @@
         "inDevelopment": false,
         "story": "Themis keeps order in the ring at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-06-01T00:00:00.000Z",
         "contract": {
@@ -13433,7 +14314,7 @@
         "inDevelopment": false,
         "story": "Rhadamanthus keeps order in the ring at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-07-01T00:00:00.000Z",
         "contract": {
@@ -13524,7 +14405,7 @@
         "inDevelopment": false,
         "story": "Nemesis keeps order in the ring at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-08-01T00:00:00.000Z",
         "contract": {
@@ -13615,7 +14496,7 @@
         "inDevelopment": false,
         "story": "Asclepius patches up the roster after every show at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-09-01T00:00:00.000Z",
         "contract": {
@@ -13706,7 +14587,7 @@
         "inDevelopment": false,
         "story": "Argus Panoptes hunts for the next legend to sign at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-10-01T00:00:00.000Z",
         "contract": {
@@ -13797,7 +14678,7 @@
         "inDevelopment": false,
         "story": "Chiron drills the roster in the training ring at Colosseum Championship Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Greece",
         "managerId": 0,
         "contractExpiryDate": "2027-11-01T00:00:00.000Z",
         "contract": {
@@ -13888,7 +14769,7 @@
         "inDevelopment": false,
         "story": "Phileas Fogg runs the business side of the promotion at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-12-01T00:00:00.000Z",
         "contract": {
@@ -13979,7 +14860,7 @@
         "inDevelopment": false,
         "story": "Ebenezer Scrooge runs the business side of the promotion at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2028-01-01T00:00:00.000Z",
         "contract": {
@@ -14070,7 +14951,7 @@
         "inDevelopment": false,
         "story": "Scheherazade shapes the storylines from behind the curtain at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Iran",
         "managerId": 0,
         "contractExpiryDate": "2028-02-01T00:00:00.000Z",
         "contract": {
@@ -14161,7 +15042,7 @@
         "inDevelopment": false,
         "story": "Dr. Watson shapes the storylines from behind the curtain at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2028-03-01T00:00:00.000Z",
         "contract": {
@@ -14253,7 +15134,7 @@
         "inDevelopment": false,
         "story": "Ishmael shapes the storylines from behind the curtain at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2028-04-01T00:00:00.000Z",
         "contract": {
@@ -14345,7 +15226,7 @@
         "inDevelopment": false,
         "story": "Tweedledum calls the action from ringside at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2028-05-01T00:00:00.000Z",
         "contract": {
@@ -14396,7 +15277,8 @@
           "awareness": 40,
           "judgement": 40
         },
-        "picture": "wrestler-0142.webp"
+        "picture": "wrestler-0142.webp",
+        "commentatorType": "comedy"
       },
       {
         "id": 143,
@@ -14437,7 +15319,7 @@
         "inDevelopment": false,
         "story": "Tweedledee calls the action from ringside at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2028-06-01T00:00:00.000Z",
         "contract": {
@@ -14488,7 +15370,8 @@
           "awareness": 40,
           "judgement": 40
         },
-        "picture": "wrestler-0143.webp"
+        "picture": "wrestler-0143.webp",
+        "commentatorType": "comedy"
       },
       {
         "id": 144,
@@ -14529,7 +15412,7 @@
         "inDevelopment": false,
         "story": "The White Rabbit chases the talent backstage for a word at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-07-01T00:00:00.000Z",
         "contract": {
@@ -14621,7 +15504,7 @@
         "inDevelopment": false,
         "story": "The Mock Turtle introduces every competitor to the crowd at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-08-01T00:00:00.000Z",
         "contract": {
@@ -14712,7 +15595,7 @@
         "inDevelopment": false,
         "story": "Inspector Lestrade keeps order in the ring at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2026-09-01T00:00:00.000Z",
         "contract": {
@@ -14803,7 +15686,7 @@
         "inDevelopment": false,
         "story": "Inspector Javert keeps order in the ring at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2026-10-01T00:00:00.000Z",
         "contract": {
@@ -14894,7 +15777,7 @@
         "inDevelopment": false,
         "story": "Ichabod Crane keeps order in the ring at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "USA",
         "managerId": 0,
         "contractExpiryDate": "2026-11-01T00:00:00.000Z",
         "contract": {
@@ -14985,7 +15868,7 @@
         "inDevelopment": false,
         "story": "Abraham Van Helsing patches up the roster after every show at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "Netherlands",
         "managerId": 0,
         "contractExpiryDate": "2026-12-01T00:00:00.000Z",
         "contract": {
@@ -15076,7 +15959,7 @@
         "inDevelopment": false,
         "story": "C. Auguste Dupin hunts for the next legend to sign at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "France",
         "managerId": 0,
         "contractExpiryDate": "2027-01-01T00:00:00.000Z",
         "contract": {
@@ -15168,7 +16051,7 @@
         "inDevelopment": false,
         "story": "Allan Quatermain drills the roster in the training ring at Wonderland Pro Wrestling.",
         "alterEgos": [],
-        "birthplace": "Unknown",
+        "birthplace": "UK",
         "managerId": 0,
         "contractExpiryDate": "2027-02-01T00:00:00.000Z",
         "contract": {
@@ -15222,9 +16105,19 @@
         "picture": "wrestler-0151.webp"
       }
     ],
+    "alliances.json": [
+      {
+        "id": 1,
+        "name": "The Public Domain Alliance",
+        "promotionIds": [
+          1,
+          2
+        ]
+      }
+    ],
     "save_meta.json": {
       "startDate": "2026-09-25",
-      "imgPath": "/home/david/Pictures/datapacks/boundless-brawlers/realistic",
+      "imgPath": "",
       "themeKey": ""
     }
   }
