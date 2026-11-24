@@ -19,7 +19,7 @@ A resource folder contains:
 - `<slug>.bbtheme` or `<slug>.bbdb`
 - `README.md` (what it is, and where database images live)
 - `preview.png`, `preview.jpg`, or `preview.webp`
-- `meta.json` with `title`, `author`, `version`, `tags`, `gameVersion`, and `license`
+- `meta.json` with `title`, `author`, `version`, `releaseDate`, `updateDate`, `official`, `legacy`, `featured`, `tags`, `gameVersion`, and `license`; databases with a separate image set also need `imagePackTitle`
 
 Automated checks reject a pull request that is missing a title, README, or preview image, that fails the schema, or that edits more than its own folder. Merging to `main` rebuilds `manifest.json`.
 

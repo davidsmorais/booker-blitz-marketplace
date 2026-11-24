@@ -39,11 +39,17 @@
     "entry": {
       "type": "object",
       "additionalProperties": false,
+      "dependentRequired": { "imageSetUrl": ["imagePackTitle"] },
       "required": [
         "title",
         "author",
         "slug",
         "version",
+        "releaseDate",
+        "updateDate",
+        "official",
+        "legacy",
+        "featured",
         "tags",
         "gameVersion",
         "license",
@@ -57,6 +63,11 @@
         "author": { "type": "string" },
         "slug": { "type": "string" },
         "version": { "type": "string" },
+        "releaseDate": { "type": "string", "format": "date" },
+        "updateDate": { "type": "string", "format": "date" },
+        "official": { "type": "boolean" },
+        "legacy": { "type": "boolean" },
+        "featured": { "type": "boolean" },
         "tags": { "type": "array", "items": { "type": "string" } },
         "gameVersion": { "type": "string" },
         "license": { "type": "string" },
@@ -65,7 +76,7 @@
         "downloadUrl": { "type": "string" },
         "imageUrl": { "type": "string" },
         "imageSetUrl": { "type": "string" },
-        "verified": { "type": "boolean" },
+        "imagePackTitle": { "type": "string", "minLength": 1 },
         "sha256": { "type": "string" },
         "size": { "type": "integer", "minimum": 0 }
       }

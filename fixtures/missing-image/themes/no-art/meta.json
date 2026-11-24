@@ -2,6 +2,11 @@
   "title": "No Art",
   "author": "Fixture",
   "version": "1.0.0",
+  "releaseDate": "2026-11-24",
+  "updateDate": "2026-11-24",
+  "official": false,
+  "legacy": false,
+  "featured": false,
   "tags": ["fixture"],
   "gameVersion": "0.2.0",
   "license": "CC-BY-4.0"

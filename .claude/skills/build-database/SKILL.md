@@ -18,7 +18,7 @@ Copy `databases/_template` to `databases/<slug>/`, then rename `your-slug.bbdb` 
 | File | Rule |
 |---|---|
 | `<slug>.bbdb` | Required. Valid JSON. 16 MB or smaller. |
-| `meta.json` | `title`, `author`, `version`, `tags` (1–8), `gameVersion`, `license` exactly `CC-BY-4.0`. Title and author max 80 characters. |
+| `meta.json` | `title`, `author`, `version`, `releaseDate`, `updateDate`, `official`, `legacy`, `featured`, `tags` (1–8), `gameVersion`, `license` exactly `CC-BY-4.0`. Add `imagePackTitle` when linking a separate image set. Title and author max 80 characters. |
 | `README.md` | Non-empty. Name every image host. Say so if the pack ships no images. |
 | `preview.png`, `preview.jpg`, or `preview.webp` | Exactly one. 512 KB or smaller. Your own art or a plain colour. No real logos. |
 

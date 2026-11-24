@@ -34,6 +34,11 @@ const entryFor = (dir, kind) => {
     author: meta.author.trim(),
     slug,
     version: meta.version.trim(),
+    releaseDate: meta.releaseDate,
+    updateDate: meta.updateDate,
+    official: meta.official,
+    legacy: meta.legacy,
+    featured: meta.featured,
     tags: meta.tags.map((tag) => tag.trim()),
     gameVersion: meta.gameVersion.trim(),
     license: meta.license,
@@ -42,7 +47,7 @@ const entryFor = (dir, kind) => {
     downloadUrl: external ? meta.downloadUrl : `${RAW_ROOT}/${folder}/${slug}/${slug}.${ext}`,
     imageUrl: `${RAW_ROOT}/${folder}/${slug}/${previewName}`,
     ...(meta.imageSetUrl ? { imageSetUrl: meta.imageSetUrl } : {}),
-    ...(meta.verified ? { verified: meta.verified } : {}),
+    ...(meta.imagePackTitle ? { imagePackTitle: meta.imagePackTitle.trim() } : {}),
     ...(payload ? { sha256: sha256(payload), size: payload.length } : {}),
   }
 }

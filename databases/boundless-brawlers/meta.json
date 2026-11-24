@@ -2,9 +2,14 @@
   "title": "Public Domain Classics",
   "author": "david morais",
   "version": "1.2.0",
+  "releaseDate": "2026-09-25",
+  "updateDate": "2026-11-20",
+  "official": true,
+  "legacy": false,
+  "featured": false,
   "tags": ["mythology", "literature", "history", "public-domain", "roster"],
   "gameVersion": "0.9.5",
   "license": "CC-BY-4.0",
   "imageSetUrl": "https://drive.google.com/drive/folders/1Zbwi9Y_tJrE7-3ZPQxeejymLNsWvrT2H?usp=drive_link",
-  "verified": true
+  "imagePackTitle": "Public Domain Classics Images"
 }

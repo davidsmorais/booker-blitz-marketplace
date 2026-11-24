@@ -2,9 +2,15 @@
   "title": "Real World by Shozukan",
   "author": "Shozukan",
   "version": "1.0.0",
+  "releaseDate": "2026-11-24",
+  "updateDate": "2026-11-24",
+  "official": false,
+  "legacy": false,
+  "featured": true,
   "tags": ["real-world", "roster", "cross-promotion", "aew", "njpw", "wwe"],
   "gameVersion": "0.10.1",
   "license": "CC-BY-4.0",
-  "downloadUrl": "https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file",
-  "imageSetUrl": "https://www.mediafire.com/file/lwfi0zbgcw86vu3/Real_World_Nov2026_Shozukan.bbdb/file"
+  "downloadUrl": "https://www.mediafire.com/file/lwfi0zbgcw86vu3/Real_World_Nov2026_Shozukan.bbdb/file",
+  "imageSetUrl": "https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file?action=check",
+  "imagePackTitle": "RWNov26"
 }

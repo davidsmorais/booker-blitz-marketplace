@@ -2,9 +2,15 @@
   "title": "Real World November 2026",
   "author": "Sonyahaus3n (community)",
   "version": "1.0.0",
+  "releaseDate": "2026-10-20",
+  "updateDate": "2026-11-03",
+  "official": false,
+  "legacy": true,
+  "featured": false,
   "tags": ["real-world", "roster", "cross-promotion", "aew", "njpw", "wwe"],
   "gameVersion": "0.6.1",
   "license": "CC-BY-4.0",
   "downloadUrl": "https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file",
-  "imageSetUrl": "https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file"
+  "imageSetUrl": "https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file",
+  "imagePackTitle": "RWNov26"
 }

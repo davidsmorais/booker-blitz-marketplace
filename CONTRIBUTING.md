@@ -16,7 +16,9 @@ One folder, `themes/<slug>/` or `databases/<slug>/`:
 | `<slug>.bbtheme` or `<slug>.bbdb` | Yes. Must match `schema/bbtheme.schema.json` or `schema/bbdb.schema.json`. |
 | `README.md` | Yes. Non-empty. For databases, name every image host. |
 | `preview.png` / `.jpg` / `.webp` | Yes. One image, 512 KB or smaller. |
-| `meta.json` | Yes. Title, author, version, tags, `gameVersion`, `license: "CC-BY-4.0"`. |
+| `meta.json` | Yes. Title, author, version, `releaseDate`, `updateDate`, `official`, `legacy`, `featured`, tags, `gameVersion`, `license: "CC-BY-4.0"`. Databases with a separate image set also need `imagePackTitle`. |
+
+`releaseDate` and `updateDate` use `YYYY-MM-DD`. Set `official` to `true` for first-party Dark Magic Studios resources, `legacy` to `true` for older-format resources, and `featured` to `true` for resources highlighted in the marketplace. `imagePackTitle` is the display name of the separate image set linked by `imageSetUrl`.
 
 Databases are a single JSON file. Do not embed images. Size cap is 16 MB. Themes cap at 8 MB, matching the game.
 

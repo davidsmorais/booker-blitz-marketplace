@@ -21,6 +21,7 @@ export const MAX_README_CHARS = 12_000
 export const IMAGE_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp"])
 export const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 export const HEX_COLOR = /^#[0-9a-fA-F]{6}$/
+export const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
 export const THEME_SLOTS = [
   "wp/1.png",
   "wp/2.png",
@@ -40,6 +41,12 @@ export const BBDB_OBJECT_FILES = ["save_meta.json", "datapack.json"]
 
 const isRecord = (value) =>
   typeof value === "object" && value !== null && !Array.isArray(value)
+
+const isIsoDate = (value) => {
+  if (typeof value !== "string" || !DATE_PATTERN.test(value)) return false
+  const date = new Date(`${value}T00:00:00.000Z`)
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value
+}
 
 export const sha256 = (buffer) => createHash("sha256").update(buffer).digest("hex")
 
@@ -67,6 +74,16 @@ export const validateMeta = (meta) => {
     push(errors, "meta.json author is missing")
   if (typeof meta.version !== "string" || meta.version.trim().length === 0)
     push(errors, "meta.json version is missing")
+  for (const field of ["releaseDate", "updateDate"]) {
+    if (!isIsoDate(meta[field]))
+      push(errors, `meta.json ${field} must be a valid YYYY-MM-DD date`)
+  }
+  if (isIsoDate(meta.releaseDate) && isIsoDate(meta.updateDate) && meta.updateDate < meta.releaseDate)
+    push(errors, "meta.json updateDate must be on or after releaseDate")
+  for (const field of ["official", "legacy", "featured"]) {
+    if (typeof meta[field] !== "boolean")
+      push(errors, `meta.json ${field} must be a boolean`)
+  }
   if (typeof meta.gameVersion !== "string" || meta.gameVersion.trim().length === 0)
     push(errors, "meta.json gameVersion is missing")
   if (meta.license !== "CC-BY-4.0")
@@ -75,10 +92,14 @@ export const validateMeta = (meta) => {
     push(errors, "meta.json tags must be a non-empty list of strings")
   if (meta.imageSetUrl !== undefined && (typeof meta.imageSetUrl !== "string" || meta.imageSetUrl.trim().length === 0))
     push(errors, "meta.json imageSetUrl must be a non-empty string")
+  if (meta.imageSetUrl !== undefined && meta.imagePackTitle === undefined)
+    push(errors, "meta.json imagePackTitle is required when imageSetUrl is set")
+  if (meta.imagePackTitle !== undefined && (typeof meta.imagePackTitle !== "string" || meta.imagePackTitle.trim().length === 0 || meta.imagePackTitle.length > 120))
+    push(errors, "meta.json imagePackTitle must be a non-empty string up to 120 characters")
   if (meta.downloadUrl !== undefined && (typeof meta.downloadUrl !== "string" || !/^https:\/\//.test(meta.downloadUrl)))
     push(errors, "meta.json downloadUrl must be an https URL")
-  if (meta.verified !== undefined && typeof meta.verified !== "boolean")
-    push(errors, "meta.json verified must be a boolean")
+  if (meta.verified !== undefined)
+    push(errors, "meta.json verified is no longer supported; use featured")
   return errors
 }
 

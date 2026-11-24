@@ -2,6 +2,11 @@
   "title": "Pixel Main Event",
   "author": "Dark Magic Studios",
   "version": "1.0.0",
+  "releaseDate": "2026-11-18",
+  "updateDate": "2026-11-19",
+  "official": true,
+  "legacy": false,
+  "featured": false,
   "tags": ["retro", "pixel", "arcade"],
   "gameVersion": "0.2.0",
   "license": "CC-BY-4.0"

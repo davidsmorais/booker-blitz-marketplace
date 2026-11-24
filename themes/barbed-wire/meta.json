@@ -2,8 +2,12 @@
   "title": "Barbed Wire",
   "author": "Dark Magic Studios",
   "version": "1.0.0",
+  "releaseDate": "2026-09-25",
+  "updateDate": "2026-09-26",
+  "official": true,
+  "legacy": true,
+  "featured": false,
   "tags": ["dark", "hardcore", "crimson"],
   "gameVersion": "0.2.0",
-  "license": "CC-BY-4.0",
-  "verified": true
+  "license": "CC-BY-4.0"
 }
