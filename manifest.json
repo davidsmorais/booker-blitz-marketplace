@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T16:09:33.192Z",
+  "generatedAt": "2026-11-24T20:35:02.085Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -143,6 +143,27 @@
       "size": 465970
     },
     {
+      "title": "Real World by Shozukan",
+      "author": "Shozukan",
+      "slug": "real-world-datapack-shozukan",
+      "version": "1.0.0",
+      "tags": [
+        "real-world",
+        "roster",
+        "cross-promotion",
+        "aew",
+        "njpw",
+        "wwe"
+      ],
+      "gameVersion": "0.10.1",
+      "license": "CC-BY-4.0",
+      "readme": "# Real World Datapack - November 2026\n\nA real-world November 2026 snapshot for Booker Blitz.\n\n![preview](preview.jpg)\n\n15 promotions, 9,365 people, 1,200 signed contracts, 8,165 free agents. Built for playing the Monday night wars with real rosters, real staff, and real title / show structures.\n\n[Images 🔻](https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file)\n\n## Stats\n\n- **Promotions:** 15\n- **Wrestlers / personnel:** 9,365\n- **Free agents:** 8,165 (87% of pool)\n- **Contracts:** 1,200\n- **Active:** 1,200 (100% active)\n- **Avg ability:** 47.5 (Median: 40)\n- **In dev:** 75\n- **Retired:** 810\n\n## Contents\n\n- **promotions.json** - 15 promotions, each with weekly shows, PPVs, titles, tag teams and signed staff\n- **wrestlers.json** - 9,365 people: 7,769 wrestlers, 1,200 signed, 8,165 free agents\n- **indies.json** - 10 indies\n- **alliances.json** - 4 alliances\n\n### Roster by promotion\n\n| id | Promotion | Lvl | Signed workers |\n|---:|---|---:|---:|\n| 1 | TNA | 4 | 72 |\n| 2 | WWE | 9 | 176 |\n| 3 | NXT | 4 | 104 |\n| 5 | ROH | 4 | 50 |\n| 21 | AAA | 6 | 53 |\n| 22 | CMLL | 8 | 123 |\n| 23 | AJPW | 6 | 36 |\n| 24 | NJPW | 8 | 76 |\n| 25 | NOAH | 4 | 47 |\n| 26 | Dragongate | 5 | 57 |\n| 37 | DDT | 5 | 49 |\n| 49 | Stardom | 4 | 41 |\n| 58 | BJW | 4 | 61 |\n| 338 | AEW | 6 | 185 |\n| 353 | NWA | 4 | 71 |\n\n### Staff ecosystem - 380 assigned keyStaff slots\n\nOwner 12, GM 7, Booker 11, Writers 36, Interviewer 23, Ring Announcers 36, Commentators 77, Referees 85, Medic Team 20, Scouts 15, Road Agents 42, Trainers 16.\n\nBy personnel type (`wrestler.type`, 9,365 total):\n\nWrestler 7,769, Manager 165, Commentator 159, Interviewer 20, Ring Announcer 48, Referee 320, Writer 433, Businessperson 27, Medic 42, Scout 122, Trainer 268.\n\n## Image sources\n\n**The `.bbdb` embeds no images.** `picture`, `logo` and staff `pic` fields are filenames only (`CM Punk.png`, `WWE_alt1.png`). Download the `RWNov26` image pack from MediaFire (the only image host for this pack), extract it, and point DataStudio's datapack import at the extracted image folder.\n\n- Image host: MediaFire `RWNov26.zip` (same pack as Real World November 2026)\n- Images are not embedded in the `.bbdb`; `picture` and `logo` fields are filenames that resolve against the host.\n\nFound a missing / wrong portrait or logo in the image pack? Report it on the reddit thread so it can get fixed in the next pack update.\n\n## Real names\n\nWrestler, staff and promotion names are real and are used descriptively. No real promotion logo or trademarked artwork is included in this repository.\n",
+      "readmeExcerpt": "Real World Datapack - November 2026 A real-world November 2026 snapshot for Booker Blitz. 15 promotions, 9,365 people, 1,200 signed contracts, 8,165 free agents. Built for playing the Monday night wars with real rosters, real staff, and real title / show structures. Stats - Prom…",
+      "downloadUrl": "https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file",
+      "imageUrl": "https://raw.githubusercontent.com/davidsmorais/booker-blitz-marketplace/main/databases/real-world-datapack-shozukan/preview.jpg",
+      "imageSetUrl": "https://www.mediafire.com/file/lwfi0zbgcw86vu3/Real_World_Nov2026_Shozukan.bbdb/file"
+    },
+    {
       "title": "Real World November 2026",
       "author": "Sonyahaus3n (community)",
       "slug": "real-world-november-2026",
@@ -155,7 +176,7 @@
         "njpw",
         "wwe"
       ],
-      "gameVersion": "0.2.0",
+      "gameVersion": "0.6.1",
       "license": "CC-BY-4.0",
       "readme": "# Real World November 2026\r\n\r\n⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update)\r\n\r\nA live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz.\r\n\r\nEvery person is real: full attribute sets, real finishers and gimmicks, real birthplaces and debut dates, and the title, tag-team, show and PPV structure each company actually runs.\r\n\r\nCross-promotion talent carries **non-exclusive** deals — AEW names who also work New Japan, CMLL and ROH regulars who double on the US indies, Stardom talent appearing in AEW, and so on. Their extra deals live in `additionalContracts` and resolve into real contracts when a game starts.\r\n\r\n## Contents\r\n\r\n- **promotions.json** — 16 promotions, each with its weekly shows, PPVs, titles, tag teams and signed staff\r\n- **wrestlers.json** — 4,270 people: 981 signed wrestlers, 292 signed staff, and 2,997 free agents\r\n- **alliances.json** — 6 alliances: WWE Universe, Forbidden Door, CyberFight, IndependentWrestling.TV, The Collective, United Japan Pro Wrestling\r\n\r\n## Roster breakdown\r\n\r\n| id | Promotion | Lvl | Base | Signed wrestlers | Signed staff |\r\n|---:|---|---:|---|---:|---:|\r\n| 3 | AJPW | 7 | Japan | 36 | 6 |\r\n| 5 | AAA | 6 | Mexico | 48 | 10 |\r\n| 11 | CMLL | 8 | Mexico | 157 | 29 |\r\n| 28 | TNA | 6 | USA | 48 | 17 |\r\n| 38 | NJPW | 9 | Japan | 56 | 24 |\r\n| 44 | PROGRESS | 3 | UK | 22 | 2 |\r\n| 45 | NOAH | 7 | Japan | 48 | 11 |\r\n| 49 | ROH | 5 | USA | 78 | 7 |\r\n| 61 | Stardom | 6 | Japan | 46 | 6 |\r\n| 64 | WWE | 10 | USA | 104 | 65 |\r\n| 65 | NXT | 6 | USA | 73 | 32 |\r\n| 68 | MLW | 4 | USA | 30 | 8 |\r\n| 76 | AEW | 9 | USA | 115 | 52 |\r\n| 77 | GCW | 4 | USA | 49 | 7 |\r\n| 79 | NWA | 5 | USA | 49 | 12 |\r\n| 118 | MLP | 3 | USA | 22 | 4 |\r\n\r\nWages are monthly. Contracts are dated relative to the start date (`2026-01-01`); the game shifts them to whatever start date you pick at New Game.\r\n\r\n## Downloads\r\n\r\nFor legal reasons this pack is not hosted in this repository. Both files are hosted on MediaFire:\r\n\r\n- **Datapack (.bbdb):** https://www.mediafire.com/file/xhzd17anc36qtex/real-world-november-2026.bbdb/file\r\n- **Image pack (RWNov26.zip):** https://www.mediafire.com/file/doqfrfek4rcpka4/RWNov26.zip/file\r\n\r\n## Image sources\r\n\r\n**The `.bbdb` embeds no images.** `picture`, `logo` and staff `pic` fields are filenames only (`Mistico.png`, `AEW_alt2.png`). Download `RWNov26.zip` from MediaFire (the only image host for this pack), extract it, and point DataStudio's datapack import at the extracted image folder.\r\n\r\n## Real names\r\n\r\nWrestler, staff and promotion names are real and are used descriptively. No real promotion logo or trademarked artwork is included in this repository.\r\n",
       "readmeExcerpt": "Real World November 2026 ⚠️ This is built from TEW's IX Real World Chronicles 2026 (August Update) A live-roster snapshot of sixteen real wrestling promotions as of November 2026, built for Booker Blitz. Every person is real: full attribute sets, real finishers and gimmicks, rea…",
