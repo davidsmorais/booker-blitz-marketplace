@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T00:45:00.757Z",
+  "generatedAt": "2026-11-24T16:09:33.192Z",
   "themes": [
     {
       "title": "Barbed Wire",
@@ -165,35 +165,35 @@
     }
   ],
   "datastudio": {
-    "version": "1.9.0",
-    "date": "2026-11-20T06:39:44Z",
+    "version": "1.10.4",
+    "date": "2026-11-24T00:44:24Z",
     "assets": [
       {
-        "name": "Booker-Blitz-Datastudio-1.9.0-linux-x86_64.AppImage",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.9.0/Booker-Blitz-Datastudio-1.9.0-linux-x86_64.AppImage",
+        "name": "Booker-Blitz-Datastudio-1.10.4-linux-x86_64.AppImage",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.10.4/Booker-Blitz-Datastudio-1.10.4-linux-x86_64.AppImage",
         "sha256": null,
-        "size": 820055699,
+        "size": 826383064,
         "os": "linux"
       },
       {
-        "name": "Booker-Blitz-Datastudio-1.9.0-mac-arm64.dmg",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.9.0/Booker-Blitz-Datastudio-1.9.0-mac-arm64.dmg",
+        "name": "Booker-Blitz-Datastudio-1.10.4-mac-arm64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.10.4/Booker-Blitz-Datastudio-1.10.4-mac-arm64.dmg",
         "sha256": null,
-        "size": 818857457,
+        "size": 824986787,
         "os": "mac"
       },
       {
-        "name": "Booker-Blitz-Datastudio-1.9.0-mac-x64.dmg",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.9.0/Booker-Blitz-Datastudio-1.9.0-mac-x64.dmg",
+        "name": "Booker-Blitz-Datastudio-1.10.4-mac-x64.dmg",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.10.4/Booker-Blitz-Datastudio-1.10.4-mac-x64.dmg",
         "sha256": null,
-        "size": 824872356,
+        "size": 830899270,
         "os": "mac"
       },
       {
-        "name": "Booker-Blitz-Datastudio-1.9.0-win-x64.exe",
-        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.9.0/Booker-Blitz-Datastudio-1.9.0-win-x64.exe",
+        "name": "Booker-Blitz-Datastudio-1.10.4-win-x64.exe",
+        "url": "https://github.com/davidsmorais/booker-blitz-marketplace/releases/download/datastudio-v1.10.4/Booker-Blitz-Datastudio-1.10.4-win-x64.exe",
         "sha256": null,
-        "size": 801144107,
+        "size": 804604143,
         "os": "windows"
       }
     ]
